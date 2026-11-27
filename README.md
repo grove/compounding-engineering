@@ -8,6 +8,8 @@ A shared starting point for three collections about making future engineering wo
 
 The site lives at [grove.github.io/compounding-engineering](https://grove.github.io/compounding-engineering/).
 
+The distant aim is to become ten times as effective as a software team with AI. [What would ten times look like?](https://grove.github.io/engineering-that-compounds/essays/what-would-ten-times-look-like.html) gives that ambition a practical role: find what holds useful work up, choose an investment, and check whether later work benefits. The [tenfold exercise](https://grove.github.io/patterns-of-compounding-engineering/guide.html#use-the-tenfold-ambition-to-choose-the-next-investment) helps a team try this on a recent change.
+
 ## Work on the site
 
 Edit `index.html` and the files in `assets/`. There is no package installation or JavaScript build step. Python 3.10 or later is enough:
