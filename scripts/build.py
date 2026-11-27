@@ -106,8 +106,9 @@ def build() -> None:
         source = ROOT / name
         if source.is_file():
             shutil.copy2(source, OUTPUT / name)
-    if (ROOT / "assets").is_dir():
-        shutil.copytree(ROOT / "assets", OUTPUT / "assets")
+    for name in ("assets", "adoption"):
+        if (ROOT / name).is_dir():
+            shutil.copytree(ROOT / name, OUTPUT / name)
     (OUTPUT / ".nojekyll").touch()
 
 

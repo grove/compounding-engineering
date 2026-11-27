@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18382d">
+  <title>Patterns of organizational compounding — Compounding Engineering</title>
+  <meta name="description" content="Six small interventions for the funding, transfer and learning problems that sit between teams.">
+  <link rel="canonical" href="https://grove.github.io/compounding-engineering/adoption/patterns.html">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/adoption.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="shell header-inner">
+      <a class="brand" href="../" aria-label="Compounding Engineering home"><svg class="brand-mark" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="11"/><circle cx="20" cy="20" r="5"/><path d="M20 3v12"/></svg><span>Compounding<br>Engineering</span></a>
+      <a class="header-source" href="https://github.com/grove/compounding-engineering">GitHub</a>
+    </div>
+  </header>
+  <main id="main" class="adoption-page" tabindex="-1">
+    <header><p class="eyebrow">Adoption guide</p><h1>Patterns of organizational compounding</h1><p class="intro">Six small interventions for the funding, transfer and learning problems that sit between teams.</p></header>
+    <nav class="adoption-nav" aria-label="Adoption guide">
+      <a href="index.html">Start here</a>
+      <a href="investing.html">Investing</a>
+      <a href="patterns.html" aria-current="page">Organizational patterns</a>
+      <a href="first-twelve-weeks.html">The first twelve weeks</a>
+    </nav>
+    <article class="adoption-body">
+      <section>
+        <h2>When the constraint is organizational</h2>
+        <p>The <a href="https://grove.github.io/patterns-of-compounding-engineering/">technical pattern catalogue</a> covers what teams can build and retain. These six companion patterns describe decisions that make those investments possible. They are proposed practices, not validated organizational interventions. Pick the problem you have; adopting all six is not a goal.</p>
+        <p>Each uses the hypothetical orders and billing migration story from <a href="index.html">the adoption guide</a>.</p>
+      </section>
+      <section id="protected-investment">
+        <h2>Protected investment</h2>
+        <p><strong>Problem.</strong> Every deadline is a reason to defer the improvement that would make the next deadline easier to meet.</p>
+        <p><strong>Try.</strong> Engineering and product leads agree a small capacity cap, displaced work, review date and the authority to interrupt or resume. Orders gets two days to prepare the lock check; billing gets time to try it. A genuine incident may interrupt the bet, but the next planning conversation explicitly restores, changes or cancels it.</p>
+        <p><strong>Look for.</strong> The investment actually happens without hidden overtime; subsequent eligible work meets the agreed outcome and quality bar. Count the work deferred and coordination cost.</p>
+        <p><strong>Stop or adapt.</strong> If the need disappears or the experiment fails, release the commitment. Do not protect an arbitrary percentage or reserve a permanent improvement backlog that nobody can challenge.</p>
+      </section>
+      <section id="capability-transfer">
+        <h2>Capability transfer</h2>
+        <p><strong>Problem.</strong> One team fixes a recurring failure; the next team still needs the original author to avoid it.</p>
+        <p><strong>Try.</strong> Transfer the question, applicability conditions, runnable check and expected result to a named receiver with time to try it. Billing tests the lock behavior of its own database and traffic assumptions, rather than copying orders' migration patch. Observe the next actual decision, including a justified decision not to use the check.</p>
+        <p><strong>Look for.</strong> Independent discovery, correct interpretation and a changed decision where appropriate. Record adaptation effort and unanswered questions. A page view or an install is not a transfer.</p>
+        <p><strong>Stop or adapt.</strong> Local context may make the check irrelevant. Repair a confusing handoff only when a real receiver needs it. Do not require universal reuse. See <a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/verified-retrieval.html">Verified retrieval</a>.</p>
+      </section>
+      <section id="shared-benefit-funding">
+        <h2>Shared-benefit funding</h2>
+        <p><strong>Problem.</strong> Orders pays for maintaining a check that principally benefits billing, so either its manager declines the work or support gets done invisibly.</p>
+        <p><strong>Try.</strong> Bring the decision to the leader responsible for both outcomes. Agree a contribution, support owner, upkeep cap and receiver time. Make the displaced work visible on both plans. Include an exit arrangement if the shared need disappears.</p>
+        <p><strong>Look for.</strong> Benefit to receiving teams without deterioration in the originating team's commitments or hidden support load. Track who bears the ongoing costs, not just aggregate savings.</p>
+        <p><strong>Stop or adapt.</strong> If coordination costs exceed the expected benefit, let teams keep local checks instead. Do not centralize merely to obtain funding; do not make a team absorb mandatory platform migrations without capacity to do the work.</p>
+      </section>
+      <section id="deliberate-reinvestment">
+        <h2>Deliberate reinvestment</h2>
+        <p><strong>Problem.</strong> A useful capability reduces recurring work and the released capacity immediately disappears into new commitments.</p>
+        <p><strong>Try.</strong> Verify the saving and where it lands. The team that no longer fields specialist calls may use freed attention for customer work, recovery rehearsal, mentoring or protective slack. Record the allocation with the next work owner. Revisit the constraint before choosing another tool.</p>
+        <p><strong>Look for.</strong> Usable capacity rather than theoretical minutes, net of upkeep and new work. If the old cases help build a recovery rehearsal, keep evidence of what transferred and what still had to be done. Count the capacity once.</p>
+        <p><strong>Stop or adapt.</strong> No verified saving means no dividend to allocate. A risk-reduction investment may be worthwhile anyway. Do not impose reinvestment quotas or equate the dividend with headcount that can be removed.</p>
+      </section>
+      <section id="earned-standardization">
+        <h2>Earned standardization</h2>
+        <p><strong>Problem.</strong> A local success becomes a company-wide rule before anyone knows whether it fits another team's work.</p>
+        <p><strong>Try.</strong> Start with a portable check. Try it in the contexts where the risk actually applies. Compare a copied command, shared library and central service, including support, versioning and migration costs. If a common standard is justified, document scope, reason, owner, exception path and review trigger.</p>
+        <p><strong>Look for.</strong> Independent use and better decisions across relevant contexts without a new central queue. Check what teams bypass and why. Invite dissent from people paying the costs.</p>
+        <p><strong>Stop or adapt.</strong> Keep local variants if the assumptions diverge. Optional operational conventions may be retired after review; legal, security and safety requirements do not expire automatically. Some controls need central enforcement from the outset; retain their required authority and verify their effectiveness rather than waiting for voluntary adoption.</p>
+      </section>
+      <section id="judgment-stewardship">
+        <h2>Judgment stewardship</h2>
+        <p><strong>Problem.</strong> A check or agent handles routine work, but fewer people can explain a failure, recognize its limits or improve it.</p>
+        <p><strong>Try.</strong> On an ordinary migration, ask a receiver to predict the lock and queue behavior, run the check, explain a surprise and decide what the result does not establish. Use a safe rehearsal for rare failures. Rotate ownership with mentoring and real time. Expand delegation only after independent evidence meets the required bar; preserve escalation and the ability to suspend automation.</p>
+        <p><strong>Look for.</strong> More than one person can reason through unfamiliar cases and make a sound decision. Count training and supervision effort alongside automation benefits.</p>
+        <p><strong>Stop or adapt.</strong> Do not turn every ticket into an examination, or remove the specialist from high-risk work before the receiver is ready. If understanding declines, narrow delegation and repair the learning opportunity. See <a href="https://grove.github.io/engineering-that-compounds/essays/how-engineers-become-engineers.html">How engineers become engineers</a> and <a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/earned-delegation.html">Earned delegation</a>.</p>
+      </section>
+      <section>
+        <h2>Check the combined burden</h2>
+        <p>Six individually defensible interventions can still create six meetings, competing policies and unwanted support work. Use the existing retrospective to ask which intervention actually changed a later decision. Remove what does not earn its keep. Adoption itself is an investment.</p>
+      </section>
+      <p class="next-page"><a class="button" href="first-twelve-weeks.html">Try one pattern in ordinary work</a></p>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><div><a class="footer-brand" href="../">Compounding Engineering</a><p>Essays, patterns and things to try.</p></div><nav aria-label="About this project"><a href="https://github.com/grove/compounding-engineering">Source &amp; suggestions</a><a href="https://github.com/grove/compounding-engineering/blob/main/LICENSE">Apache 2.0</a></nav></div></footer>
+</body>
+</html>

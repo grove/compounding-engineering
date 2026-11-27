@@ -1,0 +1,29 @@
+/* The adoption guide uses the same reading-room palette as the home page. */
+.adoption-page { width: min(76rem, calc(100% - 4rem)); margin-inline: auto; padding-block: 3.5rem 5rem; }
+.adoption-page > header { max-width: 56rem; margin-bottom: 2rem; }
+.adoption-page h1 { font-size: clamp(2.8rem, 6vw, 5rem); line-height: 1.05; margin-block: .8rem 1rem; }
+.adoption-page .intro { font: 1.4rem/1.55 var(--serif); max-width: 40em; }
+.adoption-nav { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; border-block: 1px solid var(--line); padding: .7rem 0; margin-bottom: 2.7rem; }
+.adoption-nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: .9375rem; color: var(--green); }
+.adoption-nav a[aria-current="page"] { font-weight: 600; text-decoration: none; color: var(--ink); }
+.adoption-body { max-width: 48rem; }
+.adoption-body section + section { margin-top: 3rem; }
+.adoption-body h2 { font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1.2; margin-bottom: 1rem; }
+.adoption-body h3 { font-size: 1.45rem; margin-block: 1.6rem .6rem; line-height: 1.3; }
+.adoption-body p, .adoption-body li { font-size: 1.0625rem; }
+.adoption-body ul, .adoption-body ol { padding-left: 1.5rem; }
+.adoption-body li + li { margin-top: .6rem; }
+.adoption-body a { color: var(--green); }
+.adoption-body pre { white-space: pre-wrap; overflow-wrap: anywhere; border: 1px solid var(--line); background: var(--white); padding: 1.1rem; font: .875rem/1.6 var(--mono); }
+.adoption-body .note { background: var(--wash); border-left: 3px solid var(--green); padding: 1rem 1.2rem; margin-block: 1.4rem; }
+.adoption-body .note p { font-size: .975rem; }
+.adoption-body dl { margin: 1rem 0; }
+.adoption-body dt { font-weight: 600; margin-top: 1rem; }
+.adoption-body dd { margin: .25rem 0 0; }
+.adoption-body .next-page { margin-top: 3rem; border-top: 1px solid var(--line); padding-top: 1.5rem; }
+.adoption-body .next-page .button { color: white; }
+@media (max-width: 620px) {
+  .adoption-page { width: calc(100% - 2rem); padding-block: 2rem 3rem; }
+  .adoption-page .intro { font-size: 1.2rem; }
+  .adoption-nav { gap: .2rem 1rem; }
+}
