@@ -1,0 +1,11 @@
+Compounding Engineering
+
+The browser payment example adapts the scenario and behavior of the billing
+lab in Patterns of compounding engineering, published by grove under the
+Apache License, Version 2.0:
+https://github.com/grove/patterns-of-compounding-engineering/tree/main/examples
+
+The site introduces and links to three collections published by grove:
+Software that improves with age, Engineering that compounds, and
+Patterns of compounding engineering. The essays and patterns remain in
+their original repositories.

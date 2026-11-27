@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18382d">
+  <title>Compounding Engineering — Make the next change easier.</title>
+  <meta name="description" content="Essays and practical patterns for software that gets easier to change. Keep what helps, understand why it works, and see whether the next change benefits.">
+  <link rel="canonical" href="https://grove.github.io/compounding-engineering/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Compounding Engineering">
+  <meta property="og:description" content="Make the next change easier. Essays and practical patterns for software, and the people building it, that get better with experience.">
+  <meta property="og:url" content="https://grove.github.io/compounding-engineering/">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script type="module" src="assets/billing-demo.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="shell header-inner">
+      <a class="brand" href="./" aria-label="Compounding Engineering home">
+        <svg class="brand-mark" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="11"/><circle cx="20" cy="20" r="5"/><path d="M20 3v12"/></svg>
+        <span>Compounding<br>Engineering</span>
+      </a>
+      <nav class="main-nav" aria-label="On this page">
+        <a href="#idea">The idea</a>
+        <a href="#in-practice">In practice</a>
+        <a href="#collections">The collections</a>
+      </nav>
+      <a class="header-source" href="https://github.com/grove/compounding-engineering">GitHub</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Essays &amp; a field guide for software engineers</p>
+        <h1 id="hero-title">Make the<br>next change<br><em>easier.</em></h1>
+        <p class="hero-lede">Fix the bug. Keep the test that catches it. Give the next person a little less detective work.</p>
+        <p class="hero-intro">These collections explore how software, and the people building it, can get better with experience. What should we keep from today’s work? And will it actually help tomorrow?</p>
+        <div class="hero-actions">
+          <a class="button" href="#in-practice">See it in practice</a>
+          <a class="text-link" href="#collections">Find something to read</a>
+        </div>
+      </div>
+      <figure class="growth-figure">
+        <svg class="growth-rings" viewBox="0 0 540 560" role="img" aria-labelledby="growth-title growth-description">
+          <title id="growth-title">What a useful fix can leave behind</title>
+          <desc id="growth-description">A small fix sits inside expanding rings: a regression test, a reusable test harness, and room to try a different design. Each can make the next investment easier. This illustrates a possible progression, not measured growth.</desc>
+          <defs>
+            <pattern id="dot-grid" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#315340" opacity=".16"/></pattern>
+          </defs>
+          <rect x="0" y="0" width="540" height="560" fill="url(#dot-grid)"/>
+          <g class="ring-guides" fill="none" stroke="#7f9a86" stroke-width="1">
+            <path d="M25 293h485M258 30v500" stroke-dasharray="3 8" opacity=".45"/>
+            <circle cx="258" cy="293" r="221" fill="#dce7d9" fill-opacity=".22"/>
+            <path d="M258 83c120-8 208 93 215 204 8 124-80 220-204 219C146 517 52 421 48 301 42 179 137 87 258 83Z"/>
+            <path d="M258 103c114-7 192 82 196 185 8 113-76 201-188 201-113 8-198-79-201-187-7-108 81-195 193-199Z" opacity=".5"/>
+            <path d="M260 124c97-6 166 69 172 166 5 98-66 177-168 178-100 6-172-70-176-168-4-96 74-174 172-176Z"/>
+            <path d="M260 147c85-5 146 62 151 144 3 88-58 156-148 157-86 4-151-61-154-148-4-85 65-150 151-153Z" opacity=".5"/>
+            <path d="M260 171c70-3 126 49 128 121 4 76-47 134-124 133-75 4-128-51-131-124-3-73 54-129 127-130Z" fill="#c1d4ba" fill-opacity=".2"/>
+            <path d="M260 194c60-3 101 39 105 99 3 60-39 108-101 108-59 3-104-42-106-100-2-59 43-106 102-107Z" opacity=".5"/>
+            <path d="M261 218c46-3 80 31 80 76 3 47-30 81-77 82-47 3-81-31-82-77-1-45 33-79 79-81Z" fill="#aec8a4" fill-opacity=".25"/>
+            <path d="M261 243c31-2 54 20 55 51 1 32-21 55-52 57-32 1-56-21-55-52-1-33 21-54 52-56Z" opacity=".55"/>
+          </g>
+          <g stroke="#315c43" stroke-width="1.2" fill="none">
+            <path d="M110 118H58V61h115"/><circle cx="110" cy="118" r="3.5" fill="#315c43"/>
+            <path d="M397 177h82v-32h36"/><circle cx="397" cy="177" r="3.5" fill="#315c43"/>
+            <path d="M338 341h113v43h63"/><circle cx="338" cy="341" r="3.5" fill="#315c43"/>
+          </g>
+          <g class="diagram-labels" fill="#315340">
+            <text x="66" y="44">room to try another design</text>
+            <rect x="373" y="105" width="166" height="29" fill="#f6f7f3"/>
+            <text x="380" y="125">a reusable harness</text>
+            <rect x="393" y="394" width="146" height="29" fill="#f6f7f3"/>
+            <text x="400" y="414">a regression test</text>
+          </g>
+          <rect x="207" y="274" width="110" height="38" rx="19" fill="#18382d"/>
+          <text x="262" y="298" text-anchor="middle" class="diagram-core" fill="#fff">a useful fix</text>
+        </svg>
+        <figcaption>A small fix can make room for a bigger change.</figcaption>
+      </figure>
+    </section>
+
+    <div class="collection-strip">
+      <nav class="shell strip-inner" aria-label="The three collections">
+        <span class="strip-label">Three ways in</span>
+        <a href="https://grove.github.io/software-that-improves-with-age/">Software that improves with age</a>
+        <a href="https://grove.github.io/engineering-that-compounds/">Engineering that compounds</a>
+        <a href="https://grove.github.io/patterns-of-compounding-engineering/">Patterns of compounding engineering</a>
+      </nav>
+    </div>
+
+    <section class="section shell" id="idea" aria-labelledby="idea-title">
+      <div class="section-heading">
+        <p class="eyebrow">The idea</p>
+        <h2 id="idea-title">“We solved this last year.”<br><em>Did we keep the useful bit?</em></h2>
+      </div>
+      <div class="idea-intro">
+        <p>You find the old ticket. There’s a link to a dead dashboard, a screenshot, and a comment that says “fixed.” So you start digging. Again.</p>
+        <div>
+          <p>Some work leaves us better equipped for the next round: a failure we can reproduce, a decision we can explain, a boundary that lets us change one thing safely. We call that <a href="https://grove.github.io/engineering-that-compounds/essays/engineering-capital.html">engineering capital</a>.</p>
+          <p>But keeping things is only the beginning.</p>
+        </div>
+      </div>
+      <div class="returns-grid">
+        <article class="return-item">
+          <svg viewBox="0 0 180 95" aria-hidden="true"><rect x="26" y="30" width="50" height="42" rx="2"/><path d="M35 41h30M35 50h22M35 59h27"/><path class="soft-line" d="M87 72h66M99 64h54"/></svg>
+          <p class="eyebrow">Accumulation</p>
+          <h3>You kept something.</h3>
+          <p>The debugging script made it into the repository. Good. Now it has a chance to help.</p>
+        </article>
+        <article class="return-item">
+          <svg viewBox="0 0 180 95" aria-hidden="true"><rect x="26" y="30" width="50" height="42" rx="2"/><path d="M35 41h30M35 50h22M35 59h27M76 51h23"/><rect x="99" y="36" width="54" height="31" rx="2"/><path d="m113 51 7 7 13-14"/></svg>
+          <p class="eyebrow">A return</p>
+          <h3>It helped again.</h3>
+          <p>Someone runs it during the next release and catches a regression. The script has earned a return.</p>
+        </article>
+        <article class="return-item">
+          <svg viewBox="0 0 180 95" aria-hidden="true"><rect x="19" y="37" width="38" height="32" rx="2"/><path d="M27 46h22M27 54h17M27 61h20M57 53h22M79 24v55M79 24h25M79 79h25"/><rect x="104" y="10" width="53" height="27" rx="2"/><rect x="104" y="65" width="53" height="27" rx="2"/><path d="m116 24 7 7 13-14m-20 62 7 7 13-14"/></svg>
+          <p class="eyebrow">Compounding</p>
+          <h3>It made more possible.</h3>
+          <p>That script becomes part of a harness that makes a difficult migration worth attempting.</p>
+        </article>
+      </div>
+      <aside class="margin-note"><span class="note-mark" aria-hidden="true">*</span><p>This is a possibility to investigate, not a growth curve to promise. Tests go stale. Tools need repairs. A smaller codebase can be a better investment than another clever tool. <a href="https://grove.github.io/engineering-that-compounds/essays/measuring-the-capacity-for-change.html">Look for evidence in the next change.</a></p></aside>
+    </section>
+
+    <section class="practice-section" id="in-practice" aria-labelledby="practice-title">
+      <div class="shell">
+        <div class="section-heading practice-heading">
+          <div><p class="eyebrow">A small, runnable example</p><h2 id="practice-title">Two deliveries.<br><em>One payment.</em></h2></div>
+          <p>A payment notification arrives. Then the same notification arrives again. The invoice records two payments, and someone gets an interesting afternoon.</p>
+        </div>
+        <div class="lab-layout">
+          <div class="lab-story">
+            <h3>Keep the bug on a short leash.</h3>
+            <p>The fix remembers which events it has already applied. The useful thing to keep is the tiny scenario that made the bug undeniable: an unpaid invoice, one payment event, and two deliveries.</p>
+            <p>With that case in the repository, the next engineer can make the old bug happen on purpose. “I think this still works” becomes a check they can run.</p>
+            <a class="text-link" href="https://grove.github.io/patterns-of-compounding-engineering/patterns/persistent-reproducer.html">Read the Persistent reproducer pattern</a>
+            <p class="lab-footnote">Adapted from the <a href="https://github.com/grove/patterns-of-compounding-engineering/tree/main/examples">billing lab</a>. A synthetic example, processed sequentially in memory. No real payments.</p>
+          </div>
+
+          <div class="payment-lab" aria-labelledby="lab-title">
+            <div class="lab-topline"><h3 id="lab-title">Replay the payment</h3><span class="lab-tag">Try it here</span></div>
+            <p class="lab-invoice">Invoice <code>inv_001</code><span>Invoice total <strong>24.00</strong></span></p>
+            <fieldset class="handler-choice">
+              <legend>Choose the handler</legend>
+              <label><input type="radio" name="payment-handler" value="buggy" checked> Original</label>
+              <label><input type="radio" name="payment-handler" value="fixed"> With duplicate check</label>
+            </fieldset>
+            <div class="table-scroll">
+              <table class="payment-table">
+                <caption class="sr-only">Effects of delivering the same payment event twice</caption>
+                <thead><tr><th scope="col">Delivery</th><th scope="col">Event</th><th scope="col">Effect</th></tr></thead>
+                <tbody id="payment-events"><tr><td colspan="3">The invoice starts unpaid.</td></tr></tbody>
+              </table>
+            </div>
+            <div class="payment-summary"><p>Recorded as paid <strong id="payment-total">0.00</strong></p><p>Events applied <strong id="payment-count">0</strong></p></div>
+            <p id="payment-result" class="payment-result" role="status" aria-live="polite" aria-atomic="true" data-state="idle">Deliver the same event twice and see what sticks.</p>
+            <div class="lab-actions"><button class="button" id="replay-payment" type="button" disabled>Deliver twice</button><button class="reset-button" id="reset-payment" type="button" disabled>Reset</button></div>
+            <noscript><p class="no-script">With the original handler, two deliveries record 48.00 paid. With the duplicate check, they record 24.00. Enable JavaScript to replay the example here, or <a href="https://github.com/grove/patterns-of-compounding-engineering/tree/main/examples">run the Python lab</a>.</p></noscript>
+          </div>
+        </div>
+
+        <div class="next-investments">
+          <header><p class="eyebrow">Where the example goes next</p><h3>Give the calculator a workout.</h3><p>The lab also has an invoice calculator. These are separate checks, illustrating what a team might build after learning to keep useful evidence.</p></header>
+          <div class="investment-step"><span class="step-label">State the rule</span><h4>What happens to spare credit?</h4><p>The lab keeps it unused. The amount due must never become negative. Write down the rule, then check examples and invariants against it.</p><a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/executable-invariants.html">Executable invariants</a></div>
+          <div class="investment-step"><span class="step-label">Try a replacement</span><h4>Let two versions disagree.</h4><p>Give both calculators the same invoices. Keep the cases where they differ. Agreement alone won’t prove either one right, but a disagreement gives you somewhere to look.</p><a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/differential-verification.html">Differential verification</a></div>
+          <div class="investment-step"><span class="step-label">Check the return</span><h4>Did the next change get easier?</h4><p>The next pricing change is where the investment gets an honest review. Count the repairs, the confusing failures, and the help it actually gave.</p><a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/investment-retrospective.html">Investment retrospective</a></div>
+        </div>
+        <details class="scope-note"><summary>What this little demo doesn’t establish</summary><p>The payment check covers sequential duplicate delivery in memory. Concurrent workers, restarts and durable storage need their own evidence. The invoice examples use integer minor units in one currency, without tax, proration or exchange rates. The lab demonstrates techniques; it does not measure a team’s returns over time.</p></details>
+      </div>
+    </section>
+
+    <section class="section shell principles-section" id="principles" aria-labelledby="principles-title">
+      <div class="principles-intro"><p class="eyebrow">Habits worth keeping</p><h2 id="principles-title">A few things<br><em>to work by.</em></h2><p>Try one on the task you already have open.</p></div>
+      <div class="principles">
+        <details open><summary>Leave a useful trace.</summary><div><p>Keep the test, explanation or small tool that would have saved you the investigation. Put it where the next person will look.</p><a href="https://grove.github.io/engineering-that-compounds/essays/what-software-should-remember.html">What software should remember</a></div></details>
+        <details><summary>Know why the check is green.</summary><div><p>A passing test is useful when you know what it establishes. Ask what could still be wrong. The author and the reviewer can share a blind spot; so can a model and the tests it wrote.</p><a href="https://grove.github.io/software-that-improves-with-age/essays/knowing-what-constitutes-convincing-evidence.html">Knowing what constitutes convincing evidence</a></div></details>
+        <details><summary>Keep learning in the work.</summary><div><p>Predict what will happen, try it, and explain the surprise. If an agent writes the code, someone still needs to understand the system well enough to change it again.</p><a href="https://grove.github.io/engineering-that-compounds/essays/how-engineers-become-engineers.html">How engineers become engineers</a></div></details>
+        <details><summary>Try before you commit.</summary><div><p>Build a small experiment while the decision is still cheap. You can learn more from two awkward prototypes than from a long argument about the perfect design.</p><a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/competing-prototypes.html">Competing prototypes</a></div></details>
+        <details><summary>Make it earn its keep.</summary><div><p>A tool with no users is still something to maintain. Notice what helps, repair what misleads, and retire what has outlived its purpose. Deletion counts.</p><a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/investment-retrospective.html">Investment retrospective</a></div></details>
+      </div>
+    </section>
+
+    <section class="reading-section" id="collections" aria-labelledby="collections-title">
+      <div class="shell">
+        <div class="section-heading reading-heading"><div><p class="eyebrow">The collections</p><h2 id="collections-title">Pick a thread.<br><em>See where it takes you.</em></h2></div><p>The essays develop the argument. The patterns give you something to try. Start with whatever is bothering you today.</p></div>
+        <article class="collection-entry software-entry">
+          <div class="collection-symbol" aria-hidden="true"><svg viewBox="0 0 100 115"><path d="M50 103V37M50 65C17 65 16 39 17 29c25 0 33 16 33 36ZM50 82c32 0 35-27 33-38-24 0-33 16-33 38ZM50 39C31 23 39 9 50 3c16 11 16 24 0 36Z"/><path d="M24 105h53"/></svg></div>
+          <div class="collection-copy"><p class="eyebrow">The software</p><h3><a href="https://grove.github.io/software-that-improves-with-age/">Software that improves with age</a></h3><p>What if older software became easier to understand, operate and change? Essays on maintenance, evidence, judgment and the work that remains when writing code gets cheaper.</p><a class="start-reading" href="https://grove.github.io/software-that-improves-with-age/essays/software-that-improves-with-age.html">Start with the title essay</a></div>
+          <div class="collection-aside"><span>For the question</span><p>“Why does every change feel harder than the last?”</p></div>
+        </article>
+        <article class="collection-entry engineering-entry">
+          <div class="collection-symbol" aria-hidden="true"><svg viewBox="0 0 100 115"><circle cx="50" cy="57" r="40"/><circle cx="50" cy="57" r="28"/><circle cx="50" cy="57" r="15"/><path d="M50 17v25M23 86l17-18M78 85 61 68"/></svg></div>
+          <div class="collection-copy"><p class="eyebrow">The engineering</p><h3><a href="https://grove.github.io/engineering-that-compounds/">Engineering that compounds</a></h3><p>The code is only part of what a team builds. These essays look at the knowledge, judgment and capabilities that survive a task, and the ways they can quietly disappear.</p><a class="start-reading" href="https://grove.github.io/engineering-that-compounds/essays/engineering-capital.html">Start with Engineering capital</a></div>
+          <div class="collection-aside"><span>For the question</span><p>“What are we getting better at, besides shipping?”</p></div>
+        </article>
+        <article class="collection-entry patterns-entry">
+          <div class="collection-symbol" aria-hidden="true"><svg viewBox="0 0 100 115"><rect x="13" y="15" width="27" height="27"/><rect x="60" y="15" width="27" height="27"/><rect x="36" y="73" width="27" height="27"/><path d="M26 42v13h48V42M50 55v18"/></svg></div>
+          <div class="collection-copy"><p class="eyebrow">The practice</p><h3><a href="https://grove.github.io/patterns-of-compounding-engineering/">Patterns of compounding engineering</a></h3><p>A field guide for recurring engineering problems. Each pattern explains when it helps, what you keep, what it costs, and when to leave it alone.</p><a class="start-reading" href="https://grove.github.io/patterns-of-compounding-engineering/">Find a pattern for your problem</a></div>
+          <div class="collection-aside"><span>For the question</span><p>“All right. What do I do on the next ticket?”</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell shortcuts-section" aria-labelledby="shortcuts-title">
+      <div><p class="eyebrow">Or start with the annoyance</p><h2 id="shortcuts-title">Sound familiar?</h2></div>
+      <ul class="problem-links">
+        <li><a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/persistent-reproducer.html"><span>“We’ve fixed this bug before.”</span><span class="pattern-name">Persistent reproducer</span></a></li>
+        <li><a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/verified-retrieval.html"><span>“It’s documented. Nobody finds it.”</span><span class="pattern-name">Verified retrieval</span></a></li>
+        <li><a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/review-comment-to-guardrail.html"><span>“I leave this comment on every review.”</span><span class="pattern-name">Review comment to guardrail</span></a></li>
+        <li><a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/subtraction-investigation.html"><span>“Surely we can delete this now?”</span><span class="pattern-name">Subtraction investigation</span></a></li>
+      </ul>
+    </section>
+
+    <section class="closing-section" aria-labelledby="closing-title">
+      <div class="shell closing-inner">
+        <div><p class="eyebrow">On your next change</p><h2 id="closing-title">Leave the next person<br><em>a better starting point.</em></h2></div>
+        <div class="closing-copy"><p>Before you start, see what the last person learned. While you work, keep the evidence that settles the difficult bit. Before you finish, ask what is worth leaving behind.</p><p>Then watch what happens when someone uses it. That’s where the next lesson is.</p><a class="button button-light" href="https://grove.github.io/engineering-that-compounds/essays/engineering-that-compounds.html">Try it on your next ticket</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner"><div><a class="footer-brand" href="./">Compounding Engineering</a><p>A growing collection of essays, patterns and things to try.</p></div><nav aria-label="About this project"><a href="https://github.com/grove/compounding-engineering">Source &amp; suggestions</a><a href="https://github.com/grove/compounding-engineering/blob/main/LICENSE">Apache 2.0</a></nav></div>
+    <div class="shell footer-note">This site grew out of reading <a href="https://www.outcome.engineering/">Outcome Engineering</a> and asking how to make these collections easier to explore.</div>
+  </footer>
+</body>
+</html>
