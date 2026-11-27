@@ -32,7 +32,7 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">Essays &amp; a field guide for software engineers</p>
@@ -64,7 +64,7 @@
             <path d="M261 218c46-3 80 31 80 76 3 47-30 81-77 82-47 3-81-31-82-77-1-45 33-79 79-81Z" fill="#aec8a4" fill-opacity=".25"/>
             <path d="M261 243c31-2 54 20 55 51 1 32-21 55-52 57-32 1-56-21-55-52-1-33 21-54 52-56Z" opacity=".55"/>
           </g>
-          <g stroke="#315c43" stroke-width="1.2" fill="none">
+          <g class="ring-leaders" stroke="#315c43" stroke-width="1.2" fill="none">
             <path d="M110 118H58V61h115"/><circle cx="110" cy="118" r="3.5" fill="#315c43"/>
             <path d="M397 177h82v-32h36"/><circle cx="397" cy="177" r="3.5" fill="#315c43"/>
             <path d="M338 341h113v43h63"/><circle cx="338" cy="341" r="3.5" fill="#315c43"/>
@@ -76,9 +76,10 @@
             <rect x="393" y="394" width="146" height="29" fill="#f6f7f3"/>
             <text x="400" y="414">a regression test</text>
           </g>
-          <rect x="207" y="274" width="110" height="38" rx="19" fill="#18382d"/>
+          <rect x="192" y="271" width="140" height="44" rx="22" fill="#18382d"/>
           <text x="262" y="298" text-anchor="middle" class="diagram-core" fill="#fff">a useful fix</text>
         </svg>
+        <div class="ring-key" aria-hidden="true"><span>A regression test</span><span>A reusable harness</span><span>Room to try another design</span></div>
         <figcaption>A small fix can make room for a bigger change.</figcaption>
       </figure>
     </section>
