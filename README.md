@@ -6,13 +6,13 @@ A shared starting point for three collections about making future engineering wo
 - [Engineering that compounds](https://grove.github.io/engineering-that-compounds/)
 - [Patterns of compounding engineering](https://grove.github.io/patterns-of-compounding-engineering/)
 
-The site lives at [grove.github.io/compounding-engineering](https://grove.github.io/compounding-engineering/).
+The site lives at [grove.github.io/compounding-engineering](https://grove.github.io/compounding-engineering/). The [adoption guide](https://grove.github.io/compounding-engineering/adoption/) connects the collections to decisions about investment, funding, ownership, transfer and review in existing engineering organizations.
 
 The distant aim is to become ten times as effective as a software team with AI. [What would ten times look like?](https://grove.github.io/engineering-that-compounds/essays/what-would-ten-times-look-like.html) gives that ambition a practical role: find what holds useful work up, choose an investment, and check whether later work benefits. The [tenfold exercise](https://grove.github.io/patterns-of-compounding-engineering/guide.html#use-the-tenfold-ambition-to-choose-the-next-investment) helps a team try this on a recent change.
 
 ## Work on the site
 
-Edit `index.html` and the files in `assets/`. There is no package installation or JavaScript build step. Python 3.10 or later is enough:
+Edit `index.html`, the pages in `adoption/` and the files in `assets/`. There is no package installation or JavaScript build step. Python 3.10 or later is enough:
 
 ```sh
 python3 scripts/build.py --check
