@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18382d">
+  <title>The first twelve weeks — Compounding Engineering</title>
+  <meta name="description" content="One team, one recurring kind of work and a bounded experiment that can earn its upkeep or be retired.">
+  <link rel="canonical" href="https://grove.github.io/compounding-engineering/adoption/first-twelve-weeks.html">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/adoption.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="shell header-inner">
+      <a class="brand" href="../" aria-label="Compounding Engineering home"><svg class="brand-mark" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="11"/><circle cx="20" cy="20" r="5"/><path d="M20 3v12"/></svg><span>Compounding<br>Engineering</span></a>
+      <a class="header-source" href="https://github.com/grove/compounding-engineering">GitHub</a>
+    </div>
+  </header>
+  <main id="main" class="adoption-page" tabindex="-1">
+    <header><p class="eyebrow">Adoption guide</p><h1>The first twelve weeks</h1><p class="intro">One team, one recurring kind of work and a bounded experiment that can earn its upkeep or be retired.</p></header>
+    <nav class="adoption-nav" aria-label="Adoption guide">
+      <a href="index.html">Start here</a>
+      <a href="investing.html">Investing</a>
+      <a href="patterns.html">Organizational patterns</a>
+      <a href="first-twelve-weeks.html" aria-current="page">The first twelve weeks</a>
+    </nav>
+    <article class="adoption-body">
+      <section>
+        <h2>Choose one job, not a transformation</h2>
+        <p>Ask an engineering and product lead to pick one frequent class of valuable work. In the hypothetical migration example, that is ordinary database changes that need to preserve safe service behavior. Work that appears twice a year needs a different observation window. Use the existing <a href="https://grove.github.io/engineering-that-compounds/essays/measuring-the-capacity-for-change.html#a-twelve-week-field-check">twelve-week field check</a> as the measurement basis; this playbook adds the organizational decisions.</p>
+        <p>Agree on a real quality bar with the appropriate domain and risk owners. Do not substitute a simulated check for required production safeguards. The dates below are a suggested steering horizon, not deadlines to force a second investment or cross-team rollout.</p>
+      </section>
+      <section>
+        <h2>Weeks 1–2: Find the limiting condition</h2>
+        <p>Review a few recent comparable changes, including awkward and unsuccessful ones. Trace active effort, waits, rework, acceptance and dependencies. Speak with people upstream and downstream. Choose an outcome and a suspected constraint; check whether using existing capacity or removing the chore would suffice.</p>
+        <p>Engineering and product leads agree on a bounded experiment and the work it displaces. Name a maintainer, a review trigger and a stop condition using the <a href="investing.html">investment note</a>. If the diagnosis points to a missing decision instead of a missing tool, make that decision first.</p>
+        <pre>Class of work / outcome:
+System boundary and suspected constraint:
+Recent comparable changes (links, including awkward ones):
+Quality bar and risk owner:
+Experiment, cap and displaced work:
+Owner / receiving engineer if relevant:
+Review trigger, fallback date, stop conditions:</pre>
+      </section>
+      <section>
+        <h2>Weeks 3–4: Make the smallest useful bet</h2>
+        <p>Try the check during real work. Use a representative safe environment, establish the expected result independently of the implementation, and test its limits. Record build effort, AI supervision and any deferred commitments. Let someone other than the author try it, including a failure case.</p>
+        <p>If the initial bet fails its quality bar or runs out of budget, stop and decide whether to repair, reduce scope or remove it. Do not extend the cap just to finish the experiment.</p>
+      </section>
+      <section>
+        <h2>Weeks 5–8: Watch later work</h2>
+        <p>Record every eligible change in the small selected class where practical, or agree an unbiased sampling rule in advance. Include abandoned attempts, workarounds, maintenance, missing checks, specialist support and later corrections. Use ordinary work records; avoid creating another tracking system.</p>
+        <pre>Change / eligibility / comparable baseline:
+Outcome and acceptance evidence:
+Active human effort / elapsed waiting:
+AI and other non-human costs if material:
+Capability used, bypassed or unavailable (why):
+Adaptation, upkeep, supervision and rework:
+Independent use / quality issues / downstream queues:</pre>
+        <p>Ask whether the initial constraint has moved. Faster review may simply leave more migrations waiting for release approval. Keep the observation of local savings separate from evidence that more useful work reaches acceptance at the same or stronger quality bar. Compare like work; record changes in demand, difficulty, staffing and tooling. Do not convert directional observations into individual performance scores.</p>
+      </section>
+      <section>
+        <h2>Weeks 9–10: Test the next connection, if one exists</h2>
+        <p>If billing has a real eligible migration, allocate receiver time and let its engineer adapt and interpret the check. If a recovery rehearsal is now worthwhile, see whether the earlier cases reduce new setup or improve verification. These are different questions: a capability can travel without compounding, and it can compound without crossing teams.</p>
+        <pre>Later capability or receiving team's job:
+What transferred / what was new:
+Adaptation, support and verification cost:
+Observed decision or result:
+Evidence of lower cost or greater capability (if any):
+Alternative explanation / estimated counterfactual:
+Unanswered questions:</pre>
+        <p>If no useful later investment or receiving task arrives, skip this step. Never invent extra infrastructure to complete the playbook.</p>
+      </section>
+      <section>
+        <h2>Weeks 11–12: Make a decision</h2>
+        <p>Use the <a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/investment-retrospective.html">Investment retrospective</a>. Read individual change notes before comparing averages. Invite the people who paid for upkeep and the people who benefited. A conclusion can be that the bet was useful, inconclusive, unnecessary or damaging.</p>
+        <pre>Outcome and observed changes:
+Local return / risk reduction:
+System-level change (if established):
+Later capability and evidence of a connection (if established):
+Full cost, displaced work, upkeep and uncertainty:
+Decision: keep / simplify / repair / transfer / retire
+Owner and next review trigger:
+Current constraint:
+Allocation of genuinely recovered capacity:</pre>
+        <p>Suppose the migration check helps on two changes but billing needs support to adapt it and no recovery rehearsal is built. The team may keep a simplified check if the observed benefits justify the expected upkeep. It has not established compounding or an organization-wide gain. If the specialist is still the bottleneck because business rules need clarification, invest in the decision process instead. If the check is unreliable, withdraw it with an appropriate safe alternative.</p>
+        <p>Twelve weeks of ordinary work rarely provide a credible causal comparison and may be too short to observe a later capability. Report this limitation; do not extrapolate to tenfold effectiveness. A negative or inconclusive result is useful for steering the next investment. For causal questions, see the proposed <a href="https://grove.github.io/engineering-that-compounds/research/second-capability.html">second-capability comparison</a>.</p>
+      </section>
+      <section>
+        <h2>Before asking another team to adopt it</h2>
+        <p>Check that the receiving team's problem is real, that it has time and authority to try the capability, and that support and ownership are funded. Keep the scope and exception path visible. If the same friction appears elsewhere, use the <a href="patterns.html">organizational patterns</a> to select another bounded experiment. If it does not, keep the useful local improvement and return to delivery.</p>
+        <div class="note"><p><strong>What this playbook is not:</strong> a completed field study, a maturity assessment, a promise of savings or a requirement to produce artifacts. It is a proposed way for a team to learn from an investment while doing its normal work.</p></div>
+      </section>
+      <p class="next-page"><a class="button" href="index.html">Return to the adoption guide</a></p>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><div><a class="footer-brand" href="../">Compounding Engineering</a><p>Essays, patterns and things to try.</p></div><nav aria-label="About this project"><a href="https://github.com/grove/compounding-engineering">Source &amp; suggestions</a><a href="https://github.com/grove/compounding-engineering/blob/main/LICENSE">Apache 2.0</a></nav></div></footer>
+</body>
+</html>
