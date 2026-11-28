@@ -1,5 +1,7 @@
 # Working on this site
 
+These repositories are publications: their purpose is to help readers understand and pursue ambitious engineering outcomes through prose. Keep code limited to helper utilities needed to publish, maintain or support the reading experience. Do not turn the publications into implementation projects or operational engineering laboratories. Use clearly identified illustrative examples, documented evidence and reader-facing experiments instead.
+
 Read the README for build and publishing details. Keep the site small: plain HTML, CSS and browser JavaScript, with a Python standard-library build.
 
 Write as an engineer talking to a colleague. Prefer a specific problem and a useful example to slogans, inflated promises or repeated summaries. Keep humor occasional. Do not invent the author's experiences, quotations, measurements or production results. Identify synthetic examples and state what their checks leave open.
