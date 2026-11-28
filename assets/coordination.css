@@ -1,0 +1,18 @@
+.coordination-controls:not([hidden]) { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; margin: 1rem 0; }
+.coordination-controls label { font-weight: 600; }
+.coordination-controls select { max-width: 100%; padding: .65rem; border: 1px solid var(--muted); background: var(--white); color: var(--ink); font: inherit; }
+.coordination-table { overflow-x: auto; margin-block: 1rem; }
+.coordination-table table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.coordination-table caption { text-align: left; font-weight: 600; margin-bottom: .5rem; }
+.coordination-table th, .coordination-table td { text-align: left; padding: .65rem; border-bottom: 1px solid var(--line); }
+.coordination-table td { font-variant-numeric: tabular-nums; }
+.coordination-table thead { background: var(--wash); }
+.coordination-controls select:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+@media (max-width: 35rem) { .coordination-table th, .coordination-table td { padding: .4rem; font-size: .85rem; overflow-wrap: normal; } }
+.coordination-cost { border: 1px solid var(--line); padding: 1rem; margin-block: 1.25rem; min-width: 0; }
+.coordination-cost legend { font-weight: 600; padding-inline: .5rem; }
+.coordination-cost:not([hidden]) > div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(5rem, 9rem); align-items: center; gap: .75rem; margin-block: .65rem; }
+.coordination-cost input { min-width: 0; padding: .5rem; font: inherit; color: var(--ink); background: var(--white); border: 1px solid var(--muted); }
+.coordination-cost input:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+.coordination-cost #cost-result { margin-bottom: 0; }
+@media (max-width: 35rem) { .coordination-cost:not([hidden]) > div { grid-template-columns: 1fr; gap: .3rem; } }

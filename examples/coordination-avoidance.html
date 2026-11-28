@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18382d">
+  <title>When does delegation remove coordination? — Compounding Engineering</title>
+  <meta name="description" content="A synthetic comparison of pooled and delegated capacity, including failure under demand skew and coordination outages.">
+  <link rel="canonical" href="https://grove.github.io/compounding-engineering/examples/coordination-avoidance.html">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/styles.css?v=20261128">
+  <link rel="stylesheet" href="../assets/adoption.css">
+  <link rel="stylesheet" href="../assets/coordination.css">
+  <script src="../assets/coordination.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="shell header-inner">
+      <a class="brand" href="../" aria-label="Compounding Engineering home"><svg class="brand-mark" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="11"/><circle cx="20" cy="20" r="5"/><path d="M20 3v12"/></svg><span>Compounding<br>Engineering</span></a>
+      <nav class="main-nav" aria-label="Main navigation"><a href="../paths/">Paths towards 10×</a><a href="../foundations.html">Foundations</a><a href="../adoption/">Try it with your team</a><a href="../evidence.html">Evidence</a></nav>
+      <a class="header-source" href="https://github.com/grove/compounding-engineering">GitHub</a>
+    </div>
+  </header>
+  <main id="main" class="adoption-page" tabindex="-1">
+    <header><p class="eyebrow">A synthetic comparison</p><h1>When does delegation<br>remove coordination?</h1><p class="intro">Two groups can act independently, but their promises depend on the same scarce capacity. What happens when demand changes?</p></header>
+    <nav class="adoption-nav" aria-label="Related reading"><a href="../paths/">Paths towards 10×</a><a href="../paths/customer-integrations.html#shared-capacity">Worked integration case</a><a href="../adoption/experiments.html#coordination-experiment">Try an experiment</a><a href="../evidence.html#coordination-evidence">Evidence</a></nav>
+    <article class="adoption-body">
+      <div class="note"><p><strong>This is a deterministic model, not a field result.</strong> It compares admission and transfer interactions, not engineering productivity or human effort. Its assumptions are deliberately favorable to reliable measurement and transfers.</p></div>
+      <section>
+        <h2>One resource, two groups</h2>
+        <p>There are eight capacity units. Every eligible request consumes one unit until fulfillment. Each round ends with verified fulfillment of all admitted requests. Requests arrive in order; denied requests do not wait. Compare four ways of governing access:</p>
+        <dl><dt>Pooled check</dt><dd>Consult a shared check for each request. Accept whenever capacity remains.</dd><dt>Fixed rights</dt><dd>Start with four exclusive units per group. Reject a request when that group's rights are exhausted.</dd><dt>Transfer one</dt><dd>Ask the other group for one unused right when necessary.</dd><dt>Transfer all</dt><dd>Ask for all of the other group's unused rights in one interaction when necessary.</dd></dl>
+      </section>
+      <section>
+        <h2>Change the demand</h2>
+        <div id="coordination-controls" class="coordination-controls" hidden><label for="demand-pattern">Demand pattern</label><select id="demand-pattern"><option value="balanced">Balanced</option><option value="persistent">Persistently uneven</option><option value="alternating" selected>Alternating</option><option value="overload">Overload</option><option value="outage">Coordination unavailable after warmup</option></select></div>
+        <p id="model-status" role="status">Alternating: 80 opportunities. Shared requests include unsuccessful attempts; discharge interactions excluded.</p>
+        <div class="coordination-table"><table><caption>Modeled results for the selected demand pattern</caption><thead><tr><th scope="col">Arrangement</th><th scope="col">Served</th><th scope="col">Unserved</th><th scope="col">Shared requests</th></tr></thead><tbody id="model-results"><tr><th scope="row">Pooled check</th><td>80</td><td>0</td><td>80</td></tr><tr><th scope="row">Fixed rights</th><td>40</td><td>40</td><td>0</td></tr><tr><th scope="row">Transfer one</th><td>80</td><td>0</td><td>76</td></tr><tr><th scope="row">Transfer all</th><td>80</td><td>0</td><td>10</td></tr></tbody></table></div>
+        <p>Fixed rights avoid all shared requests, but under uneven demand they can reject useful work while capacity remains free. Transferring a single right can recreate nearly all the original coordination. Larger transfers work well on the alternating trace, but leave the other group with no rights if shared coordination becomes unavailable.</p>
+        <details><summary>All initial traces and their results (also available without JavaScript)</summary><p>Each trace contains ten rounds. A and B are the two owners. The cells show served / shared requests.</p><div class="coordination-table"><table><caption>Initial deterministic comparison</caption><thead><tr><th scope="col">Pattern</th><th scope="col">Pooled</th><th scope="col">Fixed</th><th scope="col">Transfer one</th><th scope="col">Transfer all</th></tr></thead><tbody><tr><th scope="row">Balanced: AB × 4</th><td>80 / 80</td><td>80 / 0</td><td>80 / 0</td><td>80 / 0</td></tr><tr><th scope="row">Persistent: A × 8</th><td>80 / 80</td><td>40 / 0</td><td>80 / 4</td><td>80 / 1</td></tr><tr><th scope="row">Alternating: eight A, then eight B</th><td>80 / 80</td><td>40 / 0</td><td>80 / 76</td><td>80 / 10</td></tr><tr><th scope="row">Overload: AB × 5</th><td>80 / 100</td><td>80 / 0</td><td>80 / 20</td><td>80 / 20</td></tr></tbody></table></div><p>A later sensitivity uses eight requests at A, then eight at B after all initial obligations have been fulfilled and shared coordination becomes unavailable. Pooled and transferable policies serve eight in the first round and none in the second; fixed rights serve four in each. Identical totals conceal different availability. During the outage, attempted shared admissions and transfers fail. The interactive model counts those attempts.</p></details>
+      </section>
+      <section>
+        <h2>When would the investment pay?</h2>
+        <p>If N comparable needs currently require a units of coordination effort each, a redesign requiring b per need and F in initial and ongoing investment saves effort only when N × (a − b) exceeds F. For example, 100 changes at four hours each cost 400 hours of coordination. With half an hour remaining per change and 100 hours of investment and upkeep, the redesigned cost is 150 hours. That is an illustrative 2.67-fold reduction in coordination cost, not overall engineering effectiveness.</p>
+        <fieldset id="cost-controls" class="coordination-cost" hidden>
+          <legend>Compare coordination effort</legend>
+          <div><label for="cost-needs">Comparable changes</label><input id="cost-needs" type="number" min="1" max="100000" step="1" value="100"></div>
+          <div><label for="cost-before">Existing hours per change</label><input id="cost-before" type="number" min="0" max="10000" step="any" value="4"></div>
+          <div><label for="cost-after">Remaining hours per change</label><input id="cost-after" type="number" min="0" max="10000" step="any" value="0.5"></div>
+          <div><label for="cost-investment">Investment and upkeep (hours)</label><input id="cost-investment" type="number" min="0" max="10000000" step="any" value="100"></div>
+          <p id="cost-result" role="status">Existing: 400 hours. Redesigned: 150 hours. Net saving: 250 hours.</p>
+        </fieldset>
+        <p>Include unsuccessful requests, release interactions, supervision, reallocation, failure recovery and other costs. Only compare like outcomes. A cheap automated pooled check may be preferable to a complex distributed allocation even if it makes more requests.</p>
+      </section>
+      <section>
+        <h2>What the model cannot know</h2>
+        <p>Every promise is recorded, every capacity unit is identical, rights are exclusive, transfers are instantaneous when available and fulfillment is known. Real customers may rely on an experimental service without anyone recording it. Specialists may become unavailable. Retiring a service stops new commitments but does not discharge existing ones. The model cannot establish that any of these assumptions hold.</p>
+        <p>The <a href="https://github.com/grove/reimagining-software-engineering/pull/4">research note (review draft)</a> explains the initial comparison, subsequent sensitivity and limitations. The underlying technical research concerns <a href="../evidence.html#coordination-evidence">coordination and invariants in distributed databases</a>. Applying it to organizations remains a hypothesis.</p>
+        <p>Try <a href="../adoption/experiments.html#coordination-experiment">the proposed experiment</a> on one actual constraint. Compare equivalent customer outcomes at equivalent risk, then examine whether the investment helps develop a distinct later capability.</p>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><div><a class="footer-brand" href="../">Compounding Engineering</a><p>Essays, patterns and things to try.</p></div><nav aria-label="About this project"><a href="https://github.com/grove/compounding-engineering">Source &amp; suggestions</a><a href="https://github.com/grove/compounding-engineering/blob/main/LICENSE">Apache 2.0</a></nav></div></footer>
+</body>
+</html>
