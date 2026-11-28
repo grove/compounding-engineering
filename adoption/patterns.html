@@ -24,6 +24,7 @@
     <nav class="adoption-nav" aria-label="Adoption guide">
       <a href="index.html">Start here</a>
       <a href="investing.html">Investing</a>
+      <a href="investment-canvas.html">Worksheet</a>
       <a href="patterns.html" aria-current="page">Organizational patterns</a>
       <a href="first-twelve-weeks.html">The first twelve weeks</a>
     </nav>
@@ -44,6 +45,7 @@
         <h2>Capability transfer</h2>
         <p><strong>Problem.</strong> One team fixes a recurring failure; the next team still needs the original author to avoid it.</p>
         <p><strong>Try.</strong> Transfer the question, applicability conditions, runnable check and expected result to a named receiver with time to try it. Billing tests the lock behavior of its own database and traffic assumptions, rather than copying orders' migration patch. Observe the next actual decision, including a justified decision not to use the check.</p>
+        <p>Prepare the receiving team too. Can its engineer explain a lock queue, obtain the relevant access and recognize a case outside the check's scope? Pair on the missing part, then let the receiver handle another case. Cohen and Levinthal's <a href="https://doi.org/10.2307/2393553">absorptive capacity</a> gives a reason for this investment: prior knowledge affects whether new knowledge can be understood and applied. Count that learning time in the transfer cost.</p>
         <p>AI can help find likely receivers by looking for the relevant database and migration tools in repositories it is allowed to read. A matching tool is a reason to ask a question. Billing still needs to test its own lock behavior, traffic and release conditions. Keep those differences with the check so the next receiver can judge the fit.</p>
         <p><strong>Look for.</strong> Independent discovery, correct interpretation and a changed decision where appropriate. Record adaptation effort and unanswered questions. A page view or an install is not a transfer.</p>
         <p><strong>Stop or adapt.</strong> Local context may make the check irrelevant. Repair a confusing handoff only when a real receiver needs it. Do not require universal reuse. See <a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/verified-retrieval.html">Verified retrieval</a>.</p>
@@ -73,6 +75,7 @@
         <h2>Judgment stewardship</h2>
         <p><strong>Problem.</strong> A check or agent handles routine work, but fewer people can explain a failure, recognize its limits or improve it.</p>
         <p><strong>Try.</strong> On an ordinary migration, ask a receiver to predict the lock and queue behavior, run the check, explain a surprise and decide what the result does not establish. Use a safe rehearsal for rare failures. Rotate ownership with mentoring and real time. Expand delegation only after independent evidence meets the required bar; preserve escalation and the ability to suspend automation.</p>
+        <p>Occasionally rehearse without the usual expert or service. The question is what the team can still diagnose and recover, and where it needs a fallback. Preserve the understanding or alternative route that the rehearsal shows is necessary. Keeping every old process is not a substitute for making that choice.</p>
         <p>An agent can prepare a variation on a retained case, such as a migration against an empty table instead of a busy one. Have an experienced engineer check the exercise and its expected result. Let the learner predict before seeing the explanation, then change a condition to see whether the reasoning holds. A fluent answer to the original case is weak evidence of understanding.</p>
         <p><strong>Look for.</strong> More than one person can reason through unfamiliar cases and make a sound decision. Count training and supervision effort alongside automation benefits.</p>
         <p><strong>Stop or adapt.</strong> Do not turn every ticket into an examination, or remove the specialist from high-risk work before the receiver is ready. If understanding declines, narrow delegation and repair the learning opportunity. See <a href="https://grove.github.io/engineering-that-compounds/essays/how-engineers-become-engineers.html">How engineers become engineers</a> and <a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/earned-delegation.html">Earned delegation</a>.</p>

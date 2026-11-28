@@ -22,8 +22,36 @@
 .adoption-body dd { margin: .25rem 0 0; }
 .adoption-body .next-page { margin-top: 3rem; border-top: 1px solid var(--line); padding-top: 1.5rem; }
 .adoption-body .next-page .button { color: white; }
+.adoption-body details { margin-block: 1.5rem; border: 1px solid var(--line); padding: 1rem 1.2rem; }
+.adoption-body summary { cursor: pointer; font-weight: 600; }
+.adoption-body details[open] summary { margin-bottom: 1rem; }
+.worksheet-field { margin-block: 1.7rem; }
+.worksheet-field label, .worksheet-purpose legend, #investment-copy-fallback label { display: block; font-weight: 600; font-size: 1.125rem; }
+.worksheet-field p { margin-block: .35rem .6rem; color: var(--muted); font-size: 1rem; }
+.adoption-body textarea { display: block; width: 100%; min-height: 6rem; resize: vertical; padding: .8rem; border: 1px solid var(--muted); border-radius: .2rem; background: var(--white); color: var(--ink); font: 1rem/1.6 var(--sans); }
+.adoption-body textarea::placeholder { color: var(--muted); opacity: 1; }
+.worksheet-purpose { margin: 1.7rem 0; padding: 1rem; border: 1px solid var(--line); }
+.worksheet-purpose label { display: flex; align-items: start; gap: .65rem; padding: .5rem 0; font-size: 1rem; }
+.worksheet-purpose input { margin-top: .4rem; accent-color: var(--green); flex-shrink: 0; }
+.worksheet-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+.adoption-body .worksheet-status { min-height: 1.6rem; margin-top: 1rem; font-size: 1rem; }
+#use-investment-example { margin-top: .2rem; text-align: left; }
+.foundation-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 3rem; margin-top: 2rem; }
+.foundation-links article { border-top: 1px solid var(--line); padding-top: 1rem; }
+.foundation-links h3 { font-size: 1.5rem; margin-bottom: .5rem; }
+.foundation-links p { font-size: 1rem; }
+@media print {
+  .masthead, .site-footer, .skip-link, .adoption-nav, .worksheet-actions, #use-investment-example, .worksheet-status, #investment-copy-fallback, .next-page { display: none !important; }
+  body { background: white; color: black; font-size: 11pt; }
+  .adoption-page { width: 100%; padding: 0; }
+  .adoption-page h1 { font-size: 28pt; }
+  .adoption-body, .adoption-page > header { max-width: none; }
+  .adoption-body textarea { overflow: visible; color: black; background: white; }
+  .worksheet-field, .worksheet-purpose { break-inside: avoid; }
+}
 @media (max-width: 620px) {
   .adoption-page { width: calc(100% - 2rem); padding-block: 2rem 3rem; }
   .adoption-page .intro { font-size: 1.2rem; }
   .adoption-nav { gap: .2rem 1rem; }
+  .foundation-links { grid-template-columns: 1fr; }
 }
