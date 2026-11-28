@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#18382d">
   <title>Investing in engineering capital — Compounding Engineering</title>
-  <meta name="description" content="Decide who can invest, who pays, and what to do with the capacity an investment actually releases.">
+  <meta name="description" content="Fund changes to how engineering happens: remove constraints, automate workflows and reinvest the capacity they actually release.">
   <link rel="canonical" href="https://grove.github.io/compounding-engineering/adoption/investing.html">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../assets/styles.css">
@@ -20,7 +20,7 @@
     </div>
   </header>
   <main id="main" class="adoption-page" tabindex="-1">
-    <header><p class="eyebrow">Adoption guide</p><h1>Investing in engineering capital</h1><p class="intro">Decide who can invest, who pays, and what to do with the capacity an investment actually releases.</p></header>
+    <header><p class="eyebrow">Adoption guide</p><h1>Investing in engineering capital</h1><p class="intro">Fund changes to how engineering happens, and give the capacity they release somewhere useful to go.</p></header>
     <nav class="adoption-nav" aria-label="Adoption guide">
       <a href="index.html">Start here</a>
       <a href="investing.html" aria-current="page">Investing</a>
@@ -30,18 +30,19 @@
     </nav>
     <article class="adoption-body">
       <section>
-        <h2>Give the investment a place in planning</h2>
+        <h2>Fund a change in how work happens</h2>
         <p>The orders team proposes spending two days turning its lock investigation into a check another engineer can use. Billing would gain independence, but orders would lose two days of feature capacity. Who gets to say yes?</p>
         <p>Product work and capability work are both investments in future outcomes. Some work instead preserves a guarantee or reduces an exposure the business is unwilling to accept. Name which outcome matters; do not dress every maintenance task up as a speed gain.</p>
-        <p>Before building anything, compare the bet with doing nothing, eliminating the underlying chore, using an existing capability, or settling a missing product decision. The <a href="https://grove.github.io/patterns-of-compounding-engineering/guide.html#choosing-between-competing-investments">investment selection questions</a> help with this. Look at frequency, severity, the suspected constraint, cost, alternatives, likely useful life and what a later capability might inherit.</p>
+        <p>Before building anything, compare the bet with eliminating the chore, redesigning the dependency, automating the workflow, using an existing capability, settling a missing product decision or doing nothing. The <a href="https://grove.github.io/patterns-of-compounding-engineering/guide.html#choosing-between-competing-investments">investment selection questions</a> help with this. Look at frequency, severity, the suspected constraint, cost, alternatives, likely useful life and what a later capability might inherit.</p>
+        <p>Include the organizational change in the bet. A command that runs a migration check leaves the specialist queue intact if every result still needs that specialist's signature. Decide what evidence allows independent action, who owns exceptions and whether the dependency itself can go. Fund the transition and retirement of the old procedure as well as the new tool.</p>
         <p>If the cause is uncertain, fund a short investigation first. AI may help collect the cases and test explanations, but its recommendation is not an approved investment. Agree who will check the evidence, how much review time is available and what finding would justify stopping. The <a href="index.html#learning-from-the-work">learning exercise</a> shows how to keep that work small.</p>
       </section>
       <section id="three-purposes">
         <h2>Leave room for more than today's work</h2>
         <p>A quicker migration review is useful if migrations are what need to happen. It tells you little about whether a different storage design could remove much of that work. Consider three purposes when choosing an investment:</p>
         <dl>
-          <dt>Improve current work</dt><dd>Make a known job more dependable or less expensive. The lock check belongs here. Compare later migrations under the same acceptance standard.</dd>
-          <dt>Explore a different approach</dt><dd>Resolve an uncertainty that could change what you choose to do. Try a small alternative design against the difficult cases before funding a migration. A well-supported decision to stop is a useful result.</dd>
+          <dt>Improve current work</dt><dd>Make a known outcome more dependable or less expensive, including automating its routine path. Compare later migrations under the same acceptance standard and include the work around the check.</dd>
+          <dt>Explore a different approach</dt><dd>Resolve an uncertainty that could change how engineering is performed. Try independent service ownership, an automated delivery workflow or a design that removes a recurring integration. A well-supported decision to stop is a useful result.</dd>
           <dt>Preserve the ability to respond</dt><dd>Keep an important option or understanding available. Rehearse a recovery without the usual specialist, or verify that the team can replace a dependency. Name the conditions this prepares you for and what it costs.</dd>
         </dl>
         <p>The distinction between refining familiar work and exploring new possibilities comes from <a href="https://doi.org/10.1287/orsc.2.1.71">James March's work on organizational learning</a>. Preservation is an additional planning prompt used here. These are purposes, not fixed budget percentages; one investment may serve several.</p>
@@ -62,13 +63,15 @@
         <p>The existing <a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/investment-retrospective.html">Investment retrospective</a> asks for a baseline and a review trigger. For a bet competing with other priorities, add the organizational commitments. Here is a copyable note:</p>
         <pre>Outcome and boundary:
 Recent comparable work / suspected constraint:
+Work or handoffs to remove, redesign or automate:
 Alternatives (including no investment):
 Smallest bet and quality bar:
-Build, adoption and upkeep budget:
+Build, transition, adoption and upkeep budget:
 Investigation and review cost, including false leads:
 Displaced work / decision authority:
 Owner, receiver and support agreement:
 Expected recurring return or risk reduction:
+Human interventions that remain and why:
 Possible later capability and what it could inherit:
 Evidence to collect (including failures and bypasses):
 Review trigger and fallback date:
@@ -76,12 +79,18 @@ Stop / simplify / retire conditions:</pre>
         <p>For a guided version, use the <a href="investment-canvas.html">investment worksheet</a>. It includes a worked example and produces a note you can paste into the existing issue.</p>
         <h3>A hypothetical migration investment</h3>
         <p>In this example, billing's routine migration reviews repeatedly wait for orders' specialist. First check whether specialist review is actually holding up accepted changes, rather than release approval. The bet is a two-day build cap plus separately agreed receiver time: a reproducible check of lock behavior and connection queuing on representative synthetic cases. Product and engineering leads agree which work moves. The orders team owns the check during the experiment; billing names a receiver and its lead allocates adaptation time. Agree an upkeep cap before retaining it.</p>
-        <p>The expectation is that billing can judge eligible migrations without the specialist, using the same reviewed acceptance standard. The cases might later supply inputs for a recovery rehearsal. That is a hypothesis, not a saving. Observe the next three eligible migrations or review at twelve weeks, whichever comes first; this is a review trigger, not statistical proof. Stop if the cases mislead, upkeep exceeds the agreed cap, or the review no longer limits useful work. Preserve the required release and database safeguards either way.</p>
+        <p>The expectation is that billing can judge eligible migrations without the specialist, using the same reviewed acceptance standard. Agree which eligible cases can leave the specialist's queue and which exceptions still need it. The cases and environment might later support automated migration preparation or a recovery rehearsal. Those are hypotheses, not savings. Observe the next three eligible migrations or review at twelve weeks, whichever comes first; this is a review trigger, not statistical proof. Stop if the cases mislead, upkeep exceeds the agreed cap, or the review no longer limits useful work. Preserve the required release and database safeguards either way.</p>
+      </section>
+      <section>
+        <h2>Invest in the machinery that finds the next investment</h2>
+        <p>A software farm and a software factory can help improve one another. The farm investigates recurring failures, waits or unnecessary work. The factory can implement a chosen improvement and exercise it against the required evidence. Its operation then supplies new questions. Their <a href="index.html#farms-and-factories">roles</a> describe work to organize, rather than departments to fund automatically.</p>
+        <p>For example, a routine update workflow may keep asking engineers to reconstruct the same environment failure. A bounded investigation could produce a diagnostic and a simpler environment setup. If those capabilities also reduce the work needed to build a runtime-upgrade workflow, there is a specific compounding claim to examine. Count the investigation's false leads and the machinery's upkeep as well as the interruptions removed.</p>
+        <p>Give recurring investigation a budget and a route to action. Producing findings faster than anyone can resolve them creates another queue. The worthwhile investment may be clearer decision rights or the removal of a service, with no new agent involved.</p>
       </section>
       <section>
         <h2>Do not spend the same hour twice</h2>
         <p>If billing no longer needs the specialist, find out whose usable capacity changed. A saved ten-minute interruption in orders does not automatically release ten minutes on billing's delivery plan. Count support, exception handling, adoption, verification and upkeep. If work simply moves into a different queue, the system may not deliver more.</p>
-        <p>Make an explicit allocation decision in ordinary planning. The available choices include customer work, investment at the new constraint, risk reduction and slack to absorb variability or learn. Reinvesting some capacity can be worthwhile, but it is not obligatory and there is no universal split. Do not promise an immediate headcount or throughput gain from estimated savings.</p>
+        <p>Make an explicit allocation decision in ordinary planning. The available choices include customer work, investment at the new constraint, risk reduction and slack to absorb variability or learn. Continued transformation needs capacity for the next change to the engineering system. Decide what to reinvest once the return is real; there is no universal split. Do not promise an immediate headcount or throughput gain from estimated savings.</p>
         <div class="note"><p><strong>Compounding hypothesis:</strong> the retained lock scenarios reduce the effort or improve the quality of building a new recovery rehearsal. Track which scenarios transfer, the new work and the adaptation cost; distinguish observations from estimates of starting over. A recurring saving alone does not establish that effect.</p></div>
         <p>Review the investment against its remaining benefit, not the effort already sunk into it. If it continues to protect a necessary guarantee, retain or replace it appropriately even if the original delivery constraint has moved. Remove obsolete optional checks only after identifying their consumers; mandatory controls need their own risk-owner review and safe replacement or retirement.</p>
         <p>See <a href="https://grove.github.io/engineering-that-compounds/essays/measuring-the-capacity-for-change.html">Measuring the capacity for change</a> for the distinction between local savings, end-to-end outcomes and compounding.</p>

@@ -2,25 +2,25 @@ const form = document.querySelector('#investment-form');
 
 if (form) {
   const fields = [
-    ['outcome', 'Desired capability'],
-    ['obstacle', 'Obstacle and alternatives'],
+    ['outcome', 'Valuable outcome and conditions'],
+    ['obstacle', 'Constraint and work that could disappear'],
     ['existing', 'Existing capabilities'],
-    ['bet', 'Smallest experiment'],
+    ['bet', 'Workflow change and bounded experiment'],
     ['purpose', 'Main purpose'],
-    ['evidence', 'Prediction and evidence'],
-    ['next', 'Possible later capability'],
-    ['budget', 'People, budget and displaced work'],
+    ['evidence', 'Prediction, quality, attention and total cost'],
+    ['next', 'Later capability and reinvestment'],
+    ['budget', 'Ownership, authority, budget and displaced work'],
     ['review', 'Review and stopping conditions'],
   ];
   const example = {
-    outcome: "A billing engineer can assess a routine schema migration without waiting for the orders team's specialist. Unfamiliar migrations still go to the specialist.",
-    obstacle: 'Recent reviews waited for help interpreting lock behavior. Check whether test setup caused the wait or whether nobody had agreed the acceptable downtime. Consider narrowing the approval rule if its original reason no longer applies.',
-    existing: 'Orders has lock traces, synthetic traffic cases and a database sandbox. Billing needs access and time to check whether its traffic and schema assumptions fit. A specialist can review the expected results.',
-    bet: 'Adapt one case for an eligible billing migration. Ask a billing engineer to predict the lock behavior, run the check and explain its limits before comparing their judgment with the specialist.',
-    evidence: 'Prediction: the receiving engineer can judge an eligible migration under the same acceptance standard without specialist help on the next attempt. Record disagreements, support, setup and review effort. If releases still wait for a downtime decision, take that decision to its owner.',
-    next: 'The reviewed cases might supply inputs for a recovery rehearsal. Check later what transfers, what must be rebuilt and whether the earlier investment reduces effort or improves the result.',
-    budget: 'Illustrative cap: two days to build and half a day for the receiver. Orders owns the experiment; billing names the receiving engineer. Product and engineering leads agree which work moves, the upkeep cap and who can approve changes to release rules.',
-    review: 'Review after three eligible migrations or twelve weeks, whichever comes first. Stop or simplify if the check misleads, support exceeds the cap or the need disappears. Keep required release safeguards in place.',
+    outcome: 'A product team can complete an eligible experiment without waiting for a platform engineer to prepare and remove its preview environment. The initial scope is one service using synthetic data and existing access rules.',
+    obstacle: 'The hypothesis is that repeated environment requests delay experiments. Follow recent cases to distinguish provisioning waits from unclear product questions or missing participants. Remove the request handoff for eligible work instead of processing its tickets faster.',
+    existing: 'The platform team has deployment templates, synthetic data, access controls and usage telemetry. Check whether these can create isolated environments with a cost limit and reliable expiry, and identify the work needed to connect them.',
+    bet: 'For one service, provision an isolated preview when an eligible experiment branch is ready and remove it when the branch closes or expires. Retire the routine setup request. Record failures and route unsupported configurations to the platform owner; a person still decides what the product experiment should establish.',
+    evidence: 'Prediction: eligible experiments reach a usable product decision sooner with fewer platform interventions and within the agreed quality and cost limits. Compare time from experiment readiness to decision, total human attention, compute, failed provisioning and cleanup. If environment waits disappear but decisions do not arrive sooner, investigate the next constraint.',
+    next: 'Reinvest some recovered platform time in the next constraint. The provisioning, expiry and telemetry might help build independent agent investigations of alternative designs. Measure what transfers, what must be added and whether the earlier investment makes that new capability cheaper or more effective.',
+    budget: 'Illustrative cap: two days to build and half a day for adoption. The platform owner and product team agree the eligible scope, compute and upkeep budgets, authority to retire the request step, and which planned work moves. Include oversight and failed attempts in the account.',
+    review: 'Review after five eligible experiments or twelve weeks, whichever comes first. Keep only if the full workflow improves under the agreed quality and cost limits. Simplify or stop if environments outlive their expiry, support exceeds the cap or the need disappears; retain a manual route for exceptions.',
   };
   const status = document.querySelector('#investment-status');
   const fallback = document.querySelector('#investment-copy-fallback');
@@ -29,7 +29,7 @@ if (form) {
 
   function note() {
     const values = new FormData(form);
-    return '# Capability investment\n\n' + fields.map(([name, label]) => {
+    return '# Engineering transformation investment\n\n' + fields.map(([name, label]) => {
       const value = String(values.get(name) ?? '').trim();
       return `## ${label}\n${value || '(Not yet decided)'}`;
     }).join('\n\n');

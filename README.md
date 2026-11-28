@@ -1,20 +1,26 @@
 # Compounding Engineering
 
-A practical starting point for three collections about how useful work can make an organization more capable:
+A practical starting point for transforming how software engineering is performed.
+
+The ambition is an engineering system with greater capacity to discover, create, evolve and operate software. Constraint removal guides investment: eliminate unnecessary work, redesign dependencies and automate the remaining work wherever it can meet its purpose at a worthwhile total cost. Retained capabilities can make further transformation cheaper or more effective; later work has to establish whether they do.
+
+Three collections develop the argument:
 
 - [Software that improves with age](https://grove.github.io/software-that-improves-with-age/)
 - [Engineering that compounds](https://grove.github.io/engineering-that-compounds/)
 - [Patterns of compounding engineering](https://grove.github.io/patterns-of-compounding-engineering/)
 
-The site lives at [grove.github.io/compounding-engineering](https://grove.github.io/compounding-engineering/). The [adoption guide](https://grove.github.io/compounding-engineering/adoption/) connects the collections to decisions about investment, funding, ownership, transfer and review in existing engineering organizations.
+The site lives at [grove.github.io/compounding-engineering](https://grove.github.io/compounding-engineering/). Its opening distinguishes acceleration, automation and transformation. The [adoption guide](https://grove.github.io/compounding-engineering/adoption/) helps teams redesign a constrained workflow, including decisions about investment, authority, funding, transfer and reinvestment.
 
-[How organizations become more capable](https://grove.github.io/compounding-engineering/foundations.html) sets out the theory: capital and demonstrated capability, the difference between reuse and compounding, and the work of discovering, delivering, learning, developing and renewing. It connects the research to concrete decisions and states what remains to be tested.
+[How organizations become more capable](https://grove.github.io/compounding-engineering/foundations.html) sets out the theory: transformation as the ambition, constraints as the investment guide, and compounding as a mechanism to investigate. It preserves the distinctions between accumulated capital, demonstrated capability, recurring returns and easier development of subsequent capabilities.
 
-The [investment worksheet](https://grove.github.io/compounding-engineering/adoption/investment-canvas.html) helps a team choose one bounded experiment. It includes a worked example and can copy a note into an existing issue. Entries stay in the browser page; there is no server, tracking or saved draft.
+[Software farms and software factories](https://grove.github.io/compounding-engineering/#operating-models) illustrate different ways to organize engineering. Farms investigate and cultivate; factories implement and deliver. Their findings and operating results can also improve the engineering machinery itself. The source essays are [Continuous cultivation of software](https://grove.github.io/software-that-improves-with-age/essays/continuous-cultivation-of-software.html) and [Automating the work of engineering](https://grove.github.io/engineering-that-compounds/essays/automating-the-work-of-engineering.html).
+
+The [investment worksheet](https://grove.github.io/compounding-engineering/adoption/investment-canvas.html) helps a team choose one bounded redesign. Its hypothetical environment-provisioning example examines work removed, human intervention, time to outcome, total cost and the next investment. It can copy a note into an existing issue. Entries stay in the browser page; there is no server, tracking or saved draft.
 
 [Compounding learning](https://grove.github.io/engineering-that-compounds/essays/compounding-learning.html) examines how AI can help teams investigate recurring difficulties, test explanations and keep what helps later work. The [adoption exercise](https://grove.github.io/compounding-engineering/adoption/first-twelve-weeks.html#ai-assisted-investigation) gives a team a bounded way to try it.
 
-The distant aim is to become ten times as effective as a software team with AI. [What would ten times look like?](https://grove.github.io/engineering-that-compounds/essays/what-would-ten-times-look-like.html) gives that ambition a practical role: find what holds useful work up, choose an investment, and check whether later work benefits. The [tenfold exercise](https://grove.github.io/patterns-of-compounding-engineering/guide.html#use-the-tenfold-ambition-to-choose-the-next-investment) helps a team try this on a recent change.
+The distant aim is to become ten times as effective as a software team with AI. It is an ambition that motivates redesign of the whole engineering system, not a measured result. [What would ten times look like?](https://grove.github.io/engineering-that-compounds/essays/what-would-ten-times-look-like.html) and the [tenfold exercise](https://grove.github.io/patterns-of-compounding-engineering/guide.html#use-the-tenfold-ambition-to-choose-the-next-investment) help a team find what limits useful outcomes and choose its next investment.
 
 ## Work on the site
 
