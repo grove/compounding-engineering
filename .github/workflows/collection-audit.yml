@@ -1,0 +1,58 @@
+name: Collection audit pilot
+
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'foundations.html'
+      - 'adoption/**'
+      - 'scripts/**'
+      - '.github/workflows/collection-audit.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '17 6 * * 6'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: collection-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Test the audit
+        run: python3 -m unittest discover -s scripts -p 'test_collection_audit.py' -v
+      - name: Build and check the site
+        run: python3 scripts/build.py --check
+      - name: Observe published companion destinations (report only)
+        run: python3 scripts/collection_audit.py | tee audit-summary.txt
+        shell: bash
+      - name: Summarize
+        if: success()
+        run: |
+          {
+            echo '## Collection audit pilot'
+            echo 'These are observations, not a release gate or proof of productivity.'
+            echo '~~~text'
+            cat audit-summary.txt
+            echo '~~~'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: collection-audit
+          path: |
+            collection-audit.json
+            audit-summary.txt
+          retention-days: 45
+          if-no-files-found: error
