@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18382d">
+  <title>Work through one investment — Compounding Engineering</title>
+  <meta name="description" content="A short worksheet for deciding which capability is worth developing, what you can reuse and how you will judge the result.">
+  <link rel="canonical" href="https://grove.github.io/compounding-engineering/adoption/investment-canvas.html">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/adoption.css">
+  <script type="module" src="../assets/investment-canvas.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="shell header-inner">
+      <a class="brand" href="../" aria-label="Compounding Engineering home"><svg class="brand-mark" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="11"/><circle cx="20" cy="20" r="5"/><path d="M20 3v12"/></svg><span>Compounding<br>Engineering</span></a>
+      <a class="header-source" href="https://github.com/grove/compounding-engineering">GitHub</a>
+    </div>
+  </header>
+  <main id="main" class="adoption-page" tabindex="-1">
+    <header><p class="eyebrow">Capability investment worksheet</p><h1>Work through<br>one investment</h1><p class="intro">Choose something worth making easier. Decide how much to spend finding out whether you can.</p></header>
+    <nav class="adoption-nav" aria-label="Adoption guide"><a href="index.html">Start here</a><a href="investing.html">Investing</a><a href="investment-canvas.html" aria-current="page">Worksheet</a><a href="patterns.html">Organizational patterns</a><a href="first-twelve-weeks.html">The first twelve weeks</a></nav>
+    <article class="adoption-body">
+      <section>
+        <h2>Enough detail to make a decision</h2>
+        <p>Use this for a bet that needs a planning conversation. A small fix inside an ordinary task can stay small. The questions are prompts, so leave out what you do not need and copy the note into the issue you already use.</p>
+        <p>Your entries stay in this page and are not sent anywhere. Copy them before leaving; this worksheet does not save a draft.</p>
+        <details class="worked-example">
+          <summary>Read a worked example</summary>
+          <p>This hypothetical billing team wants to judge routine database migrations without waiting for another team's specialist. Its existing lock traces, synthetic traffic cases and database sandbox may be enough to build a useful check.</p>
+          <p>The team agrees a two-day build cap, half a day for a receiving engineer to try it and a review after three eligible migrations or twelve weeks. It will compare the receiver's judgment with the specialist's under the same acceptance standard, including cases the new check rejects or cannot judge.</p>
+          <p>The cases might later help build a recovery rehearsal. That is a separate hypothesis. If the next release still waits for a downtime decision, the team has learned where to take the problem next.</p>
+        </details>
+        <button type="button" class="reset-button" id="use-investment-example" hidden>Fill empty fields from this example</button>
+      </section>
+      <section aria-labelledby="worksheet-title">
+        <h2 id="worksheet-title">The proposed investment</h2>
+        <form id="investment-form">
+          <div class="worksheet-field">
+            <label for="investment-outcome">What should someone become able to do?</label>
+            <p id="outcome-help">Name the person or team, the useful work and the conditions it covers.</p>
+            <textarea id="investment-outcome" name="outcome" rows="3" aria-describedby="outcome-help" placeholder="A billing engineer can assess a routine schema migration without waiting for the orders team's specialist."></textarea>
+          </div>
+          <div class="worksheet-field">
+            <label for="investment-obstacle">What is getting in the way?</label>
+            <p id="obstacle-help">Use a recent case. Include another plausible explanation and the option of removing the chore.</p>
+            <textarea id="investment-obstacle" name="obstacle" rows="3" aria-describedby="obstacle-help"></textarea>
+          </div>
+          <div class="worksheet-field">
+            <label for="investment-existing">What can you already use?</label>
+            <p id="existing-help">Include people's knowledge, decisions and access as well as tools. What would need adapting?</p>
+            <textarea id="investment-existing" name="existing" rows="3" aria-describedby="existing-help"></textarea>
+          </div>
+          <div class="worksheet-field">
+            <label for="investment-bet">What is the smallest useful experiment?</label>
+            <p id="bet-help">Choose one task that can show whether the investment is worth pursuing.</p>
+            <textarea id="investment-bet" name="bet" rows="3" aria-describedby="bet-help"></textarea>
+          </div>
+          <fieldset class="worksheet-purpose">
+            <legend>What is its main purpose?</legend>
+            <label><input type="radio" name="purpose" value="Improve current work" checked> Improve current work</label>
+            <label><input type="radio" name="purpose" value="Explore a different approach or opportunity"> Explore a different approach or opportunity</label>
+            <label><input type="radio" name="purpose" value="Preserve the ability to respond to change"> Preserve the ability to respond to change</label>
+          </fieldset>
+          <div class="worksheet-field">
+            <label for="investment-evidence">What result would change your mind?</label>
+            <p id="evidence-help">State the prediction, the quality bar and what you will observe. Count failed attempts and work shifted to others.</p>
+            <textarea id="investment-evidence" name="evidence" rows="4" aria-describedby="evidence-help"></textarea>
+          </div>
+          <div class="worksheet-field">
+            <label for="investment-next">Could this help develop a later capability?</label>
+            <p id="next-help">Name what that capability could inherit. Leave this blank if the immediate benefit is enough.</p>
+            <textarea id="investment-next" name="next" rows="3" aria-describedby="next-help"></textarea>
+          </div>
+          <div class="worksheet-field">
+            <label for="investment-budget">Who needs time, and what will it cost?</label>
+            <p id="budget-help">Name the owner, receiver and decision authority. Include build, adoption, review, upkeep and the work displaced.</p>
+            <textarea id="investment-budget" name="budget" rows="4" aria-describedby="budget-help"></textarea>
+          </div>
+          <div class="worksheet-field">
+            <label for="investment-review">When will you keep, change or stop it?</label>
+            <p id="review-help">Set a review trigger and a date in case the expected work never arrives. Say what would justify stopping.</p>
+            <textarea id="investment-review" name="review" rows="3" aria-describedby="review-help"></textarea>
+          </div>
+          <div class="worksheet-actions" id="worksheet-actions" hidden>
+            <button class="button" type="button" id="copy-investment">Copy the note</button>
+            <button class="reset-button" type="button" id="print-investment">Print the worksheet</button>
+          </div>
+          <p id="investment-status" class="worksheet-status" role="status" aria-live="polite" aria-atomic="true"></p>
+          <div id="investment-copy-fallback" hidden>
+            <label for="investment-note">Your note</label>
+            <textarea id="investment-note" rows="14" readonly></textarea>
+          </div>
+          <noscript><p>Write directly in the fields, then copy your answers into your issue or planning document before leaving. The worked example and all the questions are available without JavaScript.</p></noscript>
+        </form>
+      </section>
+      <section>
+        <h2>Come back after someone uses it</h2>
+        <p>Add what happened to the same issue. Could the receiver make the decision? How much help did they need? Did the work move forward, or merely wait somewhere else? Then decide whether to keep, simplify, repair or retire the investment.</p>
+        <p>If a later capability is built, record what it reused and the new work required. That is where the <a href="../foundations.html#compounding">compounding claim</a> can be tested. A useful immediate return needs no larger story.</p>
+      </section>
+      <p class="next-page"><a class="button" href="first-twelve-weeks.html">Follow the investment through ordinary work</a></p>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><div><a class="footer-brand" href="../">Compounding Engineering</a><p>Essays, patterns and things to try.</p></div><nav aria-label="About this project"><a href="https://github.com/grove/compounding-engineering">Source &amp; suggestions</a><a href="https://github.com/grove/compounding-engineering/blob/main/LICENSE">Apache 2.0</a></nav></div></footer>
+</body>
+</html>

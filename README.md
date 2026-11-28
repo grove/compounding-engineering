@@ -1,6 +1,6 @@
 # Compounding Engineering
 
-A shared starting point for three collections about making future engineering work easier:
+A practical starting point for three collections about how useful work can make an organization more capable:
 
 - [Software that improves with age](https://grove.github.io/software-that-improves-with-age/)
 - [Engineering that compounds](https://grove.github.io/engineering-that-compounds/)
@@ -8,13 +8,17 @@ A shared starting point for three collections about making future engineering wo
 
 The site lives at [grove.github.io/compounding-engineering](https://grove.github.io/compounding-engineering/). The [adoption guide](https://grove.github.io/compounding-engineering/adoption/) connects the collections to decisions about investment, funding, ownership, transfer and review in existing engineering organizations.
 
+[How organizations become more capable](https://grove.github.io/compounding-engineering/foundations.html) sets out the theory: capital and demonstrated capability, the difference between reuse and compounding, and the work of discovering, delivering, learning, developing and renewing. It connects the research to concrete decisions and states what remains to be tested.
+
+The [investment worksheet](https://grove.github.io/compounding-engineering/adoption/investment-canvas.html) helps a team choose one bounded experiment. It includes a worked example and can copy a note into an existing issue. Entries stay in the browser page; there is no server, tracking or saved draft.
+
 [Compounding learning](https://grove.github.io/engineering-that-compounds/essays/compounding-learning.html) examines how AI can help teams investigate recurring difficulties, test explanations and keep what helps later work. The [adoption exercise](https://grove.github.io/compounding-engineering/adoption/first-twelve-weeks.html#ai-assisted-investigation) gives a team a bounded way to try it.
 
 The distant aim is to become ten times as effective as a software team with AI. [What would ten times look like?](https://grove.github.io/engineering-that-compounds/essays/what-would-ten-times-look-like.html) gives that ambition a practical role: find what holds useful work up, choose an investment, and check whether later work benefits. The [tenfold exercise](https://grove.github.io/patterns-of-compounding-engineering/guide.html#use-the-tenfold-ambition-to-choose-the-next-investment) helps a team try this on a recent change.
 
 ## Work on the site
 
-Edit `index.html`, the pages in `adoption/` and the files in `assets/`. There is no package installation or JavaScript build step. Python 3.10 or later is enough:
+Edit `index.html`, `foundations.html`, the pages in `adoption/` and the files in `assets/`. There is no package installation or JavaScript build step. Python 3.10 or later is enough:
 
 ```sh
 python3 scripts/build.py --check

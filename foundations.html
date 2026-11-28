@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18382d">
+  <title>How organizations become more capable — Compounding Engineering</title>
+  <meta name="description" content="A practical theory of how useful work can improve an organization's ability to solve problems, learn and change. The mechanisms, their limits, and ways to test them.">
+  <link rel="canonical" href="https://grove.github.io/compounding-engineering/foundations.html">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/adoption.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="shell header-inner">
+      <a class="brand" href="./" aria-label="Compounding Engineering home"><svg class="brand-mark" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="11"/><circle cx="20" cy="20" r="5"/><path d="M20 3v12"/></svg><span>Compounding<br>Engineering</span></a>
+      <nav class="main-nav" aria-label="Main navigation"><a href="foundations.html" aria-current="page">Foundations</a><a href="adoption/">Try it with your team</a><a href="./#evidence">Evidence</a></nav>
+      <a class="header-source" href="https://github.com/grove/compounding-engineering">GitHub</a>
+    </div>
+  </header>
+  <main id="main" class="adoption-page" tabindex="-1">
+    <header><p class="eyebrow">The foundations</p><h1>How organizations<br>become more capable</h1><p class="intro">A useful fix can change more than the software. It can change what the team knows how to do next.</p></header>
+    <nav class="adoption-nav" aria-label="On this page"><a href="#capability">What counts as capability?</a><a href="#compounding">How it compounds</a><a href="#learning">How it learns</a><a href="#adaptation">How it adapts</a><a href="#evidence">What would count as evidence?</a></nav>
+    <article class="adoption-body">
+      <section>
+        <h2>The next difficult request</h2>
+        <p>Consider a billing team with a service nobody wants to replace. Its behavior is poorly understood, and every attempted migration uncovers another exception. The team can keep patching it. It can also use those patches to learn where the exceptions come from and build a way to test a replacement.</p>
+        <p>After one fix, it keeps a duplicate-payment case. During the next, it agrees with finance what a partial refund should mean. A few changes later, those cases and rules help an engineer compare two implementations. Replacing the service becomes a question the team can investigate.</p>
+        <p>This is a hypothetical progression, not an inevitable one. The cases might be too narrow. The comparison might be misleading. The replacement might cease to matter. But it gives us a precise question: did earlier work improve the team's ability to undertake the next piece of work?</p>
+        <p><strong>Compounding Engineering is the practice of doing valuable work while developing, combining and renewing the capabilities that help an organization do future work and improve how it works.</strong> Its distinctive claim is that some investments can make subsequent capability development cheaper or more effective. That claim needs evidence from later work.</p>
+      </section>
+      <section id="capability">
+        <h2>Owning a tool is not enough</h2>
+        <p><a href="https://grove.github.io/engineering-that-compounds/essays/engineering-capital.html">Engineering capital</a> is what an organization can draw on: people's understanding, executable tools, recorded knowledge, useful boundaries and ways of working together. A capability is something those people can reliably accomplish under stated conditions.</p>
+        <p>A billing simulator is capital. Being able to evaluate a proposed billing change is a capability. The difference includes knowing which cases matter, recognizing an unreliable result, having access to the right environment and knowing who can settle a disputed rule. A repository full of tools can coexist with a team that still needs the original author for every decision.</p>
+        <p>Name a capability as work someone can do: “a billing engineer can compare two refund implementations against the agreed cases and explain their disagreements.” State the limits. It may cover the calculation while leaving the handling of interrupted payments outside the team's current ability.</p>
+        <p>This keeps investment attached to its purpose. The result we want is something a person or team becomes able to accomplish. The asset is one means of getting there.</p>
+      </section>
+      <section id="compounding">
+        <h2>What, exactly, is compounding?</h2>
+        <p>Several useful things can happen to the same retained work. They deserve different names because they require different evidence.</p>
+        <dl>
+          <dt>Accumulation</dt><dd>The duplicate-payment case survives in the repository. We have kept something.</dd>
+          <dt>A recurring return</dt><dd>The case catches a regression on a later change. It has helped again.</dd>
+          <dt>Complementarity</dt><dd>The case builder is more useful when paired with an independent check of the billing rules. The two investments reinforce one another.</dd>
+          <dt>Composition</dt><dd>The team combines its cases, rules and comparison tools into a way to evaluate a replacement service.</dd>
+          <dt>Compounding</dt><dd>The earlier investments reduce the cost or improve the quality of developing that new capability, after adaptation and upkeep are counted.</dd>
+        </dl>
+        <p>Complementarity and composition can enable compounding. Neither establishes it on its own. Repeated use can justify a tool even when no further capability follows.</p>
+        <p>Bruce Kogut and Udo Zander's <a href="https://doi.org/10.1287/orsc.3.3.383">work on combinative capabilities</a> describes how firms develop skills by recombining existing capabilities, including the ways people cooperate. Martin Weitzman's <a href="https://doi.org/10.1162/003355398555595">recombinant growth model</a> examines combinations of ideas; Milgrom and Roberts' <a href="https://doi.org/10.1016/0165-4101(94)00382-F">work on complementarities</a> explains why investments can be more valuable together. These are foundations for the argument, not validation of this particular engineering practice.</p>
+        <p>Try a small composition before drawing an organization-wide capability map. Choose a worthwhile task that is currently difficult, identify two or three things you already know how to do, and test whether connecting them helps. The <a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/capability-composition.html">Capability composition pattern</a> walks through that decision.</p>
+      </section>
+      <section>
+        <h2>Improve the way you improve</h2>
+        <p>Fixing a billing error does useful work. Building a reliable way to investigate billing errors improves that work. Learning how to develop and check such investigations improves the improvement process.</p>
+        <p>Douglas Engelbart distinguished these three levels in <a href="https://dougengelbart.org/content/view/116/">Toward High-Performance Organizations</a>. The third level matters here because a better experimental method may help a team build several different capabilities. It also costs time. An elaborate improvement system with no worthwhile problem to work on has little to offer.</p>
+        <p>Five activities give this work a practical shape. They overlap; a team will move between them while handling one request.</p>
+        <dl>
+          <dt>Discover</dt><dd>Find out what customers or colleagues need, and which problem is worth solving.</dd>
+          <dt>Deliver</dt><dd>Make a change that addresses that need.</dd>
+          <dt>Learn</dt><dd>Compare what happened with what you expected. Investigate the difference.</dd>
+          <dt>Develop</dt><dd>Turn a useful lesson into something people can use in later work.</dd>
+          <dt>Renew</dt><dd>Revisit the lesson when conditions change. Repair, replace or retire what no longer helps.</dd>
+        </dl>
+        <p>The connections matter more than the labels. Customer research can supply better test cases. Better tests can make a product experiment affordable. That experiment can reveal that a familiar business rule is wrong. <a href="https://grove.github.io/engineering-that-compounds/essays/improving-our-ability-to-improve.html">Improving our ability to improve</a> follows these connections in more detail.</p>
+      </section>
+      <section id="learning">
+        <h2>Let the evidence change the question</h2>
+        <p>Suppose every release waits for a senior engineer's approval. Preparing the approval material faster is one possible improvement. Finding that the rule was introduced for a release mechanism retired two years ago could suggest another. Before changing it, establish what the approval still protects and who has authority to revise it.</p>
+        <p>Argyris's <a href="https://hbr.org/1977/09/double-loop-learning-in-organizations">double-loop learning</a> questions the governing assumptions as well as the actions taken within them. That is how an improvement effort can discover it is solving the wrong problem.</p>
+        <p>Make the investigation capable of changing your mind. If slow test setup is the suspected cause, predict what will happen when a prepared case is available. Then watch the next eligible change. If it still waits for a product decision, the better fixture has not resolved the delay. This use of a prediction, observation and revised explanation follows the <a href="https://deming.org/explore/pdsa/">Plan-Do-Study-Act cycle</a>.</p>
+        <p>Look at successful work too. An engineer who notices a growing database queue and pauses a migration has done something worth understanding. Ask what they saw, which options were available and how they decided. A quiet release does not tell you whether the system was forgiving or someone worked hard to keep it safe. <a href="https://grove.github.io/engineering-that-compounds/essays/learning-from-things-that-go-right.html">Learning from things that go right</a> explains how to investigate without turning one success into a universal procedure.</p>
+      </section>
+      <section id="adaptation">
+        <h2>Leave room for a different future</h2>
+        <p>Today's constraint is a good place to look for an improvement. It is a poor reason to assume today's work will always matter. A team can become excellent at maintaining an integration that a different product design would remove.</p>
+        <p>James March's <a href="https://doi.org/10.1287/orsc.2.1.71">exploration and exploitation model</a> explains a difficulty: refining established knowledge can yield faster feedback than investigating unfamiliar possibilities. This framework therefore asks teams to consider three purposes for investment. Improving current work is one. Exploring a different approach is another. Preserving the ability to respond when familiar conditions fail is a third, proposed here as a practical addition.</p>
+        <p>Preservation might mean rehearsing a recovery without the usual expert, keeping a replacement route open, or protecting enough spare capacity to investigate a surprise. Each needs a reason and a cost. Keeping every old tool “just in case” makes adaptation harder too.</p>
+        <p>Revisit consequential knowledge when its assumptions change. A refund rule should say who owns it and what conditions it covers. A retrieved document can otherwise give an agent a convincing explanation for an obsolete decision. <a href="https://grove.github.io/engineering-that-compounds/essays/getting-better-at-the-wrong-thing.html">Getting better at the wrong thing</a> explores this risk.</p>
+      </section>
+      <section>
+        <h2>A capability has to reach the next person</h2>
+        <p>Suppose a neighboring orders team shares a check for dangerous database locks with billing. Orders may understand its check perfectly while billing cannot use it. Copying the command does not transfer the background knowledge, access or judgment needed to interpret the result. Cohen and Levinthal's <a href="https://doi.org/10.2307/2393553">absorptive capacity</a> explains why prior knowledge affects an organization's ability to recognize and apply new knowledge.</p>
+        <p>Give a receiver a real task and time to try it. Watch where they need help. Repair the example or teach the missing concept before adding another page of documentation. Count the receiving team's effort as part of the investment.</p>
+        <p>Some capabilities should stay local. Others benefit from temporary help between teams. A shared platform becomes worth considering when several teams have a sustained need and somebody can fund its operation. The <a href="adoption/patterns.html#capability-transfer">adoption guide</a> develops these choices. Success means the receiving teams can accomplish useful work with an acceptable support burden.</p>
+      </section>
+      <section>
+        <h2>What AI changes</h2>
+        <p>AI can help find related incidents, prepare alternative explanations, build prototypes, adapt a check for another team and teach someone how it works. These uses extend well beyond producing a patch.</p>
+        <p>When generating alternatives becomes cheaper, the ability to choose between them deserves more attention. Ten plausible explanations still need an observation that distinguishes them. A hundred generated customer scenarios still need contact with real customers. A fast agent still needs a trustworthy way to discover that its change is wrong.</p>
+        <p>Invest in the evidence and understanding that let people make those decisions: reviewed domain cases, independent checks, accessible source material and clear authority to act. Watch the cost of interpreting results as well as producing them. An agent that starts changes faster than the team can verify them may simply create a larger queue. <a href="https://grove.github.io/engineering-that-compounds/essays/the-economics-of-feedback.html">The economics of feedback</a> examines where a shorter, more informative loop can help.</p>
+      </section>
+      <section id="evidence">
+        <h2>What would count as evidence?</h2>
+        <p>A useful case starts with an outcome and follows the work that produces it. Record what the earlier investment contributed, what still had to be built, the effort of adapting and maintaining it, and whether the result met the same quality bar. Keep failed attempts in the account.</p>
+        <p>A demonstration establishes behavior in its example. A field observation shows what happened to one team. A credible comparison helps distinguish the effect of the investment from practice, easier tasks or improved tools. Following several investments over time is necessary to investigate whether the ability to develop capabilities keeps improving.</p>
+        <p>DORA's <a href="https://dora.dev/research/2025/dora-report/">2025 research</a> and <a href="https://dora.dev/ai/capabilities-model/report/">AI Capabilities Model</a> provide empirical context for organizational conditions associated with better AI outcomes. They do not establish this framework's compounding mechanism or a tenfold improvement. The <a href="https://grove.github.io/engineering-that-compounds/essays/measuring-the-capacity-for-change.html">measurement essay</a> and proposed <a href="https://grove.github.io/engineering-that-compounds/research/second-capability.html">second-capability pilot</a> separate those questions.</p>
+        <p>Also ask what has become feasible. Can the team now investigate replacing the billing service within an acceptable budget and risk? Can it evaluate a product opportunity it previously had to dismiss? <a href="https://grove.github.io/engineering-that-compounds/essays/what-becomes-possible.html">What becomes possible?</a> treats this expanding range of work as a strategic outcome, with the cost and quality conditions kept visible.</p>
+      </section>
+      <section>
+        <h2>Try it on work already waiting</h2>
+        <p>Choose one useful outcome, one obstacle and one small investment. Say what you expect to happen and what result would make you change course. Use what you already have before building more. After the next real use, decide what deserves to stay.</p>
+        <p>The <a href="adoption/investment-canvas.html">capability investment worksheet</a> fits that conversation into a note you can paste into an issue. If the best result is a clearer decision or one less tool to maintain, record that. The next task will tell you more than a count of what you kept.</p>
+      </section>
+      <p class="next-page"><a class="button" href="adoption/investment-canvas.html">Work through one investment</a></p>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><div><a class="footer-brand" href="./">Compounding Engineering</a><p>Essays, patterns and things to try.</p></div><nav aria-label="About this project"><a href="https://github.com/grove/compounding-engineering">Source &amp; suggestions</a><a href="https://github.com/grove/compounding-engineering/blob/main/LICENSE">Apache 2.0</a></nav></div></footer>
+</body>
+</html>

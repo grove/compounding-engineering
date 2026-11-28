@@ -24,6 +24,7 @@
     <nav class="adoption-nav" aria-label="Adoption guide">
       <a href="index.html">Start here</a>
       <a href="investing.html" aria-current="page">Investing</a>
+      <a href="investment-canvas.html">Worksheet</a>
       <a href="patterns.html">Organizational patterns</a>
       <a href="first-twelve-weeks.html">The first twelve weeks</a>
     </nav>
@@ -34,6 +35,17 @@
         <p>Product work and capability work are both investments in future outcomes. Some work instead preserves a guarantee or reduces an exposure the business is unwilling to accept. Name which outcome matters; do not dress every maintenance task up as a speed gain.</p>
         <p>Before building anything, compare the bet with doing nothing, eliminating the underlying chore, using an existing capability, or settling a missing product decision. The <a href="https://grove.github.io/patterns-of-compounding-engineering/guide.html#choosing-between-competing-investments">investment selection questions</a> help with this. Look at frequency, severity, the suspected constraint, cost, alternatives, likely useful life and what a later capability might inherit.</p>
         <p>If the cause is uncertain, fund a short investigation first. AI may help collect the cases and test explanations, but its recommendation is not an approved investment. Agree who will check the evidence, how much review time is available and what finding would justify stopping. The <a href="index.html#learning-from-the-work">learning exercise</a> shows how to keep that work small.</p>
+      </section>
+      <section id="three-purposes">
+        <h2>Leave room for more than today's work</h2>
+        <p>A quicker migration review is useful if migrations are what need to happen. It tells you little about whether a different storage design could remove much of that work. Consider three purposes when choosing an investment:</p>
+        <dl>
+          <dt>Improve current work</dt><dd>Make a known job more dependable or less expensive. The lock check belongs here. Compare later migrations under the same acceptance standard.</dd>
+          <dt>Explore a different approach</dt><dd>Resolve an uncertainty that could change what you choose to do. Try a small alternative design against the difficult cases before funding a migration. A well-supported decision to stop is a useful result.</dd>
+          <dt>Preserve the ability to respond</dt><dd>Keep an important option or understanding available. Rehearse a recovery without the usual specialist, or verify that the team can replace a dependency. Name the conditions this prepares you for and what it costs.</dd>
+        </dl>
+        <p>The distinction between refining familiar work and exploring new possibilities comes from <a href="https://doi.org/10.1287/orsc.2.1.71">James March's work on organizational learning</a>. Preservation is an additional planning prompt used here. These are purposes, not fixed budget percentages; one investment may serve several.</p>
+        <p>At a planning review, revisit a worthwhile initiative previously rejected as too expensive or risky. Ask whether new capabilities have changed that judgment, keeping the budget, quality and acceptable risk visible. <a href="https://grove.github.io/engineering-that-compounds/essays/what-becomes-possible.html">What becomes possible?</a> develops this exercise.</p>
       </section>
       <section>
         <h2>Match authority to the commitment</h2>
@@ -61,6 +73,7 @@ Possible later capability and what it could inherit:
 Evidence to collect (including failures and bypasses):
 Review trigger and fallback date:
 Stop / simplify / retire conditions:</pre>
+        <p>For a guided version, use the <a href="investment-canvas.html">investment worksheet</a>. It includes a worked example and produces a note you can paste into the existing issue.</p>
         <h3>A hypothetical migration investment</h3>
         <p>In this example, billing's routine migration reviews repeatedly wait for orders' specialist. First check whether specialist review is actually holding up accepted changes, rather than release approval. The bet is a two-day build cap plus separately agreed receiver time: a reproducible check of lock behavior and connection queuing on representative synthetic cases. Product and engineering leads agree which work moves. The orders team owns the check during the experiment; billing names a receiver and its lead allocates adaptation time. Agree an upkeep cap before retaining it.</p>
         <p>The expectation is that billing can judge eligible migrations without the specialist, using the same reviewed acceptance standard. The cases might later supply inputs for a recovery rehearsal. That is a hypothesis, not a saving. Observe the next three eligible migrations or review at twelve weeks, whichever comes first; this is a review trigger, not statistical proof. Stop if the cases mislead, upkeep exceeds the agreed cap, or the review no longer limits useful work. Preserve the required release and database safeguards either way.</p>
