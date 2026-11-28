@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#18382d">
   <title>Work through one investment — Compounding Engineering</title>
-  <meta name="description" content="Choose a constraint to remove, redesign or automate the work around it, and judge the investment by outcomes, human attention and total cost.">
+  <meta name="description" content="Test a change to engineering work, learn from the outcome and develop capabilities that make the next investment easier. Count human attention and total cost.">
   <link rel="canonical" href="https://grove.github.io/compounding-engineering/adoption/investment-canvas.html">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../assets/styles.css?v=1fba4adf7b82">
   <link rel="stylesheet" href="../assets/adoption.css">
-  <script type="module" src="../assets/investment-canvas.js?v=a6033dabd579"></script>
+  <script type="module" src="../assets/investment-canvas.js?v=975941afda69"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -27,13 +27,14 @@
       <section>
         <h2>Enough detail to make a decision</h2>
         <p>Use this for a bet that needs a planning conversation. A small fix inside an ordinary task can stay small. The questions are prompts, so leave out what you do not need and copy the note into the issue you already use.</p>
+        <p>The distant tenfold ambition gives this experiment a purpose: learn how to change the work and make later capability development easier.</p>
         <p>Follow the work from the initial need to a useful result. Which steps can disappear? Which can run automatically? What would a different interface, decision rule or division of work make possible? <a href="https://grove.github.io/engineering-that-compounds/essays/automating-the-work-of-engineering.html">Automating the work of engineering</a> develops these questions beyond the time spent writing code.</p>
         <p>Your entries stay in this page and are not sent anywhere. Copy them before leaving; this worksheet does not save a draft.</p>
         <details class="worked-example">
           <summary>Read a worked example</summary>
           <p>This hypothetical product team waits for a platform engineer to prepare and later remove a preview environment for each experiment. The proposed change removes that request queue: eligible branches receive an isolated environment automatically, with a cost limit and an expiry. Existing deployment templates and synthetic data provide a starting point.</p>
-          <p>The team sets an illustrative two-day build cap, half a day for adoption and a review after five eligible experiments or twelve weeks. It follows the whole experiment: time to a usable product decision, human interventions, failed provisioning, cleanup and total cost. A fast environment is useful only if it helps the experiment finish.</p>
-          <p>Recovered platform time goes toward the next constraint. The same provisioning and cleanup machinery might later let agents investigate alternatives independently. That is a separate investment to evaluate; storing the templates or using them again does not establish compounding.</p>
+          <p>The team sets an illustrative two-day build cap, half a day for adoption and a review after five eligible experiments or twelve weeks. It predicts that removing the environment queue will bring product decisions forward. It compares that prediction with observations, including human interventions, failed provisioning, cleanup and total cost. If environments arrive sooner but decisions do not, the team revisits its explanation of the delay.</p>
+          <p>Recovered platform time goes toward the next constraint. Keep the useful evidence and understanding of which experiments fit the workflow, alongside the provisioning and cleanup machinery. A later team might use them to build independent agent investigations, after checking the assumptions still apply. That is a separate investment to evaluate; storing a lesson or reusing a template does not establish compounding.</p>
         </details>
         <button type="button" class="reset-button" id="use-investment-example" hidden>Fill empty fields from this example</button>
       </section>
@@ -52,7 +53,7 @@
           </div>
           <div class="worksheet-field">
             <label for="investment-existing">What can you already use?</label>
-            <p id="existing-help">Include knowledge, decisions, interfaces, automation and access. What would need adapting before people or agents could use them independently?</p>
+            <p id="existing-help">Include people's understanding and judgment, agreed decisions, interfaces, automation and access. What would need adapting before people or agents could use them independently?</p>
             <textarea id="investment-existing" name="existing" rows="3" aria-describedby="existing-help"></textarea>
           </div>
           <div class="worksheet-field">
@@ -68,12 +69,12 @@
           </fieldset>
           <div class="worksheet-field">
             <label for="investment-evidence">What result would change your mind?</label>
-            <p id="evidence-help">State the prediction and quality bar. Measure time to the outcome, total human attention and economic cost, including failed attempts, upkeep and work shifted to others.</p>
+            <p id="evidence-help">State a prediction and an observation that could disprove it. Compare outcomes and surprises, then retain or revise the explanation. Measure time, quality, total human attention and economic cost, including failed attempts, upkeep and work shifted to others.</p>
             <textarea id="investment-evidence" name="evidence" rows="4" aria-describedby="evidence-help"></textarea>
           </div>
           <div class="worksheet-field">
             <label for="investment-next">What could the next investment inherit?</label>
-            <p id="next-help">Name a later capability, what it could reuse and how recovered capacity could help build it. Leave this blank if the immediate return is enough.</p>
+            <p id="next-help">Name a later capability, the understanding and tools it could inherit, and how recovered capacity could help build it. Who must be able to apply the learning, and what changed assumptions would require revisiting it? An immediate return can still be enough.</p>
             <textarea id="investment-next" name="next" rows="3" aria-describedby="next-help"></textarea>
           </div>
           <div class="worksheet-field">
@@ -100,8 +101,8 @@
       </section>
       <section>
         <h2>Come back after the workflow runs</h2>
-        <p>Add what happened to the same issue. Was the useful outcome achieved? Which recurring tasks or handoffs disappeared, and where did people still need to intervene? Check whether the constraint was removed or moved elsewhere. Then decide whether to keep, simplify, repair or retire the investment.</p>
-        <p>If a later capability is built, record what it inherited, the new work required and where recovered capacity went. That is where the <a href="../foundations.html#compounding">compounding claim</a> can be tested. A useful immediate return needs no larger story.</p>
+        <p>Add observations and surprises beside the prediction. Was the outcome achieved, and does the explanation of the constraint still hold? Retain or revise it before deciding what to keep, simplify, repair or retire. <a href="https://grove.github.io/engineering-that-compounds/essays/compounding-learning.html">Compounding learning</a> follows this investigation through to later use.</p>
+        <p>Keep the evidence, conditions and understanding needed to apply the lesson. Let another person or team try it on real work, and name who will revisit it when assumptions change. If a later capability is built, record what it inherited, what had to be learned or added, and where recovered capacity went. That is where the <a href="../foundations.html#compounding">compounding claim</a> can be tested. A stored explanation alone does not show that anyone has learned.</p>
       </section>
       <p class="next-page"><a class="button" href="first-twelve-weeks.html">Follow the investment through ordinary work</a></p>
     </article>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#18382d">
   <title>The first twelve weeks — Compounding Engineering</title>
-  <meta name="description" content="Start transforming one engineering workflow. Find its constraint, remove or automate work, and measure what changes from need to outcome.">
+  <meta name="description" content="Start transforming one engineering workflow, learn from each experiment and test how its capabilities help the next investment.">
   <link rel="canonical" href="https://grove.github.io/compounding-engineering/adoption/first-twelve-weeks.html">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../assets/styles.css?v=1fba4adf7b82">
@@ -20,7 +20,7 @@
     </div>
   </header>
   <main id="main" class="adoption-page" tabindex="-1">
-    <header><p class="eyebrow">Adoption guide</p><h1>The first twelve weeks</h1><p class="intro">Start transforming one workflow. Change how the work happens, then check whether the whole result improves.</p></header>
+    <header><p class="eyebrow">Adoption guide</p><h1>The first twelve weeks</h1><p class="intro">Start transforming one workflow. Learn what changes the outcome, then use that understanding to develop the next capability.</p></header>
     <nav class="adoption-nav" aria-label="Adoption guide">
       <a href="index.html">Start here</a>
       <a href="investing.html">Investing</a>
@@ -33,6 +33,7 @@
         <h2>Start transforming one workflow</h2>
         <p>Ask an engineering and product lead to pick one frequent class of valuable outcomes. In the hypothetical migration example, that is database changes reaching production with the required service behavior. Include investigation, decisions, setup, implementation, release and follow-up. The existing sequence of tickets and meetings is something to question.</p>
         <p>Choose whether to remove work, automate a routine path or redesign a dependency that makes the work necessary. Work that appears twice a year needs a different observation window. Use the existing <a href="https://grove.github.io/engineering-that-compounds/essays/measuring-the-capacity-for-change.html#a-twelve-week-field-check">twelve-week field check</a> as the measurement basis; this playbook adds the organizational decisions.</p>
+        <p>The longer-term aim is tenfold effectiveness in useful outcomes, accounting for quality and total cost. These twelve weeks begin a learning process toward that ambition: test a change to how engineering happens, develop the team's judgment and investigate whether the resulting capabilities help build the next improvement.</p>
         <p>Agree on a real quality bar with the appropriate domain and risk owners. Do not substitute a simulated check for required production safeguards. The dates below are a suggested steering horizon, not deadlines to force a second investment or cross-team rollout.</p>
       </section>
       <section>
@@ -46,6 +47,7 @@ Work to remove, redesign or automate:
 Recent comparable changes (links, including awkward ones):
 Quality bar and risk owner:
 Experiment, cap and displaced work:
+Prediction / alternative explanation / what would change our minds:
 Owner / receiving engineer if relevant:
 Review trigger, fallback date, stop conditions:</pre>
         <h3 id="ai-assisted-investigation">Try AI on the diagnosis</h3>
@@ -57,7 +59,7 @@ Review trigger, fallback date, stop conditions:</pre>
         <h2>Weeks 3–4: Change how the work happens</h2>
         <p>Try the smallest change that could relieve the constraint. For migrations, that might mean independent environments and a reliable way for billing to assess an eligible change without orders' specialist. If the dependency is unnecessary, try removing it. Producing a faster review summary is a smaller claim and should be evaluated as such.</p>
         <p>For a routine dependency workflow, establish what starts a run, how it gets an isolated environment, what evidence permits it to finish, and what brings an exception to a person. Exercise the whole path, including cleanup and follow-up. <a href="https://grove.github.io/engineering-that-compounds/essays/automating-the-work-of-engineering.html">Automating the work of engineering</a> gives a worked hypothetical example.</p>
-        <p>Establish the expected result from the agreed behavior, independently of the implementation. Include a failure case and a nearby case where the suspected problem is absent; an agent's fix and its tests can share the same mistake. Record build effort, supervision and deferred commitments. Let someone other than the author use or operate the workflow.</p>
+        <p>Establish the expected result from the agreed behavior, independently of the implementation. Include a failure case and a nearby case where the suspected problem is absent; an agent's fix and its tests can share the same mistake. Record build effort, supervision and deferred commitments. Let someone other than the author use or operate the workflow. Ask them to predict a result, explain a surprise and try a changed condition. Use that conversation to identify the understanding or practice they still need.</p>
         <p>If the initial bet fails its quality bar or runs out of budget, stop and decide whether to repair, reduce scope or remove it. Do not extend the cap just to finish the experiment.</p>
       </section>
       <section>
@@ -65,6 +67,8 @@ Review trigger, fallback date, stop conditions:</pre>
         <p>Record every eligible change in the small selected class where practical, or agree an unbiased sampling rule in advance. Include abandoned attempts, workarounds, maintenance, missing checks, specialist support and later corrections. Use ordinary work records; avoid creating another tracking system.</p>
         <pre>Change / eligibility / comparable baseline:
 Outcome and acceptance evidence:
+Prediction compared with outcome / surprise:
+Revised explanation, assumption or decision:
 Active human effort / elapsed waiting:
 Interventions and handoffs (including exception handling):
 Recurring work removed / new recurring obligations:
@@ -73,14 +77,15 @@ Capability used, bypassed or unavailable (why):
 Adaptation, upkeep, supervision and rework:
 Independent use / quality issues / downstream queues:</pre>
         <p>Ask whether the initial constraint has moved. Faster review may simply leave more migrations waiting for release approval. Did the old handoff disappear, or does someone now operate a different queue? Measure accepted outcomes and human attention across the workflow at the same or stronger quality bar. Compare like work; record changes in demand, difficulty, staffing and tooling. Do not convert directional observations into individual performance scores.</p>
-        <p>If the investigation used AI, revisit its explanation as well as the tool. Did a later migration behave as predicted? If you repeat the analysis, check whether it keeps proposing rejected changes. Narrow or stop it when reviewing its output costs more than the problem warrants.</p>
+        <p>Revisit the explanation as well as the tool. Did a later migration behave as predicted? Keep the useful reasoning with its evidence and conditions, teach it to the next user and revise obsolete guidance. A lesson has helped when it changes a later decision or enables someone to handle an unfamiliar case. If AI helped the investigation, also check its missed cases and repeated false leads. Narrow or stop it when reviewing its output costs more than the problem warrants.</p>
       </section>
       <section>
         <h2>Weeks 9–10: Test the next connection, if one exists</h2>
         <p>Follow the new constraint before choosing another investment. If another team has a real eligible migration, allocate receiver time and let its engineer adapt and interpret the workflow. If a recovery rehearsal is now worthwhile, see whether the earlier environments and cases reduce setup or improve verification. These are different questions: a capability can travel without compounding, and it can compound without crossing teams.</p>
         <p>A software farm can investigate the factory's repeated interventions and propose a change to its machinery. For example, retained update failures might help build a diagnostic that collects the missing evidence automatically. An isolated update environment might make a runtime-upgrade experiment affordable. Compare the new work required with what the earlier capability contributed; do not infer compounding from another scheduled job.</p>
+        <p>Include the way the team learned. Could the earlier sources, comparison method and shared understanding help another investigator design a useful experiment? <a href="https://grove.github.io/engineering-that-compounds/essays/compounding-learning.html">Compounding learning</a> and <a href="https://grove.github.io/engineering-that-compounds/essays/improving-our-ability-to-improve.html">Improving our ability to improve</a> develop this possibility.</p>
         <pre>Later capability or receiving team's job:
-What transferred / what was new:
+What transferred (including judgment and investigation methods) / what was new:
 Adaptation, support and verification cost:
 Observed decision or result:
 Evidence of lower cost or greater capability (if any):
@@ -96,6 +101,8 @@ Local return / risk reduction:
 System-level change (if established):
 Work or handoffs eliminated / intervention burden remaining:
 Later capability and evidence of a connection (if established):
+What people can now explain, judge or do independently:
+Lessons to retain, teach, revise or retire / next use:
 Full cost, displaced work, upkeep and uncertainty:
 Decision: keep / simplify / repair / transfer / retire
 Owner and next review trigger:
