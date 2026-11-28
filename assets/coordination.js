@@ -59,3 +59,18 @@ function update(){
 select.addEventListener("change",update);
 update();
 controls.hidden=false;
+
+function cost(needs,before,after,investment){return {existing:needs*before,redesigned:needs*after+investment,saving:needs*(before-after)-investment};}
+const costControls=document.getElementById("cost-controls");
+const inputs=["cost-needs","cost-before","cost-after","cost-investment"].map(id=>document.getElementById(id));
+function updateCost(){
+  const target=document.getElementById("cost-result");
+  if(inputs.some(input=>!input.validity.valid||!Number.isFinite(input.valueAsNumber))){target.textContent="Enter a valid nonnegative value in each field (at least one change).";return;}
+  const r=cost(...inputs.map(input=>input.valueAsNumber));
+  const hours=n=>n.toLocaleString("en-US",{maximumFractionDigits:2})+" hours";
+  const saving=r.saving>=0?"Net saving: "+hours(r.saving):"Additional effort: "+hours(-r.saving);
+  target.textContent="Existing: "+hours(r.existing)+". Redesigned: "+hours(r.redesigned)+". "+saving+". Comparable coverage and risk assumed.";
+}
+inputs.forEach(input=>input.addEventListener("change",updateCost));
+updateCost();
+costControls.hidden=false;
