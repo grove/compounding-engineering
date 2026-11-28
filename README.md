@@ -17,6 +17,7 @@ The [billing demonstration](https://grove.github.io/compounding-engineering/exam
 
 ## The companion collections
 
+- [Reimagining software engineering](https://github.com/grove/reimagining-software-engineering#readme) questions the arrangements of engineering itself: what teams are responsible for, how solutions are chosen, and which work could become economically worthwhile.
 - [Software that improves with age](https://grove.github.io/software-that-improves-with-age/) examines understanding, maintenance, operation and replaceability.
 - [Engineering that compounds](https://grove.github.io/engineering-that-compounds/) examines human judgment, organizational capability and different ways of organizing engineering.
 - [Patterns of compounding engineering](https://grove.github.io/patterns-of-compounding-engineering/) provides specific interventions with examples, costs and reasons to stop.
