@@ -43,6 +43,14 @@
       <section>
         <h2>When would the investment pay?</h2>
         <p>If N comparable needs currently require a units of coordination effort each, a redesign requiring b per need and F in initial and ongoing investment saves effort only when N × (a − b) exceeds F. For example, 100 changes at four hours each cost 400 hours of coordination. With half an hour remaining per change and 100 hours of investment and upkeep, the redesigned cost is 150 hours. That is an illustrative 2.67-fold reduction in coordination cost, not overall engineering effectiveness.</p>
+        <fieldset id="cost-controls" class="coordination-cost" hidden>
+          <legend>Compare coordination effort</legend>
+          <div><label for="cost-needs">Comparable changes</label><input id="cost-needs" type="number" min="1" max="100000" step="1" value="100"></div>
+          <div><label for="cost-before">Existing hours per change</label><input id="cost-before" type="number" min="0" max="10000" step="any" value="4"></div>
+          <div><label for="cost-after">Remaining hours per change</label><input id="cost-after" type="number" min="0" max="10000" step="any" value="0.5"></div>
+          <div><label for="cost-investment">Investment and upkeep (hours)</label><input id="cost-investment" type="number" min="0" max="10000000" step="any" value="100"></div>
+          <p id="cost-result" role="status">Existing: 400 hours. Redesigned: 150 hours. Net saving: 250 hours.</p>
+        </fieldset>
         <p>Include unsuccessful requests, release interactions, supervision, reallocation, failure recovery and other costs. Only compare like outcomes. A cheap automated pooled check may be preferable to a complex distributed allocation even if it makes more requests.</p>
       </section>
       <section>
