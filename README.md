@@ -17,6 +17,15 @@ The [billing demonstration](https://grove.github.io/compounding-engineering/exam
 
 The [coordination comparison](https://grove.github.io/compounding-engineering/examples/coordination-avoidance.html) explores pooled and delegated capacity under changing demand. It is a synthetic model, not evidence of organizational effectiveness. The [coordination experiment](https://grove.github.io/compounding-engineering/adoption/experiments.html#coordination-experiment) proposes a real-world comparison; the [publication experiment](https://grove.github.io/compounding-engineering/adoption/experiments.html#publication-experiment) proposes applying the same ideas to the collections themselves.
 
+## Beyond the software factory
+
+[The reading path](https://grove.github.io/compounding-engineering/#beyond-the-software-factory) connects four essays about organizing engineering when implementation becomes less expensive:
+
+- [Managing abundant execution and scarce judgment](https://grove.github.io/reimagining-software-engineering/essays/managing-abundant-execution-and-scarce-judgment.html) — When implementations arrive faster than people can evaluate them, find out which decisions need attention and which can proceed under established authority.
+- [How to operate a software farm](https://grove.github.io/reimagining-software-engineering/essays/how-to-operate-a-software-farm.html) — Choose a small number of consequential questions, give investigations access to the problem and connect findings to the people who can act.
+- [The strategic engineering capability catalogue](https://grove.github.io/engineering-that-compounds/essays/the-strategic-engineering-capability-catalogue.html) — Start with valuable work that remains impractical. Identify which abilities are missing and what an investment might make possible next.
+- [Software design after implementation scarcity](https://grove.github.io/software-that-improves-with-age/essays/software-design-after-implementation-scarcity.html) — Reconsider duplication, abstraction, extensibility and replacement by comparing the costs that remain when writing code gets cheaper.
+
 ## The companion collections
 
 - [Reimagining software engineering](https://grove.github.io/reimagining-software-engineering/) questions the arrangements of engineering itself: what teams are responsible for, how solutions are chosen, and which work could become economically worthwhile.
