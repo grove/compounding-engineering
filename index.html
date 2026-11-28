@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#18382d">
-  <title>Compounding Engineering — Make the next change easier.</title>
-  <meta name="description" content="A practical resource for teams that want to become more capable through their work. Essays, patterns and experiments grounded in engineering and organizational learning.">
+  <title>Compounding Engineering — Transform how we engineer software.</title>
+  <meta name="description" content="Transform how software engineering is performed: remove constraints, redesign and automate work, and develop capabilities that make the next transformation easier.">
   <link rel="canonical" href="https://grove.github.io/compounding-engineering/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Compounding Engineering">
-  <meta property="og:description" content="Make the next change easier. Essays and practical patterns for software, and the people building it, that get better with experience.">
+  <meta property="og:description" content="Transform how we engineer software. Constraint removal, automation, software farms and software factories, with capabilities that make further transformation possible.">
   <meta property="og:url" content="https://grove.github.io/compounding-engineering/">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="assets/styles.css">
@@ -27,7 +27,7 @@
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#idea">The idea</a>
         <a href="foundations.html">Foundations</a>
-        <a href="#in-practice">In practice</a>
+        <a href="#operating-models">Farms &amp; factories</a>
         <a href="adoption/">For teams</a>
         <a href="#evidence">Evidence</a>
       </nav>
@@ -39,19 +39,19 @@
     <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">A practical resource for engineering teams</p>
-        <h1 id="hero-title">Make the<br>next change<br><em>easier.</em></h1>
-        <p class="hero-lede">Fix the bug. Keep the test that catches it. Give the next person a little less detective work.</p>
-        <p class="hero-intro">The larger aim is to become a team that can tackle problems it once had to avoid. A useful fix can lead to a better check; that check can make a difficult migration possible. AI can help us investigate, experiment and build. The work still has to show whether we are becoming more capable.</p>
+        <h1 id="hero-title">Transform<br>how we engineer<br><em>software.</em></h1>
+        <p class="hero-lede">Redesign how we discover, create, evolve and operate software. Make the engineering system itself more capable.</p>
+        <p class="hero-intro">AI and automation give us reason to reconsider the whole workflow. Find what limits valuable outcomes. Remove unnecessary work, redesign dependencies and automate what remains. Keep capabilities that make the next transformation cheaper or more effective.</p>
         <div class="hero-actions">
           <a class="button" href="adoption/investment-canvas.html">Find the next investment</a>
-          <a class="text-link" href="https://grove.github.io/patterns-of-compounding-engineering/guide.html#use-the-task-already-open">Try it on your next task</a>
+          <a class="text-link" href="#operating-models">Explore farms and factories</a>
           <a class="text-link" href="adoption/">Try it with your team</a>
         </div>
       </div>
       <figure class="growth-figure">
         <svg class="growth-rings" viewBox="0 0 540 560" role="img" aria-labelledby="growth-title growth-description">
-          <title id="growth-title">What a useful fix can leave behind</title>
-          <desc id="growth-description">A small fix sits inside expanding rings: a regression test, a reusable test harness, and room to try a different design. Each can make the next investment easier. This illustrates a possible progression, not measured growth.</desc>
+          <title id="growth-title">One investment can enable the next</title>
+          <desc id="growth-description">Removing an environment queue can lead to on-demand environments, repeatable experiments and new ways of working. Earlier capabilities can make later transformations easier. The rings illustrate a possible progression, not measured growth.</desc>
           <defs>
             <pattern id="dot-grid" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#315340" opacity=".16"/></pattern>
           </defs>
@@ -74,17 +74,17 @@
             <path d="M338 341h113v43h63"/><circle cx="338" cy="341" r="3.5" fill="#315c43"/>
           </g>
           <g class="diagram-labels" fill="#315340">
-            <text x="66" y="44">room to try another design</text>
-            <rect x="373" y="105" width="166" height="29" fill="#f6f7f3"/>
-            <text x="380" y="125">a reusable harness</text>
-            <rect x="393" y="394" width="146" height="29" fill="#f6f7f3"/>
-            <text x="400" y="414">a regression test</text>
+            <text x="66" y="44">new ways of working</text>
+            <rect x="332" y="105" width="208" height="29" fill="#f6f7f3"/>
+            <text x="340" y="125">repeatable experiments</text>
+            <rect x="332" y="394" width="208" height="29" fill="#f6f7f3"/>
+            <text x="340" y="414">on-demand environments</text>
           </g>
           <rect x="192" y="271" width="140" height="44" rx="22" fill="#18382d"/>
-          <text x="262" y="298" text-anchor="middle" class="diagram-core" fill="#fff">a useful fix</text>
+          <text x="262" y="298" text-anchor="middle" class="diagram-core" fill="#fff">remove a wait</text>
         </svg>
-        <div class="ring-key" aria-hidden="true"><span>A regression test</span><span>A reusable harness</span><span>Room to try another design</span></div>
-        <figcaption>A small fix can make room for a bigger change.</figcaption>
+        <div class="ring-key" aria-hidden="true"><span>On-demand environments</span><span>Repeatable experiments</span><span>New ways of working</span></div>
+        <figcaption>A possible progression, to test in later work.</figcaption>
       </figure>
     </section>
 
@@ -100,37 +100,37 @@
     <section class="section shell" id="idea" aria-labelledby="idea-title">
       <div class="section-heading">
         <p class="eyebrow">The idea</p>
-        <h2 id="idea-title">“We solved this last year.”<br><em>Did we keep the useful bit?</em></h2>
+        <h2 id="idea-title">The workflow itself<br><em>is a design choice.</em></h2>
       </div>
       <div class="idea-intro">
-        <p>You find the old ticket. There’s a link to a dead dashboard, a screenshot, and a comment that says “fixed.” So you start digging. Again.</p>
+        <p>A team can generate a patch in minutes and still wait days for an environment, a decision or another team's release. What would have to change for that wait to disappear?</p>
         <div>
-          <p>Some work leaves us better equipped for the next round: a failure we can reproduce, a decision we can explain, a boundary that lets us change one thing safely. We call that <a href="https://grove.github.io/engineering-that-compounds/essays/engineering-capital.html">engineering capital</a>.</p>
-          <p>What matters is what someone becomes able to do with it. Owning a test harness and being able to judge a difficult change are different things.</p>
-          <p>Follow one saved failure through the work that comes next.</p>
+          <p>The primary ambition is to transform how software engineering is performed. Examine the sequence of tasks, the boundaries between teams and the assumptions that require someone to coordinate every step.</p>
+          <p>A recurring investigation can become a continuously available capability. A shared environment can become infrastructure created for each experiment. A change to an interface can remove a coordination meeting.</p>
+          <p>Consider three possible changes to a hypothetical team's environment setup. Each can help, but they change the work in different ways.</p>
         </div>
       </div>
       <div class="returns-grid">
         <article class="return-item">
           <svg viewBox="0 0 180 95" aria-hidden="true"><rect x="26" y="30" width="50" height="42" rx="2"/><path d="M35 41h30M35 50h22M35 59h27"/><path class="soft-line" d="M87 72h66M99 64h54"/></svg>
-          <p class="eyebrow">Accumulation</p>
-          <h3>You kept something.</h3>
-          <p>The failing input, its expected result and a replay command are in the repository. Someone else can reproduce the bug.</p>
+          <p class="eyebrow">Acceleration</p>
+          <h3>Complete the task faster.</h3>
+          <p>An agent helps an engineer prepare an environment. The same request, manual start and handoff remain, but each takes less effort.</p>
         </article>
         <article class="return-item">
           <svg viewBox="0 0 180 95" aria-hidden="true"><rect x="26" y="30" width="50" height="42" rx="2"/><path d="M35 41h30M35 50h22M35 59h27M76 51h23"/><rect x="99" y="36" width="54" height="31" rx="2"/><path d="m113 51 7 7 13-14"/></svg>
-          <p class="eyebrow">A return</p>
-          <h3>It helped again.</h3>
-          <p>During a later change, the replay catches the same mistake. It has returned value, even if it never becomes a larger tool.</p>
+          <p class="eyebrow">Automation</p>
+          <h3>Let the procedure run.</h3>
+          <p>A service provisions and retires an environment when eligible work arrives. Engineers no longer need to perform the setup each time.</p>
         </article>
         <article class="return-item">
           <svg viewBox="0 0 180 95" aria-hidden="true"><rect x="19" y="37" width="38" height="32" rx="2"/><path d="M27 46h22M27 54h17M27 61h20M57 53h22M79 24v55M79 24h25M79 79h25"/><rect x="104" y="10" width="53" height="27" rx="2"/><rect x="104" y="65" width="53" height="27" rx="2"/><path d="m116 24 7 7 13-14m-20 62 7 7 13-14"/></svg>
-          <p class="eyebrow">Compounding</p>
-          <h3>It helped build the next check.</h3>
-          <p>The saved input and expectation become the starting point for a recovery check. Compounding is the claim that the earlier work makes this new capability cheaper or more effective to build.</p>
+          <p class="eyebrow">Transformation</p>
+          <h3>Organize the work differently.</h3>
+          <p>Investigations create their own isolated environments. Teams can compare alternatives independently, and the environment request queue disappears from that workflow.</p>
         </article>
       </div>
-      <aside class="margin-note"><span class="note-mark" aria-hidden="true">*</span><p>This is a possibility to investigate, not a growth curve to promise. Tests go stale. Tools need repairs. A smaller codebase can be a better investment than another clever tool. <a href="https://grove.github.io/engineering-that-compounds/essays/measuring-the-capacity-for-change.html">Look for evidence in the next change.</a></p></aside>
+      <aside class="margin-note"><span class="note-mark" aria-hidden="true">*</span><p>These changes can reinforce each other. The result to measure is useful work completed, including human attention, failures and upkeep. Automating an unnecessary procedure still leaves an unnecessary procedure. <a href="https://grove.github.io/engineering-that-compounds/essays/getting-better-at-the-wrong-thing.html">Question what the work is for.</a></p></aside>
     </section>
 
     <section class="section shell" id="ambition" aria-labelledby="ambition-title">
@@ -141,7 +141,7 @@
       <div class="idea-intro">
         <p>Suppose AI could prepare ten times as many changes tomorrow. How many could your team finish? Where would the others wait?</p>
         <div>
-          <p>A billing change can be ready for review while nobody knows which cancellation rule it should follow. Another agent can produce another patch. The missing decision still needs to be made.</p>
+          <p>Follow the work from a real need to an observed result. Discovery, product decisions, architecture, implementation, verification, release and operation are all open to redesign. Waiting for an environment or coordinating a shared change can matter more than writing the code.</p>
           <p>Eliyahu Goldratt’s <a href="https://www.goldrattresearchlabs.com/introduction-to-toc/">Theory of Constraints</a> helps us choose where to invest. Name the outcome you want. Find what limits it. A faster step is not necessarily a faster result.</p>
           <ol>
             <li><strong>Identify:</strong> follow recent changes and find what actually holds them up.</li>
@@ -150,21 +150,46 @@
             <li><strong>Elevate:</strong> if the constraint remains, try the smallest investment that can change it.</li>
             <li><strong>Repeat:</strong> check the outcome, the costs and what limits the work now.</li>
           </ol>
-          <p>Keep a reviewed billing case if it helps the next engineer settle or verify a change. If the missing decision has not been made, make it first. If the case later makes a new recovery check cheaper to build, investigate that compounding effect separately.</p>
-          <p>Do not bypass necessary checks or sacrifice sustainable working hours. Some investments protect against future harm rather than increase current delivery capacity.</p>
-          <p>Our distant aim is to become ten times as effective as a team with AI. Whether we can reach it remains an open question. Greater effectiveness could mean replacing a service we previously could not safely touch, or testing a product idea we could not afford to explore. Count review, rework and upkeep, and notice where waiting or risk moves.</p>
+          <p>At the constraint, ask what work can disappear, which dependency can be removed and what remaining procedure can run automatically. A simpler interface may remove a handoff. Clear decision ownership may settle an ambiguity. A diagnostic capability may resolve a familiar failure without waking its original author.</p>
+          <p>Automate as much of the remaining work as can meet its purpose at a worthwhile total cost. Use ordinary programs for predictable operations and agents where investigation or adaptation helps. Correctness, reliability and accountability remain requirements for the redesigned system.</p>
+          <p>Our distant aim is to become ten times as effective as a team with AI. That makes redesigning the whole system worth investigating. Tenfold effectiveness remains an ambition, not a result established here. Count review, rework, compute and upkeep, and check where the constraint moves.</p>
           <p><a href="https://grove.github.io/engineering-that-compounds/essays/what-would-ten-times-look-like.html">Read What would ten times look like?</a></p>
           <p><a href="https://grove.github.io/patterns-of-compounding-engineering/guide.html#use-the-tenfold-ambition-to-choose-the-next-investment">Try the tenfold exercise with your team</a></p>
         </div>
       </div>
     </section>
 
+    <section class="section shell" id="operating-models" aria-labelledby="operating-models-title">
+      <div class="section-heading">
+        <p class="eyebrow">Different ways to organize engineering</p>
+        <h2 id="operating-models-title">Software farms.<br><em>Software factories.</em></h2>
+      </div>
+      <div class="operating-models-grid">
+        <article>
+          <p class="eyebrow">Investigate and cultivate</p>
+          <h3>A software farm starts with a question.</h3>
+          <p>Does this design still fit the workload? Why does every release need the same intervention? Could we remove an obsolete component? A farm organizes continuing investigation and turns useful findings into evidence, understanding and opportunities for change.</p>
+          <p>An investigation can succeed by establishing why the existing design should stay. It need not produce a patch.</p>
+          <a class="text-link" href="https://grove.github.io/software-that-improves-with-age/essays/continuous-cultivation-of-software.html">Read Continuous cultivation of software</a>
+        </article>
+        <article>
+          <p class="eyebrow">Implement and deliver</p>
+          <h3>A software factory starts with work to do.</h3>
+          <p>A factory organizes the route from sufficiently clear intent to an implemented, verified and delivered change. Environments, tools, evidence and release policy allow suitable classes of work to proceed with less routine coordination.</p>
+          <p>Its operating results and exceptions reveal where the machinery needs improving and which decisions still need human attention.</p>
+          <a class="text-link" href="https://grove.github.io/engineering-that-compounds/essays/automating-the-work-of-engineering.html">Read Automating the work of engineering</a>
+        </article>
+      </div>
+      <aside class="margin-note"><span class="note-mark" aria-hidden="true">*</span><p>These are complementary roles, not mandatory departments or a fixed pipeline. The same people and tools can serve both. A farm can investigate the factory itself; delivery and operations can supply the farm's next questions. People remain responsible for outcomes, priorities and the authority delegated to the system.</p></aside>
+    </section>
+
     <section class="section shell" id="foundations" aria-labelledby="foundations-title">
       <div class="idea-intro">
-        <div><p class="eyebrow">The foundations</p><h2 id="foundations-title">What can we<br><em>do next?</em></h2></div>
+        <div><p class="eyebrow">How transformation can compound</p><h2 id="foundations-title">Make the next<br><em>investment possible.</em></h2></div>
         <div>
-          <p>A good improvement does more than speed up a familiar task. It may help a team ask a better question, test an unfamiliar idea or teach someone else how to work independently.</p>
-          <p>The theory behind this resource connects engineering capital, organizational learning and the development of new capabilities. It also asks how the process goes wrong: outdated rules, tools that nobody can adopt, and improvements that make a team better at work it should stop doing.</p>
+          <p>The environment service is useful on its own. If its isolation, provisioning and telemetry also make an automated investigation cheaper to build, it contributes to a new capability. That investigation might reveal a dependency whose removal lets more delivery work proceed independently.</p>
+          <p>The tools, knowledge, architecture and ways of working that support this are <a href="https://grove.github.io/engineering-that-compounds/essays/engineering-capital.html">engineering capital</a>. Keeping them is accumulation; benefiting from them again is a return. Compounding is the further claim that they make new capabilities cheaper or more effective to develop, after adaptation and upkeep.</p>
+          <p>Reinvest some recovered capacity where the next constraint matters. Earlier capabilities and the capacity to develop them can then reinforce one another. This is a mechanism to test in later work; it does not promise exponential growth.</p>
           <p><a class="text-link" href="foundations.html">Read How organizations become more capable</a></p>
         </div>
       </div>
@@ -178,20 +203,20 @@
 
     <section class="section shell" id="learning" aria-labelledby="learning-title">
       <div class="section-heading">
-        <p class="eyebrow">Learning from the work</p>
-        <h2 id="learning-title">The same review comment.<br><em>What is it telling us?</em></h2>
+        <p class="eyebrow">Improve the engineering system itself</p>
+        <h2 id="learning-title">Why did the work<br><em>need us again?</em></h2>
       </div>
       <div class="idea-intro">
-        <p>Suppose reviewers keep asking for a duplicate-payment test. Do engineers misunderstand retries, is the test awkward to set up, or has nobody agreed what counts as a duplicate?</p>
+        <p>Suppose an automated delivery job repeatedly stops for someone to repair its environment. Each interruption is evidence about the system we have built.</p>
         <div>
-          <p>AI can help collect the relevant reviews, suggest explanations and prepare an experiment. An engineer needs to check the cases and decide what would distinguish those explanations. Otherwise a quick summary can send the team toward the wrong improvement.</p>
+          <p>A farm can investigate those interruptions. The cause might be unreliable cleanup, an unsuitable shared dependency or a class of work the factory cannot yet handle. Keep the cases and compare explanations before building a remedy.</p>
           <ol>
-            <li><strong>What do we think is happening?</strong> Keep the cases behind the claim, including ones that do not fit.</li>
-            <li><strong>What would change our minds?</strong> Try a small check that could show the explanation is wrong.</li>
-            <li><strong>What is worth changing?</strong> That might be a fixture, a business decision or an unnecessary review rule.</li>
-            <li><strong>What happens on later work?</strong> Count the investigation, review and upkeep as well as any benefit.</li>
+            <li><strong>Observe:</strong> record waiting, repeated interventions and unexpected work, including successful recoveries.</li>
+            <li><strong>Investigate:</strong> find what distinguishes a missing tool from an unnecessary dependency or an unresolved decision.</li>
+            <li><strong>Redesign:</strong> remove the work or build the capability that addresses its cause. Check the proposed change to the machinery.</li>
+            <li><strong>Reinvest:</strong> measure later outcomes and total costs, then direct recovered capacity toward the next constraint.</li>
           </ol>
-          <p>The method used to investigate can improve too. Retained cases might help the team build a new recovery experiment or a better diagnostic command. Check whether the earlier work made that new capability easier to build, including the effort needed to adapt it.</p>
+          <p>The investigation method can improve too. Better diagnostics may let the next investigation proceed without its original author. Changes to acceptance rules and authority remain explicit decisions; a job has not improved by hiding its failures.</p>
           <p><a class="text-link" href="https://grove.github.io/engineering-that-compounds/essays/compounding-learning.html">Read Compounding learning</a></p>
           <p><a href="adoption/index.html#learning-from-the-work">Try an AI-assisted investigation with your team</a></p>
         </div>
@@ -201,12 +226,13 @@
     <section class="practice-section" id="in-practice" aria-labelledby="practice-title">
       <div class="shell">
         <div class="section-heading practice-heading">
-          <div><p class="eyebrow">A small, runnable example</p><h2 id="practice-title">Two deliveries.<br><em>One payment.</em></h2></div>
+          <div><p class="eyebrow">One enabling capability: verification</p><h2 id="practice-title">Two deliveries.<br><em>One payment.</em></h2></div>
           <p>A payment notification arrives. Then the same notification arrives again. The invoice records two payments, and someone gets an interesting afternoon.</p>
         </div>
         <div class="lab-layout">
           <div class="lab-story">
-            <h3>Keep the bug on a short leash.</h3>
+            <h3>Build evidence the next workflow can use.</h3>
+            <p>Reliable verification helps a factory take on more work. This small example illustrates that one capability within the larger transformation.</p>
             <p>The fix remembers which events it has already applied. The useful thing to keep is the tiny scenario that made the bug undeniable: an unpaid invoice, one payment event, and two deliveries.</p>
             <p>Try the original handler, then the duplicate check. The expected result stays the same: 24.00 paid, one event applied. Before you run each version, predict what it will record.</p>
             <a class="text-link" href="https://grove.github.io/patterns-of-compounding-engineering/patterns/persistent-reproducer.html">Read the Persistent reproducer pattern</a>
@@ -246,13 +272,13 @@
     </section>
 
     <section class="section shell principles-section" id="principles" aria-labelledby="principles-title">
-      <div class="principles-intro"><p class="eyebrow">Habits worth keeping</p><h2 id="principles-title">A few things<br><em>to work by.</em></h2><p>Try one on the task you already have open.</p></div>
+      <div class="principles-intro"><p class="eyebrow">Principles for transformation</p><h2 id="principles-title">Engineer the way<br><em>engineering works.</em></h2><p>Use the next constraint to choose what should change.</p></div>
       <div class="principles">
-        <details open><summary>Leave a useful trace.</summary><div><p>Keep the test, explanation or small tool that would have saved you the investigation. Put it where the next person will look.</p><a href="https://grove.github.io/engineering-that-compounds/essays/what-software-should-remember.html">What software should remember</a></div></details>
+        <details open><summary>Question the workflow.</summary><div><p>Ask which tasks and handoffs still serve a purpose. Remove unnecessary work, redesign avoidable dependencies and automate the remaining procedures where the result justifies the cost.</p><a href="https://grove.github.io/engineering-that-compounds/essays/getting-better-at-the-wrong-thing.html">Getting better at the wrong thing</a></div></details>
         <details><summary>Know why the check is green.</summary><div><p>A passing test is useful when you know what it establishes. Ask what could still be wrong. The author and the reviewer can share a blind spot; so can a model and the tests it wrote.</p><a href="https://grove.github.io/software-that-improves-with-age/essays/knowing-what-constitutes-convincing-evidence.html">Knowing what constitutes convincing evidence</a></div></details>
         <details><summary>Keep learning in the work.</summary><div><p>Predict what will happen, try it, and explain the surprise. An agent can help investigate the question or prepare a new case. Someone still needs to judge what the result means and recognize when the explanation no longer fits.</p><a href="https://grove.github.io/engineering-that-compounds/essays/compounding-learning.html">Compounding learning</a><p><a href="https://grove.github.io/engineering-that-compounds/essays/how-engineers-become-engineers.html">How engineers become engineers</a></p></div></details>
         <details><summary>Try before you commit.</summary><div><p>Build a small experiment while the decision is still cheap. You can learn more from two awkward prototypes than from a long argument about the perfect design.</p><a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/competing-prototypes.html">Competing prototypes</a></div></details>
-        <details><summary>Does someone need to start this every time?</summary><div><p>When a recurring procedure is understood and can be checked, try making it run when the work arrives. Keep the decisions and exceptions that need someone’s judgment.</p><a href="https://grove.github.io/engineering-that-compounds/essays/automating-the-work-of-engineering.html">Automating the work of engineering</a></div></details>
+        <details><summary>Build capability, then reinvest.</summary><div><p>Give recurring work a way to start, finish and report exceptions within its authority. Keep what helps the next workflow: environments, diagnostics, domain knowledge and useful boundaries. Decide where the capacity recovered will go.</p><a href="https://grove.github.io/engineering-that-compounds/essays/automating-the-work-of-engineering.html">Automating the work of engineering</a></div></details>
         <details><summary>Make it earn its keep.</summary><div><p>A tool with no users is still something to maintain. Notice what helps, repair what misleads, and retire what has outlived its purpose. Deletion counts.</p><a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/investment-retrospective.html">Investment retrospective</a></div></details>
       </div>
     </section>
@@ -267,8 +293,8 @@
         </article>
         <article class="collection-entry engineering-entry">
           <div class="collection-symbol" aria-hidden="true"><svg viewBox="0 0 100 115"><circle cx="50" cy="57" r="40"/><circle cx="50" cy="57" r="28"/><circle cx="50" cy="57" r="15"/><path d="M50 17v25M23 86l17-18M78 85 61 68"/></svg></div>
-          <div class="collection-copy"><p class="eyebrow">The engineering</p><h3><a href="https://grove.github.io/engineering-that-compounds/">Engineering that compounds</a></h3><p>The code is only part of what a team builds. These essays look at the knowledge, judgment and capabilities that survive a task, and how they can help us automate and improve the work itself.</p><a class="start-reading" href="https://grove.github.io/engineering-that-compounds/essays/engineering-capital.html">Start with Engineering capital</a></div>
-          <div class="collection-aside"><span>For the question</span><p>“What are we getting better at, besides shipping?”</p></div>
+          <div class="collection-copy"><p class="eyebrow">The engineering</p><h3><a href="https://grove.github.io/engineering-that-compounds/">Engineering that compounds</a></h3><p>How can we redesign and automate the work of engineering? These essays examine constraints, delegation, architecture and the capabilities that make further change possible.</p><a class="start-reading" href="https://grove.github.io/engineering-that-compounds/essays/automating-the-work-of-engineering.html">Start with Automating the work of engineering</a></div>
+          <div class="collection-aside"><span>For the question</span><p>“Why does this work still need us every time?”</p></div>
         </article>
         <article class="collection-entry patterns-entry">
           <div class="collection-symbol" aria-hidden="true"><svg viewBox="0 0 100 115"><rect x="13" y="15" width="27" height="27"/><rect x="60" y="15" width="27" height="27"/><rect x="36" y="73" width="27" height="27"/><path d="M26 42v13h48V42M50 55v18"/></svg></div>
@@ -280,10 +306,10 @@
 
     <section class="section shell" id="adoption" aria-labelledby="adoption-title">
       <div class="idea-intro">
-        <div><p class="eyebrow">An adoption guide for teams and leaders</p><h2 id="adoption-title">Make room for<br><em>the next improvement.</em></h2></div>
+        <div><p class="eyebrow">An adoption guide for teams and leaders</p><h2 id="adoption-title">Start transforming<br><em>one workflow.</em></h2></div>
         <div>
-          <p>One team builds a useful check. Another team still needs the original specialist to use it. Who pays for making that handoff work, and what happens when delivery pressure returns?</p>
-          <p>Start with one recurring job, a bounded investment and a decision about what to keep. Make room in ordinary planning for the people who will build, learn and maintain the capability.</p>
+          <p>Choose a recurring outcome and follow its whole path. Where does it wait? What needs human intervention? Which work would disappear if the system were organized differently?</p>
+          <p>Fund one bounded redesign, try it on real work and account for the effort of using and maintaining it. Decide how recovered capacity will support delivery and the next investment.</p>
           <p><a class="text-link" href="adoption/">Read Adopting Compounding Engineering</a></p>
           <p><a href="adoption/investment-canvas.html">Work through one investment</a></p>
           <p><a href="adoption/first-twelve-weeks.html">Try the first twelve weeks with one team</a></p>
@@ -323,14 +349,14 @@
             <p class="evidence-limit"><strong>Still to establish:</strong> whether that connection helps under a fixed budget. The public walkthrough is teaching material, not a hidden benchmark.</p>
           </article>
         </div>
-        <p class="evidence-followup">For a working team, <a href="https://grove.github.io/engineering-that-compounds/essays/measuring-the-capacity-for-change.html#a-twelve-week-field-check">follow one recurring kind of change for twelve weeks</a>. Record bypasses and upkeep as well as useful runs. A decision to shrink or remove the tool is a useful finding.</p>
+        <p class="evidence-followup">These verification examples establish only a part of the argument. To evaluate transformation, <a href="adoption/first-twelve-weeks.html">follow a whole workflow through later work</a>: useful outcomes, elapsed waiting, human intervention, total cost and required quality. Record which recurring work disappeared and what became feasible. Then ask whether retained capabilities made the next redesign easier. The site does not yet establish tenfold team effectiveness or sustained compounding.</p>
       </div>
     </section>
 
     <section class="closing-section" aria-labelledby="closing-title">
       <div class="shell closing-inner">
-        <div><p class="eyebrow">On your next change</p><h2 id="closing-title">Leave the next person<br><em>a better starting point.</em></h2></div>
-        <div class="closing-copy"><p>Before you start, name the useful outcome and what is holding it up. While you work, keep the evidence that settles the difficult bit. Before you finish, ask what is worth leaving behind and where the next investment would matter.</p><p>Then watch what happens when someone uses it. That’s where the next lesson is.</p><a class="button button-light" href="https://grove.github.io/patterns-of-compounding-engineering/guide.html#use-the-task-already-open">Try it on your next ticket</a></div>
+        <div><p class="eyebrow">Choose the next transformation</p><h2 id="closing-title">What work could<br><em>stop needing you?</em></h2></div>
+        <div class="closing-copy"><p>Name the useful outcome and what limits it. Examine the work that can disappear, the dependencies that can change and the procedures that can run automatically.</p><p>Build one capability, observe what it changes and use what you learn to choose the next investment. The engineering system is part of what we engineer.</p><a class="button button-light" href="adoption/investment-canvas.html">Redesign one workflow</a></div>
       </div>
     </section>
   </main>

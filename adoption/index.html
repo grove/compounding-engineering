@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#18382d">
   <title>Adopting Compounding Engineering — Compounding Engineering</title>
-  <meta name="description" content="Help a team improve how it works without making improvement a second job.">
+  <meta name="description" content="Transform an engineering workflow: remove its constraints, automate recurring work and reinvest in the next capability.">
   <link rel="canonical" href="https://grove.github.io/compounding-engineering/adoption/">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../assets/styles.css">
@@ -20,7 +20,7 @@
     </div>
   </header>
   <main id="main" class="adoption-page" tabindex="-1">
-    <header><p class="eyebrow">Adoption guide</p><h1>Adopting Compounding Engineering</h1><p class="intro">Help a team improve how it works without making improvement a second job.</p></header>
+    <header><p class="eyebrow">Adoption guide</p><h1>Adopting Compounding Engineering</h1><p class="intro">Change how engineering gets done. Remove the constraints, automate recurring work and use what you learn to make the next transformation possible.</p></header>
     <nav class="adoption-nav" aria-label="Adoption guide">
       <a href="index.html" aria-current="page">Start here</a>
       <a href="investing.html">Investing</a>
@@ -30,17 +30,35 @@
     </nav>
     <article class="adoption-body">
       <section>
-        <h2>The work that keeps getting postponed</h2>
+        <h2>Change the system that does the work</h2>
         <p>Suppose an orders team has learned how to detect a dangerous database lock before shipping a migration. Its specialist still has to join every billing migration review, because billing cannot run or interpret the check. The product manager has a deadline, the specialist has another queue, and improving the handoff keeps sliding into next quarter.</p>
-        <p>The problem is no longer just a missing script. Someone needs the authority to spend time on a capability whose benefit may land on another team's roadmap. This guide is for making that decision in ordinary engineering and product planning. The migration story throughout is hypothetical; it does not report observed savings.</p>
+        <p>Preparing the specialist's review faster is one option. Making ordinary migrations independently verifiable is another. Changing the service boundary could remove the cross-team dependency altogether. The first question is how this work should happen, given the capabilities available today.</p>
+        <p>Compounding Engineering makes that transformation a continuing part of engineering. Someone needs the authority to change the workflow and invest in capabilities whose benefit may land on another team's roadmap. This guide puts those decisions into engineering and product planning. The examples throughout are hypothetical; they do not report observed savings.</p>
         <p>Start with <a href="https://grove.github.io/engineering-that-compounds/essays/organizations-that-improve-with-age.html">Organizations that improve with age</a> for why lessons fail to travel, and <a href="https://grove.github.io/engineering-that-compounds/essays/engineering-capital.html">Engineering capital</a> for what is worth retaining.</p>
+      </section>
+      <section id="redesign-the-work">
+        <h2>Consider three kinds of change</h2>
+        <dl>
+          <dt>Acceleration</dt><dd>An agent helps an engineer prepare an environment request faster. The request, queue and handoff remain.</dd>
+          <dt>Automation</dt><dd>An eligible change starts an isolated environment, runs the required work and cleans up afterward. Routine setup no longer needs someone to coordinate it.</dd>
+          <dt>Transformation</dt><dd>Independent environments and clearer service boundaries let teams investigate and deliver separately. The shared scheduling queue and recurring coordination meeting can disappear.</dd>
+        </dl>
+        <p>These are choices to compare, not mandatory stages. Follow the work from a need to an accepted outcome, including operation and follow-up. Ask which activities can be eliminated, which need a different design and which can run automatically. Test automation is one enabling capability alongside domain knowledge, architecture, environments, release machinery and better ways to discover what matters.</p>
+        <p><a href="https://grove.github.io/engineering-that-compounds/essays/automating-the-work-of-engineering.html">Automating the work of engineering</a> follows this change through dependency maintenance. <a href="https://grove.github.io/engineering-that-compounds/essays/architecture-for-parallel-work.html">Architecture for parallel work</a> explains why independent execution also needs independent decisions, interfaces and environments.</p>
+      </section>
+      <section id="farms-and-factories">
+        <h2>Give investigation and delivery different jobs</h2>
+        <p>A <strong>software farm</strong> continuously investigates the software and its operation: recurring incidents, expensive handoffs, unused features and opportunities to simplify. It develops evidence and experiments. Its useful result may be a decision to remove work or leave the software alone. <a href="https://grove.github.io/software-that-improves-with-age/essays/continuous-cultivation-of-software.html">Continuous cultivation of software</a> develops this investigative role.</p>
+        <p>A <strong>software factory</strong> takes work with a clear outcome through implementation, verification, release and follow-up, automating the routine path within an agreed scope. People set direction and acceptance criteria, resolve exceptions and improve the machinery. The aim is to reduce how often a person must start, coordinate or rescue the same procedure.</p>
+        <p>These are complementary roles that existing teams and tools can perform. A factory's repeated interventions can become a farm's next investigation; an investigation can propose a simpler delivery workflow. They need not become separate departments or a fixed sequence. Start with one useful loop, such as investigating recurring update failures and using the result to improve the update workflow.</p>
+        <p>Give the loop an owner, a budget, evidence standards and a way to stop. Its proposed improvements must meet those standards too. Then ask whether earlier knowledge and tools made the next improvement cheaper or more effective. That is the compounding hypothesis.</p>
       </section>
       <section>
         <h2>Five decisions in ordinary planning</h2>
         <ol>
-          <li><strong>Identify.</strong> Follow recent work to an outcome somebody values. Find the suspected limiting condition, including waits for decisions or other teams. <a href="https://grove.github.io/engineering-that-compounds/essays/what-would-ten-times-look-like.html">What would ten times look like?</a> develops the focusing exercise.</li>
-          <li><strong>Invest.</strong> Use existing capacity first. If the constraint remains, agree on the smallest useful experiment, its budget, displaced work, owner and quality bar.</li>
-          <li><strong>Observe.</strong> Watch subsequent ordinary work, including bypasses and repairs. Keep local savings, delivery outcomes and evidence of a later capability becoming easier to build separate.</li>
+          <li><strong>Identify.</strong> Follow recent work to an outcome somebody values. Find the suspected limiting condition, including waits for decisions or other teams. Question whether the blocked activity needs to exist. <a href="https://grove.github.io/engineering-that-compounds/essays/what-would-ten-times-look-like.html">What would ten times look like?</a> develops the focusing exercise.</li>
+          <li><strong>Invest.</strong> Compare removal, redesign and automation with using existing capacity better. Agree on the smallest useful experiment, its budget, displaced work, owner and quality bar.</li>
+          <li><strong>Observe.</strong> Follow subsequent work through acceptance and operation. Count human interventions, work removed, total cost, bypasses and repairs. Keep local savings, delivery outcomes and evidence of a later capability becoming easier to build separate.</li>
           <li><strong>Transfer.</strong> When another team has the same problem, give a named receiver time to try the capability in its own context. Do not mandate reuse merely because the first team liked it.</li>
           <li><strong>Reallocate.</strong> Decide whether to keep, shrink or retire the investment, where the constraint now sits, and what genuinely recovered capacity should be used for.</li>
         </ol>
@@ -62,7 +80,7 @@
         <p>Start with a few cases from the work already chosen. Ask for links to the passages supporting each proposed explanation and for cases that contradict it. Compare those explanations with the people who did the work. The <a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/friction-to-hypothesis.html">Friction to hypothesis</a> pattern gives this investigation a practical shape.</p>
         <p>Suppose the team suspects that setting up the lock test causes the wait. Let an engineer try a prepared scenario on an eligible migration, keeping the acceptance standard fixed. If the wait is still for someone to decide the downtime allowance, better fixtures have not resolved it. Record that result in the existing issue and bring the decision to its owner.</p>
         <p>Keep the question, source cases, result and its limits in the existing issue. A reviewed test, a narrower rule or a decision to stop may be sufficient.</p>
-        <p>Give the investigation an owner and a cap on human review as well as model use. A recurring job can collect candidate cases; a named engineer should decide whether the evidence warrants a change. Use sources the participants are allowed to access, keep those permissions when sharing results, and examine the work rather than ranking the people who produced it. Count false leads and corrections before widening the search.</p>
+        <p>Give the investigation an owner and a cap on human review as well as model use. Define which findings may trigger an established workflow and which decisions need a person. Use sources the participants are allowed to access, keep those permissions when sharing results, and examine the work rather than ranking the people who produced it. Count false leads and corrections before widening the search.</p>
         <p><a href="https://grove.github.io/engineering-that-compounds/essays/compounding-learning.html">Compounding learning</a> develops the argument. The <a href="first-twelve-weeks.html#ai-assisted-investigation">bounded exercise in the playbook</a> puts it into an ordinary planning cycle.</p>
       </section>
       <section id="where-the-capability-belongs">
@@ -75,16 +93,17 @@
       <section>
         <h2>Use the meetings already on the calendar</h2>
         <dl>
-          <dt>Planning</dt><dd>Which recurring constraint deserves a bounded investment? Which commitment moves if the bet takes its full budget?</dd>
-          <dt>Review and incident follow-up</dt><dd>What should the next engineer be able to discover or verify independently? Is a simpler design better than another check? Occasionally examine a difficult release that went well: what did someone notice and adjust?</dd>
+          <dt>Planning</dt><dd>Which constraint deserves attention? Could the work or handoff disappear? Which commitment moves if the experiment takes its full budget?</dd>
+          <dt>Review and incident follow-up</dt><dd>Why did a person have to intervene, and should that intervention recur? Is a simpler design better than another check? Occasionally examine a difficult release that went well: what did someone notice and adjust?</dd>
           <dt>Retrospective</dt><dd>Which retained capabilities helped? Which were bypassed or became obligations? What should go?</dd>
           <dt>Cross-team and quarterly planning</dt><dd>Who is paying for shared benefits, what can be retired, and where should recovered capacity go? Which previously impractical opportunity is worth reconsidering?</dd>
           <dt>Career conversations</dt><dd>What did colleagues become able to do, explain or decide? Recognize the transfer of judgment and the removal of unnecessary work, not numbers of scripts or hours claimed.</dd>
         </dl>
+        <p>These are starting points for decisions. Retire or redesign recurring meetings when their purpose can be met without the handoff.</p>
       </section>
       <section>
-        <h2>Start smaller than an adoption program</h2>
-        <p>An engineer can try a local improvement within existing authority. A team can agree on a bounded investment and observe its use. A neighboring team can test transfer if the need is real. Organization-wide policy or infrastructure needs stronger evidence, funding, ownership and an exception path. These are scopes, not maturity levels.</p>
+        <h2>Start with one workflow</h2>
+        <p>The ambition is to transform how engineering is performed; the first experiment can be small. An engineer can remove a recurring manual step within existing authority. A team can redesign a workflow and observe its use. A neighboring team can test transfer if the need is real. Organization-wide policy or infrastructure needs stronger evidence, funding, ownership and an exception path. These are scopes, not maturity levels.</p>
         <p>If management will not protect capacity, keep the first bet local, cheap and useful to its own team. Do not ask people to work unpaid evenings to prove that improvement matters. Escalate a repeated organizational constraint with concrete examples; a local tool cannot fix every incentive.</p>
         <div class="note"><p><strong>What not to adopt:</strong> a mandatory compounding pass on every task, a capital quota, an AI usage target, an organization-wide tenfold productivity commitment or a standing improvement committee. Each new practice has its own carrying cost.</p></div>
         <p>Use the <a href="first-twelve-weeks.html">twelve-week playbook</a> with one team, or read <a href="investing.html">how to fund and protect the investment</a> if a promising local improvement keeps being postponed. The <a href="patterns.html">organizational patterns</a> address the friction that appears when the work crosses boundaries.</p>

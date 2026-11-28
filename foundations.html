@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#18382d">
   <title>How organizations become more capable — Compounding Engineering</title>
-  <meta name="description" content="A practical theory of how useful work can improve an organization's ability to solve problems, learn and change. The mechanisms, their limits, and ways to test them.">
+  <meta name="description" content="Transforming the engineering system through constraint removal, automation, software farms and factories, and capabilities that make further transformation possible.">
   <link rel="canonical" href="https://grove.github.io/compounding-engineering/foundations.html">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="assets/styles.css">
@@ -21,42 +21,65 @@
     </div>
   </header>
   <main id="main" class="adoption-page" tabindex="-1">
-    <header><p class="eyebrow">The foundations</p><h1>How organizations<br>become more capable</h1><p class="intro">A useful fix can change more than the software. It can change what the team knows how to do next.</p></header>
-    <nav class="adoption-nav" aria-label="On this page"><a href="#capability">What counts as capability?</a><a href="#compounding">How it compounds</a><a href="#learning">How it learns</a><a href="#adaptation">How it adapts</a><a href="#evidence">What would count as evidence?</a></nav>
+    <header><p class="eyebrow">The foundations</p><h1>How organizations<br>become more capable</h1><p class="intro">Transform how software engineering is performed, and build the capabilities that make further transformation possible.</p></header>
+    <nav class="adoption-nav" aria-label="On this page"><a href="#transformation">Transformation</a><a href="#operating-models">Farms and factories</a><a href="#capability">Capability</a><a href="#compounding">Compounding</a><a href="#learning">Learning</a><a href="#adaptation">Adaptation</a><a href="#evidence">Evidence</a></nav>
     <article class="adoption-body">
       <section>
-        <h2>The next difficult request</h2>
-        <p>Consider a billing team with a service nobody wants to replace. Its behavior is poorly understood, and every attempted migration uncovers another exception. The team can keep patching it. It can also use those patches to learn where the exceptions come from and build a way to test a replacement.</p>
-        <p>After one fix, it keeps a duplicate-payment case. During the next, it agrees with finance what a partial refund should mean. A few changes later, those cases and rules help an engineer compare two implementations. Replacing the service becomes a question the team can investigate.</p>
-        <p>This is a hypothetical progression, not an inevitable one. The cases might be too narrow. The comparison might be misleading. The replacement might cease to matter. But it gives us a precise question: did earlier work improve the team's ability to undertake the next piece of work?</p>
-        <p><strong>Compounding Engineering is the practice of doing valuable work while developing, combining and renewing the capabilities that help an organization do future work and improve how it works.</strong> Its distinctive claim is that some investments can make subsequent capability development cheaper or more effective. That claim needs evidence from later work.</p>
+        <h2>Engineer the engineering system</h2>
+        <p>Suppose a team can prepare changes quickly, but every experiment waits for someone to configure a shared environment. Engineers coordinate access, repair state left by the previous experiment and explain the setup to the next person. Faster implementation leaves that system largely intact.</p>
+        <p>The team could build a service that provisions isolated environments from a declared configuration and retires them afterward. Investigations could then arrange their own infrastructure. A procedure performed on request becomes a capability available whenever work needs it, and the request queue can disappear for eligible work.</p>
+        <p>This is a hypothetical redesign. It succeeds only if useful investigations finish sooner or cost less at the required quality, including the effort of operating the service. The aim is to change how engineering is performed.</p>
+        <p><strong>Compounding Engineering is an approach to transforming the system that discovers, creates, evolves and operates software: remove constraints on valuable outcomes, redesign and automate the work, and develop capabilities that make further transformation cheaper or more effective.</strong></p>
+        <p>Transformation is the ambition. Constraint removal directs investment. Elimination, redesign and automation are ways to act. Compounding describes the possibility that earlier capabilities help us develop the next ones. Evidence from later work has to establish that connection.</p>
+      </section>
+      <section id="transformation">
+        <h2>Treat the workflow as a design choice</h2>
+        <p>Ask how we would organize the work with the capabilities available now. Which steps accomplish a necessary purpose? Which exist because people must remember to start a job, carry context between tools or wait for a specialist? The answer may change task boundaries, architecture, decision rights and the point at which work begins.</p>
+        <dl>
+          <dt>Acceleration</dt><dd>An agent helps an engineer configure the environment faster. The existing workflow takes less effort.</dd>
+          <dt>Automation</dt><dd>A service provisions the environment when eligible work arrives. The repeated procedure no longer needs someone to perform it.</dd>
+          <dt>Transformation</dt><dd>Independent investigations provision their own environments, compare alternatives and preserve their results. The organization can investigate differently because a coordination dependency has gone.</dd>
+        </dl>
+        <p>These changes can overlap. A useful automation may transform a workflow; a simpler architecture may transform it without adding an agent. Each recurring demand on human attention is a candidate for elimination, redesign or automation. The resulting system must still accomplish the purpose that matters.</p>
+        <p>Follow the whole route from need to outcome. Discovery may require better access to customer evidence. A shared business rule may need a clear owner. An interface change may let teams release independently. A diagnostic procedure may become part of responding to an incident. Testing is one enabling capability within this larger design space.</p>
+        <p>The <a href="https://grove.github.io/engineering-that-compounds/essays/what-would-ten-times-look-like.html">Theory of Constraints discussion</a> gives investment a direction: identify what limits a chosen outcome, use existing capacity better, align surrounding work with it, change the constraint where necessary, and then look again. A procedure that becomes much faster can still leave the outcome unchanged.</p>
+        <p>Our tenfold ambition makes a different operating model worth investigating. It supplies no evidence that a particular model will achieve that gain. Use a bounded redesign of real work to discover what becomes possible.</p>
+      </section>
+      <section id="operating-models">
+        <h2>Software farms and software factories</h2>
+        <p>A <a href="https://grove.github.io/software-that-improves-with-age/essays/continuous-cultivation-of-software.html">software farm</a> organizes continuing investigation and cultivation. It starts with a consequential question: whether a guarantee holds, why a workflow repeatedly stalls, whether a simpler design would suffice or whether the rationale for an old component still applies. Its useful output can be evidence, an explanation or a reason to leave the system alone.</p>
+        <p>A software factory organizes the implementation and delivery of changes. It starts with work to be done and brings together environments, tools, verification and release mechanisms. <a href="https://grove.github.io/engineering-that-compounds/essays/automating-the-work-of-engineering.html">Automating the work of engineering</a> describes how a recurring class of work can proceed within agreed authority, returning exceptions that require a decision.</p>
+        <p>The roles reinforce each other. A farm can find work worth sending to the factory. The factory's failures, delays and operating results can supply questions for the farm. Both can improve the engineering machinery itself: removing a setup dependency, diagnosing an ambiguous failure or simplifying a tool that has become expensive to maintain.</p>
+        <p>They need not be separate teams or products, and they are not a mandatory sequence. The same people and tools can serve both. Start where the constraint matters. An organization with adequate delivery capacity may need better discovery; one with a growing queue of useful findings may need to improve how those findings become decisions and delivered changes.</p>
+        <p>People remain accountable for goals, priorities and the authority delegated to the system. Routine work can proceed without requiring a new human instruction at every step, while consequential changes to purpose, acceptance rules or authority remain explicit decisions. Greater autonomy is useful when it improves outcomes and the attention required to achieve them.</p>
       </section>
       <section id="capability">
         <h2>Owning a tool is not enough</h2>
-        <p><a href="https://grove.github.io/engineering-that-compounds/essays/engineering-capital.html">Engineering capital</a> is what an organization can draw on: people's understanding, executable tools, recorded knowledge, useful boundaries and ways of working together. A capability is something those people can reliably accomplish under stated conditions.</p>
-        <p>A billing simulator is capital. Being able to evaluate a proposed billing change is a capability. The difference includes knowing which cases matter, recognizing an unreliable result, having access to the right environment and knowing who can settle a disputed rule. A repository full of tools can coexist with a team that still needs the original author for every decision.</p>
-        <p>Name a capability as work someone can do: “a billing engineer can compare two refund implementations against the agreed cases and explain their disagreements.” State the limits. It may cover the calculation while leaving the handling of interrupted payments outside the team's current ability.</p>
-        <p>This keeps investment attached to its purpose. The result we want is something a person or team becomes able to accomplish. The asset is one means of getting there.</p>
+        <p><a href="https://grove.github.io/engineering-that-compounds/essays/engineering-capital.html">Engineering capital</a> is what an organization can draw on: people's understanding, executable tools, recorded knowledge, useful boundaries and ways of working together. A capability is something the organization can reliably accomplish through its people and systems under stated conditions.</p>
+        <p>A provisioning tool is capital. Being able to run an isolated investigation without a setup handoff is a capability. The difference includes access, meaningful inputs, cleanup, cost control and a way to recognize when the environment is unsuitable. A repository full of tools can coexist with a team that still needs the original author for every attempt.</p>
+        <p>Name a capability as work the system can do: “an engineer or agent can start a representative performance experiment, obtain interpretable results and retire its environment within the agreed budget.” State the limits. The environment might support performance comparisons while leaving production failover outside its scope.</p>
+        <p>This keeps investment attached to its purpose. The result we want is useful work that becomes feasible or requires less intervention and cost. The asset is one means of getting there.</p>
       </section>
       <section id="compounding">
         <h2>What, exactly, is compounding?</h2>
         <p>Several useful things can happen to the same retained work. They deserve different names because they require different evidence.</p>
         <dl>
-          <dt>Accumulation</dt><dd>The duplicate-payment case survives in the repository. We have kept something.</dd>
-          <dt>A recurring return</dt><dd>The case catches a regression on a later change. It has helped again.</dd>
-          <dt>Complementarity</dt><dd>The case builder is more useful when paired with an independent check of the billing rules. The two investments reinforce one another.</dd>
-          <dt>Composition</dt><dd>The team combines its cases, rules and comparison tools into a way to evaluate a replacement service.</dd>
-          <dt>Compounding</dt><dd>The earlier investments reduce the cost or improve the quality of developing that new capability, after adaptation and upkeep are counted.</dd>
+          <dt>Accumulation</dt><dd>The environment configuration and provisioning command survive in the repository. We have kept something.</dd>
+          <dt>A recurring return</dt><dd>The service removes setup effort from the next eligible investigation. It has helped again.</dd>
+          <dt>Complementarity</dt><dd>Isolated environments become more useful with representative workloads and interpretable telemetry. The investments reinforce one another.</dd>
+          <dt>Composition</dt><dd>The team combines provisioning, workloads and comparison tools into a repeatable performance investigation.</dd>
+          <dt>Compounding</dt><dd>The earlier investments reduce the cost or improve the quality of developing that new investigation capability, after adaptation and upkeep are counted.</dd>
         </dl>
         <p>Complementarity and composition can enable compounding. Neither establishes it on its own. Repeated use can justify a tool even when no further capability follows.</p>
+        <p>Decide where recovered capacity will go. Some can deliver customer value; some can fund investigation of the next constraint. Reinvestment gives the transformation a way to continue. Record separately whether the earlier capabilities actually made that next investment easier. Savings and a growing collection of tools do not establish this on their own.</p>
         <p>Bruce Kogut and Udo Zander's <a href="https://doi.org/10.1287/orsc.3.3.383">work on combinative capabilities</a> describes how firms develop skills by recombining existing capabilities, including the ways people cooperate. Martin Weitzman's <a href="https://doi.org/10.1162/003355398555595">recombinant growth model</a> examines combinations of ideas; Milgrom and Roberts' <a href="https://doi.org/10.1016/0165-4101(94)00382-F">work on complementarities</a> explains why investments can be more valuable together. These are foundations for the argument, not validation of this particular engineering practice.</p>
         <p>Try a small composition before drawing an organization-wide capability map. Choose a worthwhile task that is currently difficult, identify two or three things you already know how to do, and test whether connecting them helps. The <a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/capability-composition.html">Capability composition pattern</a> walks through that decision.</p>
       </section>
       <section>
         <h2>Improve the way you improve</h2>
-        <p>Fixing a billing error does useful work. Building a reliable way to investigate billing errors improves that work. Learning how to develop and check such investigations improves the improvement process.</p>
+        <p>Delivering a useful change does engineering work. Building a factory that can deliver that class of change improves how the work is performed. Developing a reliable method for discovering and removing the factory's constraints improves the improvement process.</p>
         <p>Douglas Engelbart distinguished these three levels in <a href="https://dougengelbart.org/content/view/116/">Toward High-Performance Organizations</a>. The third level matters here because a better experimental method may help a team build several different capabilities. It also costs time. An elaborate improvement system with no worthwhile problem to work on has little to offer.</p>
-        <p>Five activities give this work a practical shape. They overlap; a team will move between them while handling one request.</p>
+        <p>Five activities give this work a practical shape. They describe purposes that a redesigned engineering system must serve; they need not be manual stages or separate teams.</p>
         <dl>
           <dt>Discover</dt><dd>Find out what customers or colleagues need, and which problem is worth solving.</dd>
           <dt>Deliver</dt><dd>Make a change that addresses that need.</dd>
@@ -64,7 +87,7 @@
           <dt>Develop</dt><dd>Turn a useful lesson into something people can use in later work.</dd>
           <dt>Renew</dt><dd>Revisit the lesson when conditions change. Repair, replace or retire what no longer helps.</dd>
         </dl>
-        <p>The connections matter more than the labels. Customer research can supply better test cases. Better tests can make a product experiment affordable. That experiment can reveal that a familiar business rule is wrong. <a href="https://grove.github.io/engineering-that-compounds/essays/improving-our-ability-to-improve.html">Improving our ability to improve</a> follows these connections in more detail.</p>
+        <p>The connections matter more than the labels. Operating results can direct an investigation. Its findings can simplify the delivery machinery. That change can make a product experiment affordable, and the experiment can reveal that the proposed feature serves no useful purpose. <a href="https://grove.github.io/engineering-that-compounds/essays/improving-our-ability-to-improve.html">Improving our ability to improve</a> follows these connections in more detail.</p>
       </section>
       <section id="learning">
         <h2>Let the evidence change the question</h2>
@@ -88,20 +111,22 @@
       </section>
       <section>
         <h2>What AI changes</h2>
-        <p>AI can help find related incidents, prepare alternative explanations, build prototypes, adapt a check for another team and teach someone how it works. These uses extend well beyond producing a patch.</p>
+        <p>AI can help investigate unfamiliar behavior, compare designs, build the tools that recurring work needs and propose improvements to the engineering system. Its larger opportunity is to change which workflows are economical to automate and which questions are economical to investigate.</p>
+        <p>Use ordinary programs for predictable scheduling, provisioning, permission enforcement and cleanup. Use agents where interpretation or adaptation is useful. Then reconsider the surrounding work: who must start it, what it needs to know, how it finishes and which exceptions come back to a person. A more capable model does not remove those design decisions.</p>
         <p>When generating alternatives becomes cheaper, the ability to choose between them deserves more attention. Ten plausible explanations still need an observation that distinguishes them. A hundred generated customer scenarios still need contact with real customers. A fast agent still needs a trustworthy way to discover that its change is wrong.</p>
         <p>Invest in the evidence and understanding that let people make those decisions: reviewed domain cases, independent checks, accessible source material and clear authority to act. Watch the cost of interpreting results as well as producing them. An agent that starts changes faster than the team can verify them may simply create a larger queue. <a href="https://grove.github.io/engineering-that-compounds/essays/the-economics-of-feedback.html">The economics of feedback</a> examines where a shorter, more informative loop can help.</p>
       </section>
       <section id="evidence">
         <h2>What would count as evidence?</h2>
-        <p>A useful case starts with an outcome and follows the work that produces it. Record what the earlier investment contributed, what still had to be built, the effort of adapting and maintaining it, and whether the result met the same quality bar. Keep failed attempts in the account.</p>
+        <p>A useful case starts with an outcome and follows the work that produces it. Compare time to that outcome, human attention, intervention burden and total economic cost at the required quality. Keep elapsed waiting separate from effort. Include compute, failed attempts, supervision, maintenance and work shifted to another team.</p>
+        <p>For transformation, record which recurring work or dependency disappeared and what the organization can now accomplish. For compounding, record what a later investment inherited, what had to be adapted or built, and whether that inheritance reduced cost or improved the result. These are related claims that need different evidence.</p>
         <p>A demonstration establishes behavior in its example. A field observation shows what happened to one team. A credible comparison helps distinguish the effect of the investment from practice, easier tasks or improved tools. Following several investments over time is necessary to investigate whether the ability to develop capabilities keeps improving.</p>
         <p>DORA's <a href="https://dora.dev/research/2025/dora-report/">2025 research</a> and <a href="https://dora.dev/ai/capabilities-model/report/">AI Capabilities Model</a> provide empirical context for organizational conditions associated with better AI outcomes. They do not establish this framework's compounding mechanism or a tenfold improvement. The <a href="https://grove.github.io/engineering-that-compounds/essays/measuring-the-capacity-for-change.html">measurement essay</a> and proposed <a href="https://grove.github.io/engineering-that-compounds/research/second-capability.html">second-capability pilot</a> separate those questions.</p>
         <p>Also ask what has become feasible. Can the team now investigate replacing the billing service within an acceptable budget and risk? Can it evaluate a product opportunity it previously had to dismiss? <a href="https://grove.github.io/engineering-that-compounds/essays/what-becomes-possible.html">What becomes possible?</a> treats this expanding range of work as a strategic outcome, with the cost and quality conditions kept visible.</p>
       </section>
       <section>
-        <h2>Try it on work already waiting</h2>
-        <p>Choose one useful outcome, one obstacle and one small investment. Say what you expect to happen and what result would make you change course. Use what you already have before building more. After the next real use, decide what deserves to stay.</p>
+        <h2>Start transforming one workflow</h2>
+        <p>Choose a useful outcome and follow the work that produces it. Find the constraint, question the tasks and dependencies around it, and choose one bounded redesign. Say what you expect to happen and what would make you change course. Use what you already have before building more, then observe subsequent real work.</p>
         <p>The <a href="adoption/investment-canvas.html">capability investment worksheet</a> fits that conversation into a note you can paste into an issue. If the best result is a clearer decision or one less tool to maintain, record that. The next task will tell you more than a count of what you kept.</p>
       </section>
       <p class="next-page"><a class="button" href="adoption/investment-canvas.html">Work through one investment</a></p>

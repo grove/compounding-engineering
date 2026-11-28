@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#18382d">
   <title>Patterns of organizational compounding — Compounding Engineering</title>
-  <meta name="description" content="Six small interventions for the funding, transfer and learning problems that sit between teams.">
+  <meta name="description" content="Six organizational patterns for funding workflow transformation, removing dependencies and sustaining the capabilities it creates.">
   <link rel="canonical" href="https://grove.github.io/compounding-engineering/adoption/patterns.html">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../assets/styles.css">
@@ -20,7 +20,7 @@
     </div>
   </header>
   <main id="main" class="adoption-page" tabindex="-1">
-    <header><p class="eyebrow">Adoption guide</p><h1>Patterns of organizational compounding</h1><p class="intro">Six small interventions for the funding, transfer and learning problems that sit between teams.</p></header>
+    <header><p class="eyebrow">Adoption guide</p><h1>Patterns of organizational compounding</h1><p class="intro">Make room to change the workflow, remove dependencies and sustain what makes the next transformation possible.</p></header>
     <nav class="adoption-nav" aria-label="Adoption guide">
       <a href="index.html">Start here</a>
       <a href="investing.html">Investing</a>
@@ -31,37 +31,37 @@
     <article class="adoption-body">
       <section>
         <h2>When the constraint is organizational</h2>
-        <p>The <a href="https://grove.github.io/patterns-of-compounding-engineering/">technical pattern catalogue</a> covers what teams can build and retain. These six companion patterns describe decisions that make those investments possible. They are proposed practices, not validated organizational interventions. Pick the problem you have; adopting all six is not a goal.</p>
+        <p>The <a href="https://grove.github.io/patterns-of-compounding-engineering/">technical pattern catalogue</a> covers capabilities teams can build and combine. These six companion patterns address who can redesign the work, change a dependency and fund what follows. They are proposed practices, not validated organizational interventions. Pick the problem you have; adopting all six is not a goal.</p>
         <p>Each uses the hypothetical orders and billing migration story from <a href="index.html">the adoption guide</a>.</p>
       </section>
       <section id="protected-investment">
         <h2>Protected investment</h2>
         <p><strong>Problem.</strong> Every deadline is a reason to defer the improvement that would make the next deadline easier to meet.</p>
-        <p><strong>Try.</strong> Engineering and product leads agree a small capacity cap, displaced work, review date and the authority to interrupt or resume. Orders gets two days to prepare the lock check; billing gets time to try it. A genuine incident may interrupt the bet, but the next planning conversation explicitly restores, changes or cancels it.</p>
-        <p><strong>Look for.</strong> The investment actually happens without hidden overtime; subsequent eligible work meets the agreed outcome and quality bar. Count the work deferred and coordination cost.</p>
+        <p><strong>Try.</strong> Engineering and product leads agree a capacity cap, displaced work, review date and authority to change the workflow. Orders gets two days to prepare the lock check; billing gets time to try independent migration assessment. The agreement includes when the recurring specialist handoff can end. A genuine incident may interrupt the bet, but the next planning conversation explicitly restores, changes or cancels it.</p>
+        <p><strong>Look for.</strong> The investment actually happens without hidden overtime; subsequent eligible work meets the agreed outcome and quality bar with fewer recurring interventions. Count the work deferred, transition effort and coordination cost.</p>
         <p><strong>Stop or adapt.</strong> If the need disappears or the experiment fails, release the commitment. Do not protect an arbitrary percentage or reserve a permanent improvement backlog that nobody can challenge.</p>
       </section>
       <section id="capability-transfer">
         <h2>Capability transfer</h2>
         <p><strong>Problem.</strong> One team fixes a recurring failure; the next team still needs the original author to avoid it.</p>
-        <p><strong>Try.</strong> Transfer the question, applicability conditions, runnable check and expected result to a named receiver with time to try it. Billing tests the lock behavior of its own database and traffic assumptions, rather than copying orders' migration patch. Observe the next actual decision, including a justified decision not to use the check.</p>
+        <p><strong>Try.</strong> Transfer the question, applicability conditions, runnable capability and expected result to a named receiver with time to try it. Billing tests the lock behavior of its own database and traffic assumptions, rather than copying orders' migration patch. Give the receiver the access and decision rights needed to act independently. Observe the next actual outcome, including a justified decision not to use the check.</p>
         <p>Prepare the receiving team too. Can its engineer explain a lock queue, obtain the relevant access and recognize a case outside the check's scope? Pair on the missing part, then let the receiver handle another case. Cohen and Levinthal's <a href="https://doi.org/10.2307/2393553">absorptive capacity</a> gives a reason for this investment: prior knowledge affects whether new knowledge can be understood and applied. Count that learning time in the transfer cost.</p>
         <p>AI can help find likely receivers by looking for the relevant database and migration tools in repositories it is allowed to read. A matching tool is a reason to ask a question. Billing still needs to test its own lock behavior, traffic and release conditions. Keep those differences with the check so the next receiver can judge the fit.</p>
-        <p><strong>Look for.</strong> Independent discovery, correct interpretation and a changed decision where appropriate. Record adaptation effort and unanswered questions. A page view or an install is not a transfer.</p>
+        <p><strong>Look for.</strong> Independent discovery, correct interpretation and a changed decision where appropriate. Does the original author's queue actually shrink, or has it become a support queue? Record adaptation effort and unanswered questions. A page view or an install is not a transfer.</p>
         <p><strong>Stop or adapt.</strong> Local context may make the check irrelevant. Repair a confusing handoff only when a real receiver needs it. Do not require universal reuse. See <a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/verified-retrieval.html">Verified retrieval</a>.</p>
       </section>
       <section id="shared-benefit-funding">
         <h2>Shared-benefit funding</h2>
         <p><strong>Problem.</strong> Orders pays for maintaining a check that principally benefits billing, so either its manager declines the work or support gets done invisibly.</p>
-        <p><strong>Try.</strong> Bring the decision to the leader responsible for both outcomes. Agree a contribution, support owner, upkeep cap and receiver time. Make the displaced work visible on both plans. Include an exit arrangement if the shared need disappears.</p>
+        <p><strong>Try.</strong> Bring the decision to the leader responsible for both outcomes. Compare a shared service with a portable capability or a design that removes the cross-team dependency. Agree a contribution, support owner, upkeep cap and receiver time. Make the displaced work visible on both plans. Include an exit arrangement if the shared need disappears.</p>
         <p><strong>Look for.</strong> Benefit to receiving teams without deterioration in the originating team's commitments or hidden support load. Track who bears the ongoing costs, not just aggregate savings.</p>
         <p><strong>Stop or adapt.</strong> If coordination costs exceed the expected benefit, let teams keep local checks instead. Do not centralize merely to obtain funding; do not make a team absorb mandatory platform migrations without capacity to do the work.</p>
       </section>
       <section id="deliberate-reinvestment">
         <h2>Deliberate reinvestment</h2>
         <p><strong>Problem.</strong> A useful capability reduces recurring work and the released capacity immediately disappears into new commitments.</p>
-        <p><strong>Try.</strong> Verify the saving and where it lands. The team that no longer fields specialist calls may use freed attention for customer work, recovery rehearsal, mentoring or protective slack. Record the allocation with the next work owner. Revisit the constraint before choosing another tool.</p>
-        <p><strong>Look for.</strong> Usable capacity rather than theoretical minutes, net of upkeep and new work. If the old cases help build a recovery rehearsal, keep evidence of what transferred and what still had to be done. Count the capacity once.</p>
+        <p><strong>Try.</strong> Verify the saving and where it lands. The team that no longer fields specialist calls can allocate some attention to the next constraint: automating migration preparation, separating a shared environment or investigating whether a service is still needed. Customer work, mentoring and protective slack also need capacity. Record the allocation with the next work owner.</p>
+        <p><strong>Look for.</strong> Usable capacity rather than theoretical minutes, net of upkeep and new work. If old cases or isolated environments help build the next workflow, keep evidence of what transferred and what still had to be done. Count the capacity once. Reinvestment funds the next attempt; evidence that earlier capabilities helped build it supports the compounding claim.</p>
         <p><strong>Stop or adapt.</strong> No verified saving means no dividend to allocate. A risk-reduction investment may be worthwhile anyway. Do not impose reinvestment quotas or equate the dividend with headcount that can be removed.</p>
       </section>
       <section id="earned-standardization">
@@ -74,7 +74,7 @@
       <section id="judgment-stewardship">
         <h2>Judgment stewardship</h2>
         <p><strong>Problem.</strong> A check or agent handles routine work, but fewer people can explain a failure, recognize its limits or improve it.</p>
-        <p><strong>Try.</strong> On an ordinary migration, ask a receiver to predict the lock and queue behavior, run the check, explain a surprise and decide what the result does not establish. Use a safe rehearsal for rare failures. Rotate ownership with mentoring and real time. Expand delegation only after independent evidence meets the required bar; preserve escalation and the ability to suspend automation.</p>
+        <p><strong>Try.</strong> Give engineers practice in setting outcomes, judging evidence, resolving exceptions and improving the machinery. On an ordinary migration, ask a receiver to predict the lock and queue behavior, run the check, explain a surprise and decide what the result does not establish. Use a safe rehearsal for rare failures. Rotate ownership with mentoring and real time. Expand delegation when independent evidence meets the required bar; preserve escalation and the ability to suspend automation.</p>
         <p>Occasionally rehearse without the usual expert or service. The question is what the team can still diagnose and recover, and where it needs a fallback. Preserve the understanding or alternative route that the rehearsal shows is necessary. Keeping every old process is not a substitute for making that choice.</p>
         <p>An agent can prepare a variation on a retained case, such as a migration against an empty table instead of a busy one. Have an experienced engineer check the exercise and its expected result. Let the learner predict before seeing the explanation, then change a condition to see whether the reasoning holds. A fluent answer to the original case is weak evidence of understanding.</p>
         <p><strong>Look for.</strong> More than one person can reason through unfamiliar cases and make a sound decision. Count training and supervision effort alongside automation benefits.</p>
@@ -82,7 +82,7 @@
       </section>
       <section>
         <h2>Check the combined burden</h2>
-        <p>Six individually defensible interventions can still create six meetings, competing policies and unwanted support work. Use the existing retrospective to ask which intervention actually changed a later decision. Remove what does not earn its keep. Adoption itself is an investment.</p>
+        <p>Six individually defensible interventions can still create six meetings, competing policies and unwanted support work. Use the existing retrospective to ask what work disappeared, which outcome improved and where human attention now goes. Remove what does not earn its keep. Adoption itself is an investment.</p>
         <p>Apply the same review to an AI-assisted learning workflow. Count the cases it missed, false leads it produced, time spent checking its suggestions and whether a useful result reached the next task. If it repeatedly finds the same unresolved issue, decide who can act on it before producing another summary. The <a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/investment-retrospective.html">Investment retrospective</a> can cover the investigation method as well as the capability it produced.</p>
       </section>
       <p class="next-page"><a class="button" href="first-twelve-weeks.html">Try one pattern in ordinary work</a></p>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#18382d">
   <title>Work through one investment — Compounding Engineering</title>
-  <meta name="description" content="A short worksheet for deciding which capability is worth developing, what you can reuse and how you will judge the result.">
+  <meta name="description" content="Choose a constraint to remove, redesign or automate the work around it, and judge the investment by outcomes, human attention and total cost.">
   <link rel="canonical" href="https://grove.github.io/compounding-engineering/adoption/investment-canvas.html">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../assets/styles.css">
@@ -21,18 +21,19 @@
     </div>
   </header>
   <main id="main" class="adoption-page" tabindex="-1">
-    <header><p class="eyebrow">Capability investment worksheet</p><h1>Work through<br>one investment</h1><p class="intro">Choose something worth making easier. Decide how much to spend finding out whether you can.</p></header>
+    <header><p class="eyebrow">Engineering transformation worksheet</p><h1>Work through<br>one investment</h1><p class="intro">Choose a constraint worth removing. Design a different way to deliver the outcome, then test whether it works.</p></header>
     <nav class="adoption-nav" aria-label="Adoption guide"><a href="index.html">Start here</a><a href="investing.html">Investing</a><a href="investment-canvas.html" aria-current="page">Worksheet</a><a href="patterns.html">Organizational patterns</a><a href="first-twelve-weeks.html">The first twelve weeks</a></nav>
     <article class="adoption-body">
       <section>
         <h2>Enough detail to make a decision</h2>
         <p>Use this for a bet that needs a planning conversation. A small fix inside an ordinary task can stay small. The questions are prompts, so leave out what you do not need and copy the note into the issue you already use.</p>
+        <p>Follow the work from the initial need to a useful result. Which steps can disappear? Which can run automatically? What would a different interface, decision rule or division of work make possible? <a href="https://grove.github.io/engineering-that-compounds/essays/automating-the-work-of-engineering.html">Automating the work of engineering</a> develops these questions beyond the time spent writing code.</p>
         <p>Your entries stay in this page and are not sent anywhere. Copy them before leaving; this worksheet does not save a draft.</p>
         <details class="worked-example">
           <summary>Read a worked example</summary>
-          <p>This hypothetical billing team wants to judge routine database migrations without waiting for another team's specialist. Its existing lock traces, synthetic traffic cases and database sandbox may be enough to build a useful check.</p>
-          <p>The team agrees a two-day build cap, half a day for a receiving engineer to try it and a review after three eligible migrations or twelve weeks. It will compare the receiver's judgment with the specialist's under the same acceptance standard, including cases the new check rejects or cannot judge.</p>
-          <p>The cases might later help build a recovery rehearsal. That is a separate hypothesis. If the next release still waits for a downtime decision, the team has learned where to take the problem next.</p>
+          <p>This hypothetical product team waits for a platform engineer to prepare and later remove a preview environment for each experiment. The proposed change removes that request queue: eligible branches receive an isolated environment automatically, with a cost limit and an expiry. Existing deployment templates and synthetic data provide a starting point.</p>
+          <p>The team sets an illustrative two-day build cap, half a day for adoption and a review after five eligible experiments or twelve weeks. It follows the whole experiment: time to a usable product decision, human interventions, failed provisioning, cleanup and total cost. A fast environment is useful only if it helps the experiment finish.</p>
+          <p>Recovered platform time goes toward the next constraint. The same provisioning and cleanup machinery might later let agents investigate alternatives independently. That is a separate investment to evaluate; storing the templates or using them again does not establish compounding.</p>
         </details>
         <button type="button" class="reset-button" id="use-investment-example" hidden>Fill empty fields from this example</button>
       </section>
@@ -40,23 +41,23 @@
         <h2 id="worksheet-title">The proposed investment</h2>
         <form id="investment-form">
           <div class="worksheet-field">
-            <label for="investment-outcome">What should someone become able to do?</label>
-            <p id="outcome-help">Name the person or team, the useful work and the conditions it covers.</p>
-            <textarea id="investment-outcome" name="outcome" rows="3" aria-describedby="outcome-help" placeholder="A billing engineer can assess a routine schema migration without waiting for the orders team's specialist."></textarea>
+            <label for="investment-outcome">What valuable outcome should become possible?</label>
+            <p id="outcome-help">Name who benefits, what they can accomplish and the conditions it covers. Describe the result beyond the automated task.</p>
+            <textarea id="investment-outcome" name="outcome" rows="3" aria-describedby="outcome-help" placeholder="A product team can complete an eligible experiment without waiting for a platform engineer to prepare and remove its preview environment."></textarea>
           </div>
           <div class="worksheet-field">
-            <label for="investment-obstacle">What is getting in the way?</label>
-            <p id="obstacle-help">Use a recent case. Include another plausible explanation and the option of removing the chore.</p>
+            <label for="investment-obstacle">What constrains that outcome today?</label>
+            <p id="obstacle-help">Follow a recent case through waiting, decisions, execution and follow-up. Name another plausible cause and any step or handoff that could disappear.</p>
             <textarea id="investment-obstacle" name="obstacle" rows="3" aria-describedby="obstacle-help"></textarea>
           </div>
           <div class="worksheet-field">
             <label for="investment-existing">What can you already use?</label>
-            <p id="existing-help">Include people's knowledge, decisions and access as well as tools. What would need adapting?</p>
+            <p id="existing-help">Include knowledge, decisions, interfaces, automation and access. What would need adapting before people or agents could use them independently?</p>
             <textarea id="investment-existing" name="existing" rows="3" aria-describedby="existing-help"></textarea>
           </div>
           <div class="worksheet-field">
-            <label for="investment-bet">What is the smallest useful experiment?</label>
-            <p id="bet-help">Choose one task that can show whether the investment is worth pursuing.</p>
+            <label for="investment-bet">How will the work change?</label>
+            <p id="bet-help">Specify what you will remove, redesign or automate in one bounded experiment. What starts the work, what lets it finish, and which exceptions still need a person?</p>
             <textarea id="investment-bet" name="bet" rows="3" aria-describedby="bet-help"></textarea>
           </div>
           <fieldset class="worksheet-purpose">
@@ -67,17 +68,17 @@
           </fieldset>
           <div class="worksheet-field">
             <label for="investment-evidence">What result would change your mind?</label>
-            <p id="evidence-help">State the prediction, the quality bar and what you will observe. Count failed attempts and work shifted to others.</p>
+            <p id="evidence-help">State the prediction and quality bar. Measure time to the outcome, total human attention and economic cost, including failed attempts, upkeep and work shifted to others.</p>
             <textarea id="investment-evidence" name="evidence" rows="4" aria-describedby="evidence-help"></textarea>
           </div>
           <div class="worksheet-field">
-            <label for="investment-next">Could this help develop a later capability?</label>
-            <p id="next-help">Name what that capability could inherit. Leave this blank if the immediate benefit is enough.</p>
+            <label for="investment-next">What could the next investment inherit?</label>
+            <p id="next-help">Name a later capability, what it could reuse and how recovered capacity could help build it. Leave this blank if the immediate return is enough.</p>
             <textarea id="investment-next" name="next" rows="3" aria-describedby="next-help"></textarea>
           </div>
           <div class="worksheet-field">
             <label for="investment-budget">Who needs time, and what will it cost?</label>
-            <p id="budget-help">Name the owner, receiver and decision authority. Include build, adoption, review, upkeep and the work displaced.</p>
+            <p id="budget-help">Name the owner, users and authority to change the workflow. Include build, adoption, oversight, compute, upkeep and the work displaced.</p>
             <textarea id="investment-budget" name="budget" rows="4" aria-describedby="budget-help"></textarea>
           </div>
           <div class="worksheet-field">
@@ -98,9 +99,9 @@
         </form>
       </section>
       <section>
-        <h2>Come back after someone uses it</h2>
-        <p>Add what happened to the same issue. Could the receiver make the decision? How much help did they need? Did the work move forward, or merely wait somewhere else? Then decide whether to keep, simplify, repair or retire the investment.</p>
-        <p>If a later capability is built, record what it reused and the new work required. That is where the <a href="../foundations.html#compounding">compounding claim</a> can be tested. A useful immediate return needs no larger story.</p>
+        <h2>Come back after the workflow runs</h2>
+        <p>Add what happened to the same issue. Was the useful outcome achieved? Which recurring tasks or handoffs disappeared, and where did people still need to intervene? Check whether the constraint was removed or moved elsewhere. Then decide whether to keep, simplify, repair or retire the investment.</p>
+        <p>If a later capability is built, record what it inherited, the new work required and where recovered capacity went. That is where the <a href="../foundations.html#compounding">compounding claim</a> can be tested. A useful immediate return needs no larger story.</p>
       </section>
       <p class="next-page"><a class="button" href="first-twelve-weeks.html">Follow the investment through ordinary work</a></p>
     </article>
