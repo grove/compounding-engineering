@@ -44,10 +44,14 @@ Quality bar and risk owner:
 Experiment, cap and displaced work:
 Owner / receiving engineer if relevant:
 Review trigger, fallback date, stop conditions:</pre>
+        <h3 id="ai-assisted-investigation">Try AI on the diagnosis</h3>
+        <p>If finding and comparing the cases is taking too long, try AI on that part of the work. For example, give it a small set of migration reviews the participants can access. Ask it to distinguish waiting for technical evidence from waiting for a decision, cite each case and include cases that resist the grouping. An engineer checks the source material before choosing an explanation to test.</p>
+        <p>Agree the time and review cap first. Write down a credible alternative and what result would favor it. Try the smallest check that separates them: a prepared lock scenario might remove setup work, but it cannot decide how much downtime a customer can accept. Stop if the cases do not support a common problem or the investigation reaches its cap.</p>
+        <p>Keep the question, evidence and decision in the issue already open. Record source preparation, model use, review effort and misleading suggestions. The later observation is whether this diagnosis led to a useful change. This trial alone cannot establish that AI improved the diagnosis or saved time; that needs a comparison.</p>
       </section>
       <section>
         <h2>Weeks 3–4: Make the smallest useful bet</h2>
-        <p>Try the check during real work. Use a representative safe environment, establish the expected result independently of the implementation, and test its limits. Record build effort, AI supervision and any deferred commitments. Let someone other than the author try it, including a failure case.</p>
+        <p>Try the check during real work in a representative safe environment. Establish the expected result from the agreed behavior, independently of the implementation. Include a failure case and a nearby case where the suspected problem is absent; an agent's fix and its tests can share the same mistake. Record build effort, supervision and deferred commitments. Let someone other than the author try it.</p>
         <p>If the initial bet fails its quality bar or runs out of budget, stop and decide whether to repair, reduce scope or remove it. Do not extend the cap just to finish the experiment.</p>
       </section>
       <section>
@@ -61,6 +65,7 @@ Capability used, bypassed or unavailable (why):
 Adaptation, upkeep, supervision and rework:
 Independent use / quality issues / downstream queues:</pre>
         <p>Ask whether the initial constraint has moved. Faster review may simply leave more migrations waiting for release approval. Keep the observation of local savings separate from evidence that more useful work reaches acceptance at the same or stronger quality bar. Compare like work; record changes in demand, difficulty, staffing and tooling. Do not convert directional observations into individual performance scores.</p>
+        <p>If the investigation used AI, revisit its explanation as well as the tool. Did a later migration behave as predicted? If you repeat the analysis, check whether it keeps proposing rejected changes. Narrow or stop it when reviewing its output costs more than the problem warrants.</p>
       </section>
       <section>
         <h2>Weeks 9–10: Test the next connection, if one exists</h2>
@@ -87,7 +92,7 @@ Owner and next review trigger:
 Current constraint:
 Allocation of genuinely recovered capacity:</pre>
         <p>Suppose the migration check helps on two changes but billing needs support to adapt it and no recovery rehearsal is built. The team may keep a simplified check if the observed benefits justify the expected upkeep. It has not established compounding or an organization-wide gain. If the specialist is still the bottleneck because business rules need clarification, invest in the decision process instead. If the check is unreliable, withdraw it with an appropriate safe alternative.</p>
-        <p>Twelve weeks of ordinary work rarely provide a credible causal comparison and may be too short to observe a later capability. Report this limitation; do not extrapolate to tenfold effectiveness. A negative or inconclusive result is useful for steering the next investment. For causal questions, see the proposed <a href="https://grove.github.io/engineering-that-compounds/research/second-capability.html">second-capability comparison</a>.</p>
+        <p>Twelve weeks of ordinary work rarely provide a credible causal comparison and may be too short to observe a later capability. Report this limitation; do not extrapolate to tenfold effectiveness. A negative or inconclusive result is useful for steering the next investment. The proposed <a href="https://grove.github.io/engineering-that-compounds/research/second-capability.html">research comparisons</a> separate the question of whether retained work helps build a later capability from whether AI helps the investigation itself.</p>
       </section>
       <section>
         <h2>Before asking another team to adopt it</h2>
