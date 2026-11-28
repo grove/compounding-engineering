@@ -1,57 +1,54 @@
 # Compounding Engineering
 
-A practical resource intended to make tenfold engineering effectiveness more achievable.
+Our ambition is to become ten times more effective at delivering valuable software outcomes with AI. These publications explore what engineering would have to become for that to be plausible: which work could disappear, which decisions and procedures could be delegated, and what one improvement could make possible next.
 
-The ambition is to become ten times as effective at delivering valuable outcomes with AI. Transforming how engineering is performed is the route we are exploring. Learning helps us discover and correct that route; compounding lets earlier understanding and capabilities make later advances cheaper or more effective.
+The site is at [grove.github.io/compounding-engineering](https://grove.github.io/compounding-engineering/). It is a publication, developed through essays, practical guidance and clearly identified examples.
 
-Constraint removal guides investment: eliminate unnecessary work, redesign dependencies and automate the remaining work wherever it can meet its purpose at a worthwhile total cost. Compare predictions with outcomes, revise assumptions, develop human and shared judgment, and retain what helps later work. Reinvest recovered capacity where the next constraint matters. The site develops this approach through essays, examples and experiments; its effect on the prospects of reaching 10× remains to be established.
+## Where to start
 
-Three collections develop the argument:
+- [Where could 10× come from?](https://grove.github.io/engineering-that-compounds/essays/where-could-10x-come-from.html) develops the six mechanisms of transformation and their interactions.
+- [Paths towards 10×](https://grove.github.io/compounding-engineering/paths/) compares possible routes from recurring work to different ways of organizing engineering.
+- [When every customer needs an integration](https://grove.github.io/compounding-engineering/paths/customer-integrations.html) follows a hypothetical team through rejected designs, product decisions, independent delivery and a later capability.
+- [How organizations become more capable](https://grove.github.io/compounding-engineering/foundations.html) explains engineering capital, learning, constraints and what distinguishes compounding from repeatedly using a tool.
+- [The team guide](https://grove.github.io/compounding-engineering/adoption/) covers investment, ownership and learning. Its [worksheet](https://grove.github.io/compounding-engineering/adoption/investment-canvas.html) helps frame one attempt.
+- [What the evidence supports](https://grove.github.io/compounding-engineering/evidence.html) explains the sources and their limits. The companion [open questions](https://grove.github.io/engineering-that-compounds/research/open-questions.html) describe investigations that could change the argument.
 
-- [Software that improves with age](https://grove.github.io/software-that-improves-with-age/)
-- [Engineering that compounds](https://grove.github.io/engineering-that-compounds/)
-- [Patterns of compounding engineering](https://grove.github.io/patterns-of-compounding-engineering/)
+The [billing demonstration](https://grove.github.io/compounding-engineering/examples/two-deliveries-one-payment.html) has its own page. It illustrates how a retained case can help with later changes; it does not measure a team's effectiveness.
 
-The site lives at [grove.github.io/compounding-engineering](https://grove.github.io/compounding-engineering/). Its opening distinguishes acceleration, automation and transformation. The [adoption guide](https://grove.github.io/compounding-engineering/adoption/) helps teams redesign a constrained workflow, including decisions about investment, authority, funding, transfer and reinvestment.
+## The companion collections
 
-[How organizations become more capable](https://grove.github.io/compounding-engineering/foundations.html) sets out the theory: tenfold effectiveness as the desired outcome, transformation as the route, learning as the way to guide and revise it, and compounding as the connection between successive advances. It preserves the distinctions between accumulated capital, demonstrated capability, recurring returns and easier development of subsequent capabilities.
+- [Software that improves with age](https://grove.github.io/software-that-improves-with-age/) examines understanding, maintenance, operation and replaceability.
+- [Engineering that compounds](https://grove.github.io/engineering-that-compounds/) examines human judgment, organizational capability and different ways of organizing engineering.
+- [Patterns of compounding engineering](https://grove.github.io/patterns-of-compounding-engineering/) provides specific interventions with examples, costs and reasons to stop.
 
-[Software farms and software factories](https://grove.github.io/compounding-engineering/#operating-models) illustrate different ways to organize engineering. Farms investigate and cultivate; factories implement and deliver. Their findings and operating results can also improve the engineering machinery itself. The source essays are [Continuous cultivation of software](https://grove.github.io/software-that-improves-with-age/essays/continuous-cultivation-of-software.html) and [Automating the work of engineering](https://grove.github.io/engineering-that-compounds/essays/automating-the-work-of-engineering.html).
-
-The [investment worksheet](https://grove.github.io/compounding-engineering/adoption/investment-canvas.html) helps a team choose one bounded redesign. Its hypothetical environment-provisioning example examines work removed, human intervention, time to outcome, total cost and the next investment. It can copy a note into an existing issue. Entries stay in the browser page; there is no server, tracking or saved draft.
-
-[Compounding learning](https://grove.github.io/engineering-that-compounds/essays/compounding-learning.html) examines how experience changes understanding, decisions, tools and ways of working. The investigation method can itself become a capability that helps develop the next one. [Improving our ability to improve](https://grove.github.io/engineering-that-compounds/essays/improving-our-ability-to-improve.html) develops this connection. The [adoption exercise](https://grove.github.io/compounding-engineering/adoption/first-twelve-weeks.html#ai-assisted-investigation) gives a team a bounded way to try it.
-
-[What would ten times look like?](https://grove.github.io/engineering-that-compounds/essays/what-would-ten-times-look-like.html) and the [tenfold exercise](https://grove.github.io/patterns-of-compounding-engineering/guide.html#use-the-tenfold-ambition-to-choose-the-next-investment) give the ambition a practical role: find what limits useful outcomes, choose an investment, learn from its result and follow what it enables next. Evaluate the full cost and required quality; local gains cannot simply be multiplied into a team-wide result.
-
-[Transformation experiments](https://grove.github.io/compounding-engineering/adoption/experiments.html) offers five candidate workflow redesigns, a farm–factory feedback loop and a reusable evidence record. The candidates are proposals, not measured case studies; the goal is to learn from actual outcomes, including failed experiments and later connections between investments.
+Essays and patterns remain in their own repositories. Link to them rather than keeping another copy here.
 
 ## Work on the site
 
-Edit `index.html`, `foundations.html`, the pages in `adoption/` and the files in `assets/`. There is no package installation or JavaScript build step. Python 3.10 or later is enough:
+Edit the root HTML pages and the files in `adoption/`, `paths/`, `examples/` and `assets/`. The build uses Python's standard library; there is no package installation or JavaScript build step. Python 3.10 or later is enough:
 
 ```sh
 python3 scripts/build.py --check
 python3 -m http.server --directory dist 8000
 ```
 
-Open [localhost:8000](http://localhost:8000). The build copies the site into `dist/`; the check catches missing local pages and assets, broken fragment links, and duplicate HTML IDs. It does not check external websites. Keep generated files out of commits.
+Open [localhost:8000](http://localhost:8000). The build copies the site into `dist/` and checks local pages, assets, fragment links and duplicate HTML IDs. It does not contact external websites. Keep generated files out of commits.
 
-The essays and pattern catalogue remain in their own repositories. Link to them rather than keeping another copy here.
+The worksheet keeps entries in the browser page, with no server, tracking or saved draft. Reading and navigation must remain usable without JavaScript. Check interactive changes in a browser, including keyboard operation and narrow screens.
 
 ## Write like a colleague
 
-Start with a problem an engineer might actually have. Use a concrete example, explain the decision, and include the cost of getting it wrong. A sentence should earn its place; a paragraph should add something the previous one did not.
+Start with a problem an engineer might recognize. Follow an example far enough to explain the choices, their consequences and when a different answer would be better. Cut sentences that repeat the ambition without advancing the argument.
 
-Keep synthetic examples visibly synthetic. The billing demonstration illustrates a small, sequential, in-memory model. It is not a production payment processor or evidence of measured productivity gains. Separate an observed result from a plausible next step.
+Keep research findings, published accounts, illustrative examples and hypotheses distinguishable. Link factual claims to the sources that support them. Do not invent the author's experiences, customer results or measurements. The billing demonstration is a sequential, in-memory model, not a production payment processor.
 
-Give readers working links to the essays and patterns behind an idea. Avoid promises about compounding unless there is evidence from later work. A useful tool can pay for itself without transforming anyone's career.
+An article should add something the neighboring pieces need. Before adding another explanation of a familiar idea, improve the route to the existing one. When proposing a capability that compounds, identify the later investment it could help and what would count as evidence. A useful tool can justify its upkeep without supporting that stronger claim.
 
 ## Publish
 
 In the repository's **Settings → Pages**, choose **GitHub Actions** as the publishing source. This setting is separate from the workflow file.
 
-Pull requests build and check the site, then upload a `site-preview` artifact for review. They do not deploy. A push to `main`, or a manual workflow run on `main`, deploys the checked `dist/` directory to GitHub Pages. Existing environment approvals still apply.
+Pull requests build and check the site, then upload a `site-preview` artifact. A push to `main`, or a manual workflow run on `main`, deploys the checked `dist/` directory to GitHub Pages. Existing environment approvals still apply.
 
 ## License
 

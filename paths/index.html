@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18382d">
+  <title>Paths towards 10× — Compounding Engineering</title>
+  <meta name="description" content="Explore practical routes towards tenfold engineering effectiveness: remove recurring work, delegate established decisions and use each investment to make further change possible.">
+  <link rel="canonical" href="https://grove.github.io/compounding-engineering/paths/">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/styles.css?v=20261128">
+  <link rel="stylesheet" href="../assets/adoption.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="shell header-inner">
+      <a class="brand" href="../" aria-label="Compounding Engineering home"><svg class="brand-mark" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="11"/><circle cx="20" cy="20" r="5"/><path d="M20 3v12"/></svg><span>Compounding<br>Engineering</span></a>
+      <nav class="main-nav" aria-label="Main navigation"><a href="../paths/" aria-current="page">Paths towards 10×</a><a href="../foundations.html">Foundations</a><a href="../adoption/">Try it with your team</a><a href="../evidence.html">Evidence</a></nav>
+      <a class="header-source" href="https://github.com/grove/compounding-engineering">GitHub</a>
+    </div>
+  </header>
+  <main id="main" class="adoption-page" tabindex="-1">
+    <header>
+      <p class="eyebrow">Explore the possibilities</p>
+      <h1>Paths towards 10×</h1>
+      <p class="intro">A useful first change should improve today's work. It may also let you attempt something that would have been too difficult before.</p>
+    </header>
+    <nav class="adoption-nav" aria-label="Paths towards 10×">
+      <a href="./" aria-current="page">Choosing a path</a>
+      <a href="customer-integrations.html">A worked transformation</a>
+      <a href="../adoption/experiments.html">Experiments to try</a>
+    </nav>
+    <article class="adoption-body">
+      <section id="starting-point">
+        <h2>Start where the work is stuck</h2>
+        <p>After a team automates releases, customer decisions may become its longest wait. The next useful investment could involve understanding customer needs. Another team might already know exactly what to build but spend most of its time repairing changes that cross a poorly understood service boundary.</p>
+        <p>Those teams need different routes. A path towards tenfold effectiveness is a sequence of changes whose results inform what to try next. Its direction can be clear while several of its steps remain unknown.</p>
+        <p>The routes below are proposals to investigate. Each begins with a recognizable problem, describes how the work could change, and asks what would justify going further. They are alternatives, not stages every organization must complete. The <a href="../foundations.html">foundations</a> explain the underlying distinctions; the <a href="../adoption/">adoption guide</a> covers how to make and sustain an investment.</p>
+      </section>
+      <section id="routes">
+        <h2>Four places a route might begin</h2>
+        <h3>Repeated bespoke work becomes a product capability</h3>
+        <p>Customers keep asking for integrations that appear different, and each one needs an engineer. Before automating their construction, investigate which differences matter. Some may reflect inconsistent names for the same business concept; others may express genuinely different rules.</p>
+        <p>A common model could let customers configure ordinary cases. A delivery workflow could handle the remaining eligible changes. Engineers would investigate new requirements and decide whether the product should support them. Implementation, repeated requirements conversations and release coordination could all shrink together.</p>
+        <p>The difficult early question is whether the apparent commonality survives contact with real cases. A universal configuration language can become custom programming with worse tools. Try a narrow interface on contrasting examples before making it the foundation of a product. The <a href="customer-integrations.html">worked transformation</a> follows this route through a rejected design, a narrower scope and several later investments.</p>
+
+        <h3>Routine intervention gives way to engineering by exception</h3>
+        <p>A team repeatedly approves, repairs or restarts an otherwise familiar procedure. Examine what people actually contribute at those points. They may be applying a stable rule, supplying missing information, recognizing a dangerous case or making a decision that nobody has been willing to delegate.</p>
+        <p>Different causes call for different changes. A rule might become an executable check. Missing information might become part of the request. A risky case might remain outside the workflow. A recurring approval might require a decision about authority before any automation would help.</p>
+        <p>Begin with a class of work whose limits people can explain. Let it finish without routine intervention, then inspect where it still needs help. Each exception can suggest the next investment. The route has stalled if the team spends its recovered attention investigating a larger, less intelligible queue of failures. The <a href="../adoption/experiments.html#candidate-experiments">dependency-maintenance experiment</a> gives this approach a bounded starting point. <a href="https://grove.github.io/engineering-that-compounds/essays/engineering-by-exception.html">Engineering by exception</a> examines how the work changes as routine intervention recedes.</p>
+
+        <h3>Occasional diagnosis becomes continuing investigation</h3>
+        <p>Some questions remain unanswered because preparing an investigation costs more than anyone can justify: whether a slow path matters, which customers still need an old feature, or why a particular release always needs a specialist.</p>
+        <p>Start with one consequential question. Retain the observations, ways to reproduce the behavior and means of comparing explanations. If another investigation can use them, its cost may fall enough to make previously neglected questions worth asking. A software farm can then maintain a changing set of investigations within an explicit budget.</p>
+        <p>The selection of questions matters as much as the ability to run them. Evidence that settles a decision is useful; an expanding queue of plausible improvements can consume more attention than it saves. If findings wait for weeks because nobody can act on them, improve that decision or delivery constraint before expanding the search. The <a href="../adoption/experiments.html#operating-loop">farm–factory loop</a> connects investigation to action. <a href="https://grove.github.io/engineering-that-compounds/essays/when-the-farm-studies-the-factory.html">When the farm studies the factory</a> examines the decisions and conflicts within that arrangement.</p>
+
+        <h3>A difficult replacement becomes a repeatable kind of work</h3>
+        <p>A component is expensive to maintain, but replacing it means rediscovering what years of patches have taught it to do. Begin by finding behavior that users depend on and the assumptions behind it. Preserve representative scenarios, including awkward cases, and establish a boundary at which an alternative can be compared.</p>
+        <p>That evidence might support a modest simplification first. It could later make a replacement practical, then help the team compare two competing designs in separate environments. Understanding, verification and isolation would each make the others more useful.</p>
+        <p>The route depends on whether behavior can be observed and the transition managed. A neat interface does not remove hidden data dependencies or make a migration reversible. Some components should be left in place. The worthwhile capability is being able to judge and carry out a replacement when its benefits justify the cost. <a href="https://grove.github.io/software-that-improves-with-age/essays/the-economics-of-replaceability.html">The economics of replaceability</a> follows the evidence and migration work that remain when writing a successor gets cheaper.</p>
+      </section>
+      <section id="next-step">
+        <h2>Choose a next step with more than one possible future</h2>
+        <p>Suppose the integration team is choosing between a faster adapter generator and a set of agreed business scenarios. The generator could reduce an immediate cost. The scenarios might also reveal that several adapters should disappear, help assess a new interface and support a later migration. Those possible uses give the second investment value, provided they are plausible enough to test.</p>
+        <p>Ask what the next investment would inherit, and which part would still require new work. An isolated environment cannot supply a missing business decision. A collection of examples cannot establish that its unrepresented cases are safe. Writing down the dependency makes it easier to notice when an attractive sequence rests on an assumption nobody has checked.</p>
+        <p>Prefer an early investment that answers an important question or serves several credible next steps. That leaves room to change direction. There is little value in constructing a large delivery platform to support a product model that customers may reject.</p>
+        <p>Keep one further possibility in view, rather than drawing a complete roadmap. After the investment runs, ask what is now limiting the outcome and what has become affordable to investigate. Sometimes the best next step is removing machinery built for the previous constraint.</p>
+      </section>
+      <section id="ambition">
+        <h2>Let the ambition expose a ceiling</h2>
+        <p>If routine review consumes half the total effort, a design that leaves review unchanged cannot reduce that effort tenfold. Working backwards from the ambition makes such limits visible. It gives a reason to reconsider the work, the product boundary or the decision being made.</p>
+        <p>Some limits will remain. A customer may need time to decide what service to offer, regardless of how quickly software can be built. Some outcomes depend on scarce expertise or physical processes. Discovering those limits helps distinguish a promising engineering transformation from an implausible promise.</p>
+        <p>There may also be a more valuable route than doing the same work for less. A previously unaffordable investigation might prevent a bad product commitment. A simpler product might meet a need without requiring ten separate changes. Describe that value directly when counting completed tasks would obscure it.</p>
+      </section>
+      <section id="evidence">
+        <h2>Keep enough evidence to change direction</h2>
+        <p>Follow the full outcome through later use. Count preparation, failed attempts, customer effort, review, compute and upkeep alongside the work removed. Record a change in the work mix: a workflow that accepts easier cases may look faster while leaving the hardest work untouched.</p>
+        <p>For the compounding claim, follow one later investment closely. Identify what it inherited and what the team had to adapt, learn or repair. Repeatedly using a tool establishes a recurring return. Evidence that it helped develop a further capability supports the stronger claim of compounding.</p>
+        <p>The <a href="../adoption/experiments.html#evidence-record">existing experiment record</a> is enough to begin. Write a prediction before the work, add what happened and record the decision it changed. A route that turns out to be unhelpful belongs in that record too.</p>
+      </section>
+      <p class="next-page"><a class="button" href="customer-integrations.html">Follow a worked transformation</a></p>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><div><a class="footer-brand" href="../">Compounding Engineering</a><p>Essays, patterns and things to try.</p></div><nav aria-label="About this project"><a href="https://github.com/grove/compounding-engineering">Source &amp; suggestions</a><a href="https://github.com/grove/compounding-engineering/blob/main/LICENSE">Apache 2.0</a></nav></div></footer>
+</body>
+</html>
