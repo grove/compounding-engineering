@@ -39,6 +39,18 @@ Open [localhost:8000](http://localhost:8000). The build copies the site into `di
 
 The essays and pattern catalogue remain in their own repositories. Link to them rather than keeping another copy here.
 
+### Collection audit pilot
+
+The local build stays offline. A separate read-only experiment checks published companion pages and fragments, on relevant pull requests and weekly after merge. It records missing pages/fragments separately from network or other uncertain responses, and deduplicates document requests. It does not gate releases, modify content, or check unrelated external sites. The GitHub Actions run retains the JSON report and summary; review the pilot after four weeks rather than assuming the automation earns its upkeep.
+
+To run manually (network access required for the last command):
+
+```sh
+python3 -m unittest discover -s scripts -p 'test_collection_audit.py' -v
+python3 scripts/build.py --check
+python3 scripts/collection_audit.py --report /tmp/collection-audit.json
+```
+
 ## Write like a colleague
 
 Start with a problem an engineer might actually have. Use a concrete example, explain the decision, and include the cost of getting it wrong. A sentence should earn its place; a paragraph should add something the previous one did not.
