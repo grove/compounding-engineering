@@ -52,7 +52,7 @@ code { font: .85em/1.5 var(--mono); }
 .hero .eyebrow { margin-bottom: 1.7rem; }
 h1 { font-size: clamp(4.5rem, 7.5vw, 7rem); line-height: .99; }
 h1 em { color: var(--green); }
-.hero h1 { font-size: clamp(3.1rem, 5.8vw, 5.5rem); line-height: 1.04; }
+.hero h1 { font-size: clamp(2.8rem, 4.5vw, 4.35rem); line-height: 1.08; }
 .hero-lede { max-width: 27em; margin-top: 1.7rem; font: 1.4rem/1.5 var(--serif); letter-spacing: -.012em; }
 .hero-intro { max-width: 32em; color: var(--muted); font-size: 1rem; line-height: 1.75; margin-top: 1rem; }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem; }
@@ -98,9 +98,28 @@ h2 em { color: var(--green); }
 .operating-models-grid h3 { font-size: 1.8rem; line-height: 1.3; margin-block: .6rem 1rem; }
 .operating-models-grid p:not(.eyebrow) { font-size: 1.0625rem; color: var(--muted); }
 .operating-models-grid .text-link { margin-top: 1rem; }
+.mechanism-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 3rem; }
+.mechanism-grid article { border-top: 1px solid var(--line); padding-top: 1.2rem; }
+.mechanism-grid h3 { font-size: 1.65rem; line-height: 1.3; margin-bottom: .65rem; }
+.mechanism-grid p, .section-followup { font-size: 1.0625rem; color: var(--muted); }
+.section-followup { max-width: 52rem; margin-top: 2rem; }
+.section-followup a { color: var(--green); }
+.collection-reading-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
+.collection-reading-list h3 { font-size: 1.7rem; line-height: 1.3; margin-block: .7rem 1rem; }
+.collection-reading-list p:not(.eyebrow) { font-size: 1.0625rem; color: var(--muted); }
+.example-caption { margin-top: .5rem; color: var(--muted); font-size: .875rem; }
+.example-intro { padding-block: 2rem; max-width: 54rem; font-size: 1rem; }
+.example-intro p { margin-top: 1rem; }
+.example-page h1 { font-size: clamp(2.6rem, 4.2vw, 4rem); line-height: 1.12; }
+.main-nav a[aria-current="page"] { color: var(--ink); text-decoration: underline; }
+@media (max-width: 900px) {
+  .mechanism-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .collection-reading-list { grid-template-columns: 1fr; gap: 2rem; max-width: 40rem; }
+}
 @media (max-width: 640px) {
   .hero h1 { font-size: clamp(2.7rem, 9.2vw, 3.7rem); }
   .operating-models-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .mechanism-grid { grid-template-columns: 1fr; gap: 1.5rem; }
 }
 
 /* The workbench */

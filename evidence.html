@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18382d">
+  <title>What the evidence supports — Compounding Engineering</title>
+  <meta name="description" content="Research and published engineering accounts behind the collection, with the questions they help answer and the limits of their claims.">
+  <link rel="canonical" href="https://grove.github.io/compounding-engineering/evidence.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="What the evidence supports">
+  <meta property="og:description" content="Research and published engineering accounts behind the collection, with the questions they help answer and the limits of their claims.">
+  <meta property="og:url" content="https://grove.github.io/compounding-engineering/evidence.html">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/styles.css?v=20261128">
+  <link rel="stylesheet" href="assets/adoption.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="shell header-inner">
+      <a class="brand" href="./" aria-label="Compounding Engineering home"><svg class="brand-mark" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="11"/><circle cx="20" cy="20" r="5"/><path d="M20 3v12"/></svg><span>Compounding<br>Engineering</span></a>
+      <nav class="main-nav" aria-label="Main navigation"><a href="paths/">Paths towards 10×</a><a href="foundations.html">Foundations</a><a href="adoption/">Try it with your team</a><a href="evidence.html" aria-current="page">Evidence</a></nav>
+      <a class="header-source" href="https://github.com/grove/compounding-engineering">GitHub</a>
+    </div>
+  </header>
+  <main id="main" class="adoption-page" tabindex="-1">
+    <header><p class="eyebrow">Research and experience</p><h1>What the evidence supports</h1><p class="intro">A working system can show that an approach is possible. Establishing when it improves valuable outcomes takes a different kind of evidence.</p></header>
+    <nav class="adoption-nav" aria-label="On this page"><a href="#accounts">Engineering accounts</a><a href="#measurement">Measuring improvement</a><a href="#learning">Human learning</a><a href="#our-claims">Claims in this collection</a></nav>
+    <article class="adoption-body">
+      <section id="accounts">
+        <h2>What people have built</h2>
+        <p>OpenAI's <a href="https://openai.com/index/harness-engineering/">Harness engineering</a> describes a team building a new product with agent-written code. The account explains how isolated application instances, inspectable behavior and enforced architectural constraints helped agents complete more of the work. It gives us concrete arrangements to examine. Its estimated saving against writing the product by hand is not a controlled comparison of organizational effectiveness.</p>
+        <p>StrongDM's <a href="https://factory.strongdm.ai/">software factory account</a> describes development driven by specifications, behavioral scenarios and replicas of external services. It suggests a different place to invest engineering effort: constructing an environment in which proposed behavior can be assessed repeatedly. It remains a first-party account. A replica can miss a real service's behavior, and a separate scenario set can still encode a mistaken requirement.</p>
+        <p>These accounts inform our discussion of factories. They do not establish that the same arrangement will pay for itself in an existing product, or that every team should stop reading code. A useful adaptation would name the class of work, the required evidence and the decisions people retain, then examine the cost of operating it.</p>
+      </section>
+      <section id="measurement">
+        <h2>Be clear about what improved</h2>
+        <p>METR's <a href="https://metr.org/blog/2026-02-24-uplift-update/">February 2026 update</a> explains why its follow-up developer productivity experiment could not give a reliable estimate of current effects. Participation and task selection had changed; concurrent agents complicated the recording of time. This matters when we compare workflows that organize work differently. An apparent improvement can partly reflect which work enters the comparison.</p>
+        <p>Its later note, <a href="https://metr.org/blog/2026-05-08-task-substitution-and-uplift/">Task Substitution and Uplift</a>, separates gains on the old task mix, gains on the new task mix and gains in value. This is a theoretical model with stated assumptions. It helps frame a practical question: if a farm runs investigations nobody would previously have commissioned, what decisions improve because of them? Their hypothetical manual cost is not a saving we have actually made.</p>
+        <p><a href="https://dora.dev/research/2025/dora-report/">DORA's 2025 report</a> emphasizes the organizational conditions surrounding AI adoption. Its survey findings support examining the wider system; they do not prove that a particular practice causes a fixed productivity gain.</p>
+        <p>For a trial, keep the useful outcome in view. Record elapsed time, human attention, machine and operating costs, failures, rework and any effort shifted to customers or other teams. Include work that remains outside the new route. When the nature of the outcome changes, explain that change instead of forcing unlike results into one ratio.</p>
+      </section>
+      <section id="learning">
+        <h2>Check what people learned</h2>
+        <p>Anthropic's <a href="https://www.anthropic.com/research/AI-assistance-coding-skills">study of coding skill formation</a> examined 52 mostly junior developers learning an unfamiliar Python library. The group with AI assistance scored lower on an immediate comprehension quiz; the difference in completion speed was not statistically significant. This short study does not tell us what happens to expertise over years. It does show why completing a task is insufficient evidence of understanding.</p>
+        <p>Our proposed response is to give understanding its own checks. Can an engineer predict a failure they have not seen, explain a boundary or recognize when a rule should change? That is an investigation to run alongside increased delegation, rather than something to assume will follow from it.</p>
+      </section>
+      <section id="our-claims">
+        <h2>How to read the claims here</h2>
+        <p>A <strong>research finding</strong> belongs to its study population, tasks and conditions. A <strong>documented account</strong> tells us what its authors report doing and observing. An <strong>illustrative example</strong> lets us examine a proposed design without claiming it happened. A <strong>hypothesis</strong> needs an observation that could count against it.</p>
+        <p>The <a href="paths/customer-integrations.html">customer integration story</a> is illustrative. The <a href="examples/two-deliveries-one-payment.html">billing example</a> demonstrates behavior in a small synthetic model. The claim that one capability can make later capabilities easier to develop is a hypothesis to investigate beyond repeated use of the first tool. Each kind of material serves a purpose, provided we do not silently turn it into another.</p>
+        <p>Our <a href="https://grove.github.io/engineering-that-compounds/research/open-questions.html">open questions</a> set out the next investigations. For a useful account from your own organization, describe the starting constraint, what changed, the costs you included and what happened later. A case where the idea failed would help us revise it.</p>
+      </section>
+      <div class="next-page"><a class="button" href="paths/">Explore paths towards 10×</a></div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-inner"><div><a class="footer-brand" href="./">Compounding Engineering</a><p>A growing collection of essays, patterns and things to try.</p></div><nav aria-label="About this project"><a href="https://github.com/grove/compounding-engineering">Source &amp; suggestions</a><a href="https://github.com/grove/compounding-engineering/blob/main/LICENSE">Apache 2.0</a></nav></div>
+    <div class="shell footer-note">This site grew out of reading <a href="https://www.outcome.engineering/">Outcome Engineering</a> and asking how to make these collections easier to explore.</div>
+  </footer>
+</body>
+</html>

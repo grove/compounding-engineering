@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18382d">
+  <title>Two deliveries. One payment. — Compounding Engineering</title>
+  <meta name="description" content="A synthetic billing example: retain one duplicate-payment case and follow what it can establish across a fix, a restart and a replacement.">
+  <link rel="canonical" href="https://grove.github.io/compounding-engineering/examples/two-deliveries-one-payment.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Two deliveries. One payment.">
+  <meta property="og:description" content="A synthetic billing example: retain one duplicate-payment case and follow what it can establish across a fix, a restart and a replacement.">
+  <meta property="og:url" content="https://grove.github.io/compounding-engineering/examples/two-deliveries-one-payment.html">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/styles.css?v=20261128">
+  <link rel="stylesheet" href="../assets/adoption.css">
+  <script type="module" src="../assets/billing-demo.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="shell header-inner">
+      <a class="brand" href="../" aria-label="Compounding Engineering home"><svg class="brand-mark" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="11"/><circle cx="20" cy="20" r="5"/><path d="M20 3v12"/></svg><span>Compounding<br>Engineering</span></a>
+      <nav class="main-nav" aria-label="Main navigation"><a href="../paths/">Paths towards 10×</a><a href="../foundations.html">Foundations</a><a href="../adoption/">Try it with your team</a><a href="../evidence.html">Evidence</a></nav>
+      <a class="header-source" href="https://github.com/grove/compounding-engineering">GitHub</a>
+    </div>
+  </header>
+  <main id="main" class="example-page" tabindex="-1">
+    <div class="shell example-intro"><a href="../#in-practice">← Back to Compounding Engineering</a><p>This small model follows one piece of evidence into later work. For a wider redesign of engineering, read the <a href="../paths/customer-integrations.html">customer integrations example</a>.</p></div>
+    <section class="practice-section" id="in-practice" aria-labelledby="practice-title">
+      <div class="shell">
+        <div class="section-heading practice-heading">
+          <div><p class="eyebrow">One enabling capability: verification</p><h1 id="practice-title">Two deliveries.<br><em>One payment.</em></h1></div>
+          <p>A payment notification arrives. Then the same notification arrives again. The invoice records two payments, and someone gets an interesting afternoon.</p>
+        </div>
+        <div class="lab-layout">
+          <div class="lab-story">
+            <h3>Build evidence the next workflow can use.</h3>
+            <p>Reliable verification helps a factory take on more work. This small example illustrates that one capability within the larger transformation.</p>
+            <p>The fix remembers which events it has already applied. The useful thing to keep is the tiny scenario that made the bug undeniable: an unpaid invoice, one payment event, and two deliveries.</p>
+            <p>Try the original handler, then the duplicate check. The expected result stays the same: 24.00 paid, one event applied. Before you run each version, predict what it will record.</p>
+            <a class="text-link" href="https://grove.github.io/patterns-of-compounding-engineering/patterns/persistent-reproducer.html">Read the Persistent reproducer pattern</a>
+            <p class="lab-footnote">Adapted from the <a href="https://github.com/grove/patterns-of-compounding-engineering/tree/main/examples">billing lab</a>. A synthetic example, processed sequentially in memory. No real payments.</p>
+          </div>
+
+          <div class="payment-lab" aria-labelledby="lab-title">
+            <div class="lab-topline"><h3 id="lab-title">Replay the payment</h3><span class="lab-tag">Try it here</span></div>
+            <p class="lab-invoice">Invoice <code>inv_001</code><span>Invoice total <strong>24.00</strong></span></p>
+            <fieldset class="handler-choice">
+              <legend>Choose the handler</legend>
+              <label><input type="radio" name="payment-handler" value="buggy" checked> Original</label>
+              <label><input type="radio" name="payment-handler" value="fixed"> With duplicate check</label>
+            </fieldset>
+            <div class="table-scroll">
+              <table class="payment-table">
+                <caption class="sr-only">Effects of delivering the same payment event twice</caption>
+                <thead><tr><th scope="col">Delivery</th><th scope="col">Event</th><th scope="col">Effect</th></tr></thead>
+                <tbody id="payment-events"><tr><td colspan="3">The invoice starts unpaid.</td></tr></tbody>
+              </table>
+            </div>
+            <div class="payment-summary"><p>Recorded as paid <strong id="payment-total">0.00</strong></p><p>Events applied <strong id="payment-count">0</strong></p></div>
+            <p id="payment-result" class="payment-result" role="status" aria-live="polite" aria-atomic="true" data-state="idle">Deliver the same event twice and see what sticks.</p>
+            <div class="lab-actions"><button class="button" id="replay-payment" type="button" disabled>Deliver twice</button><button class="reset-button" id="reset-payment" type="button" disabled>Reset</button></div>
+            <noscript><p class="no-script">With the original handler, two deliveries record 48.00 paid. With the duplicate check, they record 24.00. Enable JavaScript to replay the example here, or <a href="https://github.com/grove/patterns-of-compounding-engineering/tree/main/examples">run the Python lab</a>.</p></noscript>
+          </div>
+        </div>
+
+        <div class="next-investments">
+          <header><p class="eyebrow">Use the case again</p><h3>Now restart the worker.</h3><p>Does the duplicate check still hold? The evolving billing lab follows the same payment through five changes. Each step names what it reuses and what still needs to be built.</p></header>
+          <div class="investment-step"><span class="step-label">Keep the expectation</span><h4>A restart exposes a gap.</h4><p>Reuse the payment case, but restart between deliveries. Remembering an event in one process does not mean the next process will remember it.</p><a href="https://grove.github.io/patterns-of-compounding-engineering/examples/evolving-billing/">Follow the runnable walkthrough</a></div>
+          <div class="investment-step"><span class="step-label">Extend the check</span><h4>Stop between two writes.</h4><p>The runner gains a way to interrupt processing. The same expected balance now helps expose a partial update and check a transaction that keeps both writes together.</p><a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/executable-invariants.html">What should remain true?</a></div>
+          <div class="investment-step"><span class="step-label">Use it for a new decision</span><h4>Replace the implementation.</h4><p>Run the retained cases against a different storage design. Then check the replacement on its own: the evidence should survive removing the old path.</p><a href="https://grove.github.io/patterns-of-compounding-engineering/patterns/differential-verification.html">How to judge a replacement</a></div>
+        </div>
+        <details class="scope-note"><summary>What these examples establish</summary><p>The browser demo covers sequential duplicate delivery in memory. The separate Python walkthrough adds simulated restarts and interruptions at named points in temporary local storage. Neither establishes behavior under concurrent workers, machine failure or a real payment provider’s contract. Reusing the cases demonstrates a connection between capabilities; it does not measure whether the investment saves a team time.</p></details>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-inner"><div><a class="footer-brand" href="../">Compounding Engineering</a><p>A growing collection of essays, patterns and things to try.</p></div><nav aria-label="About this project"><a href="https://github.com/grove/compounding-engineering">Source &amp; suggestions</a><a href="https://github.com/grove/compounding-engineering/blob/main/LICENSE">Apache 2.0</a></nav></div>
+    <div class="shell footer-note">This site grew out of reading <a href="https://www.outcome.engineering/">Outcome Engineering</a> and asking how to make these collections easier to explore.</div>
+  </footer>
+</body>
+</html>

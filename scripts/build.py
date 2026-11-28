@@ -102,11 +102,11 @@ def build() -> None:
     if OUTPUT.exists():
         shutil.rmtree(OUTPUT)
     OUTPUT.mkdir()
-    for name in ("index.html", "foundations.html", "404.html", "robots.txt", "sitemap.xml"):
+    for name in ("index.html", "foundations.html", "evidence.html", "404.html", "robots.txt", "sitemap.xml"):
         source = ROOT / name
         if source.is_file():
             shutil.copy2(source, OUTPUT / name)
-    for name in ("assets", "adoption"):
+    for name in ("assets", "adoption", "paths", "examples"):
         if (ROOT / name).is_dir():
             shutil.copytree(ROOT / name, OUTPUT / name)
     (OUTPUT / ".nojekyll").touch()

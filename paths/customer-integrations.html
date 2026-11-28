@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18382d">
+  <title>When every customer needs an integration — Compounding Engineering</title>
+  <meta name="description" content="A hypothetical transformation from bespoke customer integrations to a simpler product and bounded autonomous delivery, including failed assumptions and what each capability makes possible next.">
+  <link rel="canonical" href="https://grove.github.io/compounding-engineering/paths/customer-integrations.html">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/styles.css?v=20261128">
+  <link rel="stylesheet" href="../assets/adoption.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="shell header-inner">
+      <a class="brand" href="../" aria-label="Compounding Engineering home"><svg class="brand-mark" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="11"/><circle cx="20" cy="20" r="5"/><path d="M20 3v12"/></svg><span>Compounding<br>Engineering</span></a>
+      <nav class="main-nav" aria-label="Main navigation"><a href="../paths/">Paths towards 10×</a><a href="../foundations.html">Foundations</a><a href="../adoption/">Try it with your team</a><a href="../evidence.html">Evidence</a></nav>
+      <a class="header-source" href="https://github.com/grove/compounding-engineering">GitHub</a>
+    </div>
+  </header>
+  <main id="main" class="adoption-page" tabindex="-1">
+    <header>
+      <p class="eyebrow">A worked transformation</p>
+      <h1>When every customer<br>needs an integration</h1>
+      <p class="intro">Follow one team as it questions the work, abandons an attractive design and develops capabilities that change what it can attempt next.</p>
+    </header>
+    <nav class="adoption-nav" aria-label="Paths towards 10×">
+      <a href="./">Choosing a path</a>
+      <a href="customer-integrations.html" aria-current="page">A worked transformation</a>
+      <a href="../adoption/experiments.html">Experiments to try</a>
+    </nav>
+    <article class="adoption-body">
+      <div class="note"><p><strong>This is a hypothetical case.</strong> The company, decisions and developments below are invented to examine a plausible route. They are not observed results or evidence of tenfold effectiveness. The case extends the shorter integration example in <a href="../adoption/experiments.html#discover-a-path">Transformation experiments</a>.</p></div>
+      <section id="outcome">
+        <h2>The integration is only part of the job</h2>
+        <p>A software company sells an order-management service to distributors. Each new customer needs its warehouse system connected so sales staff can promise stock without calling the warehouse. The company has more customers waiting than its integration team can handle.</p>
+        <p>An engineer asks for sample files, interprets the fields, writes an adapter and tests it in a shared staging system. A customer specialist checks the result. Release waits for the product team's next deployment, then someone reconciles the first live imports by hand.</p>
+        <p>Much of the difficult work concerns meaning. Does “available” include reserved units? Can two warehouses use the same product code? Is an empty file a complete snapshot showing no stock, or a failed export? The answers affect orders people will actually accept.</p>
+        <p>The useful outcome is that a customer's sales staff can make sufficiently accurate stock promises. Shipping an adapter is an intermediate event. The team follows onboarding through ordinary use, including corrections and support, so that a quick release followed by weeks of reconciliation cannot count as a success.</p>
+      </section>
+      <section id="failed-start">
+        <h2>A faster generator leaves the queue in place</h2>
+        <p>The first proposal is an agent that reads warehouse documentation and generates adapters. In this imagined trial, it produces plausible code quickly. Engineers still have to settle the meaning of the data, obtain a staging slot and persuade someone to approve a release.</p>
+        <p>Worse, a generated test agrees with a generated adapter about the meaning of “available.” Both subtract reservations from a field that already excludes them. The code is consistent with its tests and wrong about the customer's operation.</p>
+        <p>The team keeps the generator for straightforward mapping work but stops treating it as the main investment. The trial has identified a more consequential problem: every integration reconstructs domain decisions that should already be understood. That diagnosis could be wrong in a real team; it needs evidence from actual cases before it justifies a redesign.</p>
+      </section>
+      <section id="common-model">
+        <h2>Find out which differences deserve to survive</h2>
+        <p>A small investigation examines earlier integrations and asks customer specialists to explain cases that needed correction. An agent helps compare field definitions and find contradictory examples. Engineers check the source material and work through the disputed cases with the people who understand the warehouses.</p>
+        <p>The investigation finds several ordinary variations in representation: field names, units and stable identifiers. It also finds differences in business rules. One customer allocates stock to contracts before accepting orders. Another promises goods still in transit. Those decisions cannot be resolved by matching columns.</p>
+        <p>The team first sketches a universal adapter configuration capable of expressing every known rule. It quickly fills with conditions, exceptions and customer-specific expressions. Reviewing that configuration would require much the same reasoning as reviewing code. This branch is abandoned.</p>
+        <p>Instead, the product lead chooses a narrower offer: warehouses that can provide physical stock, reservations and the time of a complete snapshot for each stable product-and-location identifier. Other cases remain explicit engineering work. The narrower model is useful only if enough customers fit it and find it worth adopting; the team tests that before funding the delivery machinery.</p>
+        <p>The team builds one importer for that contract. Customer configuration is limited to field names, stable identifiers and supported unit conversions; new business rules still require a product decision.</p>
+        <p>For customers who fit, an agreed mapping replaces a bespoke adapter. Some engineering work disappears through a product decision. Customers still need to confirm the meaning of their data. Moving all that interpretation into a long configuration form would merely move the burden.</p>
+      </section>
+      <section id="evidence">
+        <h2>Build evidence around the customer's decision</h2>
+        <p>The team turns the domain discussions into a small set of business scenarios. Ten physical units and three reservations should permit seven further units to be promised. A repeated snapshot must not add the same stock twice. Missing timestamps and incomplete exports must not silently become current inventory.</p>
+        <p>A customer specialist establishes the expected results independently of the mapping generator. Engineers include examples that contradicted their first interpretation, then add a new customer case the generator has not seen. These checks cover stated behaviors; they do not establish that every warehouse convention has been captured.</p>
+        <p>The scenarios make a later investment practical: a mapping can be assessed without booking the entire product's staging environment. The team builds a small isolated runner around the agreed model, using permitted sample data and representative failures. A new mapping can now be examined while another customer's integration is being tested.</p>
+        <p>Parallel work becomes useful because the comparisons share a clear meaning. Without the domain decisions, the team would have produced several incompatible answers faster. The runner also leaves evidence that another engineer can inspect without reconstructing the original conversation.</p>
+      </section>
+      <section id="delivery">
+        <h2>Remove the release dependency</h2>
+        <p>The next obstacle is the shared release. An accepted mapping still waits for unrelated product changes. The team introduces a versioned boundary between imports and the ordering service, then makes eligible mappings independently deployable behind that boundary.</p>
+        <p>This takes work of its own. An old import must remain readable while a new mapping is assessed. A failing mapping must be disabled without hiding that inventory is stale. Operators need to distinguish a bad mapping from a broken warehouse export. These requirements shape the boundary before unattended delivery is considered.</p>
+        <p>The initial release path compares imported results with the customer's existing process without using them to make promises. Only after the agreed checks and customer acceptance does the new feed become authoritative. Once established, eligible mapping changes can follow a repeatable path through preparation, verification, release and observation.</p>
+        <p>The team is now operating a small software factory. Its scope is precise: changes to mappings within an accepted model. A proposal to change what “reserved” means requires a new product and customer decision. The factory has no authority to settle that question by changing its own acceptance tests.</p>
+      </section>
+      <section id="exceptions">
+        <h2>Use exceptions to decide what to improve</h2>
+        <p>Ordinary mapping changes can proceed with less supervision, but some still stop. The team keeps the reason and supporting evidence for each intervention. One recurring category is a feed that momentarily reports zero stock during a warehouse export.</p>
+        <p>The original contract required a complete snapshot, but gave the importer no reliable way to tell whether that requirement had been met.</p>
+        <p>The first proposed repair is to retry until a plausible value appears. That would conceal the distinction between an incomplete export and a warehouse that has genuinely run out of stock. The investigation instead identifies the missing condition: consumers need to know whether a snapshot is complete.</p>
+        <p>Where the warehouse can supply that signal, the team changes the contract and adds cases for incomplete and genuinely empty snapshots. Where it cannot, the integration remains outside unattended handling. Some exceptions disappear through a better boundary; others remain because the necessary information does not exist.</p>
+        <p>This is the farm investigating the factory. Its useful output is a corrected explanation and a change to the system, including a decision about which work to exclude. The earlier scenarios and runner help reproduce the problem and assess the contract change. The team should record that contribution and the extra work required, rather than attribute every improvement to the original investment.</p>
+      </section>
+      <section id="understanding">
+        <h2>Make sure people can still explain the stock</h2>
+        <p>As routine work is delegated, newer engineers have fewer occasions to discover the warehouse rules through painful mistakes. The team deliberately gives them other occasions to reason about those rules.</p>
+        <p>Before running an unfamiliar case, an engineer predicts the inventory that sales staff will see and explains the assumptions. A colleague then introduces a late reservation or an incomplete snapshot. The discussion reveals whether the engineer understands the model, where the model is silent and when to ask the customer for a decision.</p>
+        <p>The team uses difficult exceptions for this practice and keeps the disputed interpretations with the scenarios. It occasionally checks an apparently ordinary result against the customer's operation as well. That can reveal a shared blind spot that all the automated checks have missed. The learning takes time and belongs in the cost of operating the system.</p>
+      </section>
+      <section id="next-capability">
+        <h2>Attempt something the earlier system made expensive</h2>
+        <p>Customers now ask for fresher inventory. Previously, comparing periodic imports with a stream of changes would have meant recreating customer examples, arranging a test environment and inventing a way to judge the results.</p>
+        <p>The team can reuse its domain scenarios, isolated runner and observable import boundary. It extends them to cover out-of-order changes, disconnections and recovery, then compares two designs. Those additions are substantial: evidence about complete snapshots does not establish correct behavior for an event stream.</p>
+        <p>This is a specific compounding hypothesis. Earlier work may reduce the effort and uncertainty of developing a new capability. To assess it, record what was usable as it stood, what needed adaptation and what had to be learned from scratch. The team may still decide that fresher data is not worth the operating cost. Reaching that decision with adequate evidence is a useful result.</p>
+      </section>
+      <section id="judgment">
+        <h2>Would this route be worth following?</h2>
+        <p>The first question is whether a supported customer reaches reliable stock promises with less total work. The product and delivery changes would have to earn their costs over ordinary use, including corrections and support.</p>
+        <p>None of that establishes tenfold effectiveness. In a real attempt, the team would need to follow useful customer outcomes and total cost over time, including the initial investment, customers outside the supported model, failed trials, model use and ongoing support. It would also need to explain what happened to the capacity released: more successful onboarding, better service, another investigation or merely a different queue.</p>
+        <p>There are several reasons to stop or change direction. Too few customers may fit the common model. Customers may find configuration more burdensome than the old service. Maintaining the delivery machinery may consume the expected return. A lower exception count might conceal failures that no longer reach an engineer.</p>
+        <p>To investigate a similar route, choose one recurring class of work and examine the decisions behind several contrasting cases. Ask which differences should remain and which have been preserved by habit. Use the <a href="../adoption/investment-canvas.html">investment worksheet</a> for the first bounded change, and the <a href="../adoption/experiments.html#evidence-record">experiment record</a> to follow what it makes possible next.</p>
+      </section>
+      <p class="next-page"><a class="button" href="../adoption/investment-canvas.html">Work through your first investment</a></p>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><div><a class="footer-brand" href="../">Compounding Engineering</a><p>Essays, patterns and things to try.</p></div><nav aria-label="About this project"><a href="https://github.com/grove/compounding-engineering">Source &amp; suggestions</a><a href="https://github.com/grove/compounding-engineering/blob/main/LICENSE">Apache 2.0</a></nav></div></footer>
+</body>
+</html>
