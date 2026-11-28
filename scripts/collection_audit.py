@@ -12,6 +12,7 @@ from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from html.parser import HTMLParser
+from http.client import HTTPException
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.parse import unquote, urlsplit, urlunsplit
@@ -89,7 +90,7 @@ def fetch(url: str) -> Fetched:
     except HTTPError as error:
         status = "broken" if error.code in {404, 410} else "inconclusive"
         return Fetched(status, f"HTTP {error.code}")
-    except (URLError, OSError, ValueError, LookupError) as error:
+    except (URLError, OSError, ValueError, LookupError, HTTPException) as error:
         return Fetched("inconclusive", type(error).__name__)
 
 
