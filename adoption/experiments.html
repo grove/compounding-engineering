@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18382d">
+  <title>Transformation experiments — Compounding Engineering</title>
+  <meta name="description" content="Test different ways to organize engineering, measure valuable outcomes and follow what each advance makes possible next.">
+  <link rel="canonical" href="https://grove.github.io/compounding-engineering/adoption/experiments.html">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/styles.css?v=1fba4adf7b82">
+  <link rel="stylesheet" href="../assets/adoption.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="shell header-inner">
+      <a class="brand" href="../" aria-label="Compounding Engineering home"><svg class="brand-mark" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="11"/><circle cx="20" cy="20" r="5"/><path d="M20 3v12"/></svg><span>Compounding<br>Engineering</span></a>
+      <a class="header-source" href="https://github.com/grove/compounding-engineering">GitHub</a>
+    </div>
+  </header>
+  <main id="main" class="adoption-page" tabindex="-1">
+    <header><p class="eyebrow">Transformation experiments</p><h1>What could engineering become?</h1><p class="intro">Choose a consequential constraint. Test a different way to organize the work. Find out what becomes possible, what remains difficult and whether the next transformation gets easier.</p></header>
+    <nav class="adoption-nav" aria-label="Adoption guide">
+      <a href="index.html">Start here</a>
+      <a href="investing.html">Investing</a>
+      <a href="investment-canvas.html">Worksheet</a>
+      <a href="patterns.html">Organizational patterns</a>
+      <a href="first-twelve-weeks.html">The first twelve weeks</a>
+      <a href="experiments.html" aria-current="page">Experiments</a>
+    </nav>
+    <article class="adoption-body">
+      <section>
+        <h2>Begin with the outcome, not the procedure</h2>
+        <p>Suppose software changes can be generated almost instantly, but reaching a decision, obtaining an environment, establishing correctness or getting a release accepted still takes days. Making the implementation step faster may barely change the result.</p>
+        <p>Imagine organizing this workflow from scratch with today's capabilities. Which activities would you no longer create? Which constraints would still hold? Who or what needs to make each decision, and what evidence would make delegated decisions trustworthy?</p>
+        <p>Use the <a href="investment-canvas.html">investment worksheet</a> to select a bounded first experiment. Compare the current workflow, eliminating the work, redesigning it and automating what remains. Choose by expected effect on useful outcomes, rather than ease of building an AI tool.</p>
+        <div class="note"><p><strong>These are candidate experiments, not case studies.</strong> No results or savings are claimed below. Start with work that matters to your organization, and adapt the tests to the risks and constraints of that work.</p></div>
+      </section>
+      <section id="candidate-experiments">
+        <h2>Five experiments worth considering</h2>
+        <h3>1. Dependency maintenance without a standing queue</h3>
+        <p><strong>Constraint:</strong> routine upgrades repeatedly interrupt teams or accumulate until they become urgent. <strong>Redesign:</strong> let a factory discover eligible updates, prepare and verify changes in isolated environments, deliver within policy and route uncertain cases to an owner. Keep high-risk changes outside automatic release until there is evidence and authority to expand it.</p>
+        <p><strong>Test:</strong> compare time to a safely deployed update, overdue exposure, manual touches, escaped faults and total run and upkeep cost. Can the resulting environment and verification capabilities handle another class of maintenance, such as a runtime migration?</p>
+        <h3>2. Investigate continuously, change selectively</h3>
+        <p><strong>Constraint:</strong> recurring faults, expensive code paths or obsolete features are rarely investigated unless they become emergencies. <strong>Redesign:</strong> run a farm with a bounded budget and a portfolio of consequential questions. Require supporting evidence and counterexamples, and let findings propose a change, a further experiment or no action.</p>
+        <p><strong>Test:</strong> count accepted findings that change decisions, false leads, review effort, avoided work and effects on reliability or cost. Does one investigation develop a diagnostic method that makes a different investigation cheaper?</p>
+        <h3>3. Eliminate a cross-team dependency</h3>
+        <p><strong>Constraint:</strong> valuable changes wait for a shared specialist, environment, approval or synchronized release. <strong>Redesign:</strong> examine actual waiting cases. Try independently verifiable contracts, clearer decision rights or on-demand environments; remove the handoff if its purpose can be met without it.</p>
+        <p><strong>Test:</strong> measure request-to-outcome time, the proportion of eligible work completed independently, failures at the boundary and support costs. Does the new boundary make an additional team or class of work independent?</p>
+        <h3>4. Make a previously impractical opportunity feasible</h3>
+        <p><strong>Constraint:</strong> a customer need or product experiment is not worth pursuing under current implementation and validation costs. <strong>Redesign:</strong> combine existing domain knowledge, prototypes, isolated environments and evidence machinery to investigate the opportunity without committing to a full build. Use AI where it expands exploration, not just output.</p>
+        <p><strong>Test:</strong> compare time and cost to a defensible product decision, including abandoned alternatives. If the outcome is promising, verify actual user value. Did reusable capabilities lower the cost of a subsequent opportunity? A decision not to build can be valuable.</p>
+        <h3>5. Let the engineering system expose its own constraints</h3>
+        <p><strong>Constraint:</strong> repeated interventions in delivery are treated as individual exceptions, rather than clues to improve the system. <strong>Redesign:</strong> collect permitted evidence about waits, retries, manual interventions and successful runs. Use a farm to test explanations and suggest changes to the factory. Implement a selected improvement through the factory's normal verification and release path.</p>
+        <p><strong>Test:</strong> measure investigation cost, useful changes to the delivery system, whether recurring interventions really disappear, and whether the new capability helps investigate or remove another constraint. Keep a human owner for priorities, permission changes, budgets and stopping the experiment.</p>
+        <p>These possibilities are related to the essays on <a href="https://grove.github.io/engineering-that-compounds/essays/automating-the-work-of-engineering.html">automating engineering</a>, <a href="https://grove.github.io/software-that-improves-with-age/essays/continuous-cultivation-of-software.html">continuous cultivation</a> and <a href="https://grove.github.io/engineering-that-compounds/essays/what-would-ten-times-look-like.html">tenfold effectiveness</a>.</p>
+      </section>
+      <section id="operating-loop">
+        <h2>Let farms and factories improve one another</h2>
+        <ol>
+          <li><strong>Direct:</strong> people set valuable outcomes, constraints, priorities, risk boundaries and investment budgets.</li>
+          <li><strong>Investigate:</strong> a farm uses operational observations and domain understanding to test explanations, challenge assumptions and discover alternatives.</li>
+          <li><strong>Decide:</strong> an accountable owner decides what to remove, redesign, automate or leave alone.</li>
+          <li><strong>Deliver:</strong> a factory implements, verifies and delivers the selected change within delegated authority; uncertainty goes to an appropriate decision-maker.</li>
+          <li><strong>Learn:</strong> compare predicted with observed outcomes, including useful surprises, errors and cost. Develop shared judgment and retain capabilities that another person or workflow can use.</li>
+          <li><strong>Reinvest:</strong> use the improved system to pursue a more valuable outcome or the next limiting constraint. Test whether the earlier investment made this advance easier.</li>
+        </ol>
+        <p>This is a feedback loop, not an organizational chart. One team may operate both roles. Do not automate the selection of priorities or expansion of permissions merely because a workflow can execute unattended. Stop or narrow an investment that cannot establish its benefit.</p>
+      </section>
+      <section id="evidence-record">
+        <h2>Record what actually happened</h2>
+        <p>Use the <a href="first-twelve-weeks.html">twelve-week playbook</a> to follow the experiment through later work. Agree on the outcome and quality bar before changing the workflow. Observe representative eligible work before and after, or use a credible comparison where possible. Include failed attempts, exceptions, changes in work mix and other plausible explanations.</p>
+        <p>Follow useful outcomes per unit of total cost alongside elapsed time, human attention and quality. Count compute, tools, setup, supervision, rework and maintenance. Do not multiply unrelated speedups into a claim of 10×. Where outcomes cannot be reduced to a defensible common unit, report several measures and the trade-offs instead of a single ratio.</p>
+        <p>Keep the record in the issue or document the team already uses. Update it when subsequent work establishes or contradicts the connection. The following template works for a small experiment and can be expanded into a longitudinal case study.</p>
+        <pre>Title and owner:
+Status: proposed / running / observed / repeated / retired
+Context and valuable outcome:
+Current constraint and evidence:
+What work could disappear?
+Redesign and alternative considered:
+Scope, delegated authority, safeguards and stop conditions:
+Prediction, baseline, observation period and comparison:
+Investment and ongoing costs (including human attention):
+Observed outcomes, waiting, interventions and quality:
+Exceptions, failures and other possible explanations:
+What changed in our understanding or decisions?
+What capability or practice remains? Who can use it?
+What became feasible that was not feasible before?
+Next constraint or opportunity:
+Later advance: what transferred, at what adaptation cost?
+What remains uncertain?
+Decision: keep, adapt, widen or retire; next review:</pre>
+      </section>
+      <section id="evidence-status">
+        <h2>Separate a plausible route from a demonstrated one</h2>
+        <dl>
+          <dt>Proposed</dt><dd>A hypothesis and plan; not evidence of an improvement.</dd>
+          <dt>Observed</dt><dd>Results from a bounded intervention, with context and limitations. An improvement in one workflow is not a team-wide transformation.</dd>
+          <dt>Repeated or transferred</dt><dd>Useful results on later eligible work or in another context, with adaptation and upkeep accounted for. This can demonstrate sustained or recurring benefit.</dd>
+          <dt>Compounding connection</dt><dd>Evidence that an earlier investment helped create a later capability more effectively. Reuse by itself is not enough. A connection may fail to transfer or make a later investment more expensive.</dd>
+          <dt>System-level effectiveness</dt><dd>Outcomes across the relevant value stream over time, including the costs of all the enabling investments and required quality. Establish this separately from individual experiments.</dd>
+        </dl>
+        <p>Share what worked, what failed and what remains uncertain. If publishing outside your organization, remove confidential material and obtain permission; summaries with clear limitations can still be useful. The <a href="https://github.com/grove/compounding-engineering">site repository</a> is a place to propose new public case studies or corrections. The site's <a href="../#evidence">evidence section</a> distinguishes its current demonstrations and research proposals from actual organizational results.</p>
+      </section>
+      <p class="next-page"><a class="button" href="investment-canvas.html">Choose your next investment</a></p>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><div><a class="footer-brand" href="../">Compounding Engineering</a><p>Essays, patterns and things to try.</p></div><nav aria-label="About this project"><a href="https://github.com/grove/compounding-engineering">Source &amp; suggestions</a><a href="https://github.com/grove/compounding-engineering/blob/main/LICENSE">Apache 2.0</a></nav></div></footer>
+</body>
+</html>

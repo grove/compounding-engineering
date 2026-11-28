@@ -24,6 +24,8 @@ The [investment worksheet](https://grove.github.io/compounding-engineering/adopt
 
 [What would ten times look like?](https://grove.github.io/engineering-that-compounds/essays/what-would-ten-times-look-like.html) and the [tenfold exercise](https://grove.github.io/patterns-of-compounding-engineering/guide.html#use-the-tenfold-ambition-to-choose-the-next-investment) give the ambition a practical role: find what limits useful outcomes, choose an investment, learn from its result and follow what it enables next. Evaluate the full cost and required quality; local gains cannot simply be multiplied into a team-wide result.
 
+[Transformation experiments](https://grove.github.io/compounding-engineering/adoption/experiments.html) offers five candidate workflow redesigns, a farm–factory feedback loop and a reusable evidence record. The candidates are proposals, not measured case studies; the goal is to learn from actual outcomes, including failed experiments and later connections between investments.
+
 ## Work on the site
 
 Edit `index.html`, `foundations.html`, the pages in `adoption/` and the files in `assets/`. There is no package installation or JavaScript build step. Python 3.10 or later is enough:
