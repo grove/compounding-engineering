@@ -15,6 +15,8 @@ The site is at [grove.github.io/compounding-engineering](https://grove.github.io
 
 The [billing demonstration](https://grove.github.io/compounding-engineering/examples/two-deliveries-one-payment.html) has its own page. It illustrates how a retained case can help with later changes; it does not measure a team's effectiveness.
 
+The [coordination comparison](https://grove.github.io/compounding-engineering/examples/coordination-avoidance.html) explores pooled and delegated capacity under changing demand. It is a synthetic model, not evidence of organizational effectiveness. The [coordination experiment](https://grove.github.io/compounding-engineering/adoption/experiments.html#coordination-experiment) proposes a real-world comparison; the [publication experiment](https://grove.github.io/compounding-engineering/adoption/experiments.html#publication-experiment) proposes applying the same ideas to the collections themselves.
+
 ## The companion collections
 
 - [Reimagining software engineering](https://grove.github.io/reimagining-software-engineering/) questions the arrangements of engineering itself: what teams are responsible for, how solutions are chosen, and which work could become economically worthwhile.
